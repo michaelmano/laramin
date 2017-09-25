@@ -1,0 +1,52 @@
+// Any global functions or mixins.
+@mixin clear-box-model() {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    position: $pos;
+    display: $display;
+    content: $content;
+}
+
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+    $padding: unquote(($y / $x) * 100 + '%');
+
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+@mixin sr-only($focusable: false) {
+	border: 0;
+	width: 1px;
+    padding: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+
+	@if $focusable {
+		@include sr-only-focusable;
+	}
+}
+
+@mixin sr-only-focusable {
+	&:active, &:focus {
+		margin: 0;
+        clip: auto;
+		width: auto;
+        height: auto;
+        position: static;
+        overflow: visible;
+	}
+}

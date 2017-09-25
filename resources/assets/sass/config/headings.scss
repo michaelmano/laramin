@@ -1,0 +1,21 @@
+$heading-selectors: (h1, h2, h3, h4, h5, h6);
+
+$heading-sizes: (
+    h1: 6rem,
+    h2: 5rem,
+    h3: 4rem,
+    h4: 3rem,
+    h5: 2rem,
+    h6: 1rem,
+);
+
+@mixin headings {
+    @each $selector in $heading-selectors {
+        #{$selector} {
+            @content;
+
+            // The specific selector based configurations defined above.
+            font-size: map-get($heading-sizes, $selector);
+        }
+    }
+}

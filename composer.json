@@ -1,0 +1,14 @@
+{
+    "name": "michaelmano/laramin",
+    "description": "Admin styles and scripts",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Mano",
+            "email": "michael.mano26@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

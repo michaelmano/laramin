@@ -1,0 +1,8 @@
+$z-indexes: (
+    'one',
+    'two',
+);
+
+@function z-index($name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+}

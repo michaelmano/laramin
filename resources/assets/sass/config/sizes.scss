@@ -1,0 +1,5 @@
+$base-size: 0.25rem;
+
+@function size($multiplier) {
+    @return $base-size * $multiplier;
+}

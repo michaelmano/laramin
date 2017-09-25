@@ -1,0 +1,49 @@
+.util-color-alpha {
+  color: #FFFFFF; }
+
+.util-background-alpha {
+  background-color: #FFFFFF; }
+
+.util-color-bravo {
+  color: #000000; }
+
+.util-background-bravo {
+  background-color: #000000; }
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 96px;
+  font-size: 6rem; }
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 80px;
+  font-size: 5rem; }
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 64px;
+  font-size: 4rem; }
+
+h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  font-size: 3rem; }
+
+h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  font-size: 2rem; }
+
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-size: 1rem; }
+
+/*# sourceMappingURL=laramin.css.map*/
