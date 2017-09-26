@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ asset('michaelmano/laramin/css/laramin.css') }}">
     </head>
 <body>
+    @include('laramin::partials._sprite')
     <div id="laramin">
 	    @yield('base-content')
     </div>

@@ -296,11 +296,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 __webpack_require__(2);
 
-var _index = __webpack_require__(3);
+var _sprite = __webpack_require__(3);
+
+var _sprite2 = _interopRequireDefault(_sprite);
+
+var _index = __webpack_require__(4);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(5);
+var _index3 = __webpack_require__(6);
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -308,7 +312,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _index2.default)();
 (0, _index4.default)();
-console.log('loaded');
 
 /***/ }),
 /* 2 */
@@ -326,28 +329,40 @@ console.log('loaded');
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var __svg__ = { filename: __webpack_require__.p +"../../src/views/partials/_sprite.blade.php" };
+exports.default = __svg__;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _qoob = __webpack_require__(0);
 
 var _qoob2 = _interopRequireDefault(_qoob);
 
-var _example = __webpack_require__(4);
+var _example = __webpack_require__(5);
 
 var _example2 = _interopRequireDefault(_example);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _module = function module() {
-    _qoob2.default.documentReady(function () {
-        (0, _example2.default)();
-        console.log('vanilla loaded');
-    });
+  _qoob2.default.documentReady(function () {
+    console.log('vanilla loaded');
+  });
 };
 
 exports.default = _module;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -373,7 +388,7 @@ var _module = function module() {
 exports.default = _module;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -383,13 +398,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(7);
 
 var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.component('vue-modal', __webpack_require__(9).default);
+_vue2.default.component('vue-modal', __webpack_require__(10).default);
 
 var _module = function module() {
 
@@ -402,7 +417,7 @@ var _module = function module() {
 exports.default = _module;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9678,10 +9693,10 @@ function getOuterHTML(el) {
 Vue$3.compile = compileToFunctions;
 
 exports.default = Vue$3;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(9)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9874,7 +9889,7 @@ process.umask = function () {
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9904,14 +9919,14 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1a4f9d20_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Modal_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1a4f9d20_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Modal_vue__ = __webpack_require__(12);
 var disposed = false
-var normalizeComponent = __webpack_require__(10)
+var normalizeComponent = __webpack_require__(11)
 /* script */
 var __vue_script__ = null
 /* template */
@@ -9953,7 +9968,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -10050,7 +10065,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10058,7 +10073,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "div" } }, [_vm._v("\n    stuff\n")])
+  return _c("div", { staticClass: "Modal" }, [
+    _c("header", { staticClass: "Modal__header" }, [
+      _c("h4", [_vm._v("Modal Title")]),
+      _vm._v(" "),
+      _c("button", { staticClass: "Modal__close" }, [
+        _c("svg", { staticClass: "Icon Icon--small" }, [
+          _c("use", { attrs: { "xlink:href": "#icon-times" } })
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "Modal__body" }, [
+      _vm._v("\n        Modal Body\n    ")
+    ]),
+    _vm._v(" "),
+    _c("footer", { staticClass: "Modal__footer" }, [
+      _vm._v("\n        Modal Footer\n    ")
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

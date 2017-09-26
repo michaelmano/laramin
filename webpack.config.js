@@ -26,8 +26,11 @@ module.exports = {
 				fallback: 'style-loader'
 			})
 		}, {
-			test: /\.(gif|png|jpe?g|bmp|svg)$/,
+			test: /\.(gif|png|jpe?g|bmp)$/,
 			loader: 'file-loader?name=[name].[ext]&outputPath=assets/images/'
+		}, {
+			test: /\.(svg)$/,
+			loader: 'file-loader?name=[name].[ext]&outputPath=assets/images/svgs/'
 		}, {
 			test: /\.vue$/,
 			loader: 'vue-loader'
@@ -44,12 +47,14 @@ module.exports = {
 			allChunks: true
 		}),
 		new SvgStore.Options({
-			svgoOptions: {
-				plugins: [
-					{ removeTitle: true }
-				]
-			}
-		}),
+            template: './resources/assets/js/config/svg-template.pug',
+            svgoOptions: {
+                plugins: [
+                    { removeTitle: true },
+                    { removeUselessDefs: true },
+                    { cleanupIDs: { remove: false, minify: true }}
+                ]}
+        }),
 		new webpack.ProvidePlugin({
 			Vue: 'vue',
 		})

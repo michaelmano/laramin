@@ -1,0 +1,16 @@
+.Icon {
+	display: inline-block;
+}
+
+$icon_sizes: (
+	small: 1rem,
+	medium: 2rem,
+	large: 3rem,
+);
+
+@each $key, $value in $icon_sizes {
+	.Icon--#{$key} {
+		width: $value;
+		height: $value;
+	}
+}
