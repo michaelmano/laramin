@@ -329,7 +329,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var __svg__ = { filename: __webpack_require__.p +"../../src/views/partials/_sprite.blade.php" };
+var __svg__ = { filename: __webpack_require__.p +"../src/views/partials/_sprite.blade.php" };
 exports.default = __svg__;
 
 /***/ }),

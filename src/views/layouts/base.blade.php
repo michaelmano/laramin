@@ -6,6 +6,7 @@
         <title>{{ config('app.name') ?? 'Laramin' }} - Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('michaelmano/laramin/css/laramin.css') }}">
+        @stack('styles')
     </head>
 <body>
     @include('laramin::partials._sprite')
@@ -14,4 +15,5 @@
     </div>
 </body>
 <script src="{{ asset('michaelmano/laramin/js/laramin.js') }}" async defer></script>
+@stack('scripts')
 </html>
