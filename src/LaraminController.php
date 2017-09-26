@@ -8,7 +8,11 @@ class LaraminController extends Controller
 {
     public function index()
     {
+        return view('laramin::laramin.intro.index');
+    }
 
-        return view('laramin::welcome');
+    public function sprite()
+    {
+        return view('laramin::laramin.sprite.index');
     }
 }

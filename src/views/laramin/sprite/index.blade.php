@@ -1,12 +1,8 @@
 @extends('laramin::layouts.base')
 
 @section('base-content')
-	@component('laramin::components.sidebar')
-		<h3>this is the sidebar content.</h3>
-	@endcomponent
-	<h1>Welcome to the Laramin Dashboard</h1>
-	<vue-modal></vue-modal>
-	<div id="sprite-example">
+	<h4>Sprites</h4>
+	<div id="sprite-example" class="Row">
 
 	</div>
 @endsection
@@ -19,13 +15,12 @@
 			var container = document.createElement('div');
 			var icon = document.createElement('svg');
 			var use = document.createElement('use');
-			var pre = document.createElement('pre');
+			container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg';
 			use.setAttribute('xlink:href', '#' + element.id);
 			icon.classList = 'Icon Icon--small';
 			icon.appendChild(use);
+			icon.title = '<svg class="Icon Icon--small"><use xlink:href="#' + element.id + '"></use></svg>';
 			container.appendChild(icon);
-			pre.textContent = '<svg class="Icon Icon--small"><use xlink:href="#' + element.id + '"></use></svg>';
-			container.appendChild(pre);
 			spriteExample.appendChild(container);
 		});
 	</script>
