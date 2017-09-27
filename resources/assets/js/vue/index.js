@@ -1,9 +1,8 @@
 import Vue from 'vue';
 
-Vue.component('vue-modal', require('./components/Modal.vue').default);
+Vue.component('laramin-modal', require('./components/Modal.vue'));
 
 const module = function module() {
-
   new Vue({
     el: '#laramin',
     data: {}

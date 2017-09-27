@@ -14,6 +14,15 @@
 		<li>list of components.</li>
 	</ul>
 	<h4>Sprites</h4>
+
+	<laramin-modal>
+		<h4 slot="title">Modal Title Here</h4>
+		<p slot="body">
+			Modal Body Content
+		</p>
+		<p slot="footer">Footer Content</p>
+	</laramin-modal>
+	
 	<div id="sprite-example" class="Row">
 
 	</div>
