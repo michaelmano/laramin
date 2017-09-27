@@ -1,6 +1,6 @@
 $z-indexes: (
-    'modal-overlay',
     'modal-content',
+    'modal-overlay',
 );
 
 @function z-index($name) {

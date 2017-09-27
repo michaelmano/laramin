@@ -1861,19 +1861,6 @@ h6 {
           box-sizing: border-box;
 }
 
-.Modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
-}
-
 .Modal__overlay {
   position: fixed;
   left: 0;
@@ -1881,12 +1868,38 @@ h6 {
   right: 0;
   bottom: 0;
   background: rgba(10, 10, 10, 0.86);
-  z-index: 2;
 }
 
 .Modal__content {
-  position: relative;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   z-index: 2;
+}
+
+.Modal__body {
+  position: relative;
+  z-index: 1;
 }
 
 .Icon {

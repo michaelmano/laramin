@@ -1,8 +1,4 @@
 .Modal {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
 }
 
 .Modal__overlay {
@@ -12,18 +8,35 @@
 	right: 0;
 	bottom: 0;
 	background: rgba(10, 10, 10, 0.86);
-	z-index: z-index(modal-overlay);
+
 }
 
 .Modal__content {
-	position: relative;
-	z-index: z-index(modal-overlay);
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	z-index: z-index(modal-content);
 }
 
-.Modal__header {}
+.Modal__header {
+}
 
 .Modal__close {}
 
-.Modal__body {}
+.Modal__body {
+	position: relative;
+	z-index: z-index(modal-overlay);
+}
 
 .Modal__footer {}

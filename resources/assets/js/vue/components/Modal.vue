@@ -1,6 +1,6 @@
 <template>
     <div class="Modal">
-        <transition enter-active-class="animated bounceInRight" leave-active-class="animated bounceOutLeft">
+        <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
             <div class="Modal__overlay" v-show="show"></div>
         </transition>
         <transition enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight">
