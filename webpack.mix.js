@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const SvgStore = require('webpack-svgstore-plugin');
+const webpack = require('webpack');
 
 mix.webpackConfig({
 	devtool: "inline-source-map",

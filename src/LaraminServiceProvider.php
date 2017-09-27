@@ -14,7 +14,10 @@ class LaraminServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/views', 'laramin');
-        $this->publishes([__DIR__.'/assets' => public_path('michaelmano/laramin')], 'public');
+        $this->publishes([
+            __DIR__.'/assets' => public_path('michaelmano/laramin'),
+            __DIR__.'/config/laramin.php' => config_path('laramin.php'),
+        ], 'public');
     }
 
     /**

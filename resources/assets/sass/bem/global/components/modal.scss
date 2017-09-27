@@ -1,0 +1,28 @@
+.Modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Modal__overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(10, 10, 10, 0.86);
+	z-index: z-index(modal-overlay);
+}
+
+.Modal__content {
+	position: relative;
+	z-index: z-index(modal-overlay);
+}
+
+.Modal__header {}
+
+.Modal__close {}
+
+.Modal__body {}
+
+.Modal__footer {}
