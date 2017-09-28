@@ -13,7 +13,7 @@ class LaraminServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/views', 'laramin');
         $this->publishes([
-            __DIR__.'/assets' => public_path('michaelmano/laramin'),
+            __DIR__.'/assets' => public_path('laramin'),
         ], 'public');
     }
 
