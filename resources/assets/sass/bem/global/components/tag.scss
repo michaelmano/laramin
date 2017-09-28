@@ -1,0 +1,25 @@
+.Tag {
+    align-items: center;
+	display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+	font-size: 0.75rem;
+}
+
+.Tag__name {
+	background-color: color(delta);
+	padding: 0.25rem 0.75em;
+}
+
+.Tag__info {
+	background-color: color(golf);
+	color: color(alpha);
+	padding: 0.25rem 0.75em;
+}
+
+.Tag__remove {
+	cursor: pointer;
+	fill: color(bravo);
+	width: 0.35rem;
+	height: 0.45rem;
+}
