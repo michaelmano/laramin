@@ -1,3 +1,3 @@
 <aside>
-	{{ $slot }}
+	laramin sidebar yo.asdsadsa
 </aside>

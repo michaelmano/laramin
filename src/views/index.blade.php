@@ -1,6 +1,6 @@
-@extends('laramin::layouts.base')
+@extends('laramin::layouts.standard')
 
-@section('base-content')
+@section('standard-content')
 	<div id="example">
 			@component('laramin::components.sidebar')
 			<h3>this is the sidebar content.</h3>
@@ -14,6 +14,24 @@
 		<ul>
 			<li>list of components.</li>
 		</ul>
+		<h4>Tags</h4>
+		<div class="Tag">
+			<div class="Tag__name">Tag with info</div>
+			<div class="Tag__info">v2</div>
+		</div>
+		<div class="Tag">
+			<div class="Tag__name">Tag without info</div>
+		</div>
+
+		<div class="Tag">
+			<div class="Tag__name">Tag with delete <svg class="Tag__remove"><use xlink:href="#icon-times"></use></svg></div>
+		</div>
+
+		<h4>Tooltips</h4>
+
+		<span class="Tooltip">Hover me.
+			<span class="Tooltip__text">This is the hovvver</span>
+		</span>
 		<h4>Sprites</h4>
 		
 		<button @click="showModal('modal')">Show Modal</button>
@@ -40,7 +58,7 @@
 	</div>
 @endsection
 
-@push('scripts')
+@push('pre-scripts')
 <script>
 	// Run through the sprite and print out all of the icons.
 	var sprite = document.getElementById('sprite');

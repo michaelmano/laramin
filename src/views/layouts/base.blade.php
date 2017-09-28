@@ -9,12 +9,18 @@
         <link rel="stylesheet" href="{{ asset('michaelmano/laramin/css/laramin.css') }}">
         @stack('styles')
     </head>
-<body class="Theme Theme--{{ config('laramin.settings.theme') }}">
+<body class="Body Theme Theme--{{ config('laramin.settings.theme') }}">
     @include('laramin::partials._sprite')
-    <div id="laramin">
-	    @yield('base-content')
+    <div id="laramin" class="Laramin">
+        @yield('base-header')
+        <main class="Main">
+            @yield('base-content')
+        </main>
+        @yield('base-footer')
     </div>
 </body>
-<script src="{{ asset('michaelmano/laramin/js/laramin.js') }}" async defer></script>
+
+@stack('pre-scripts')
+<script src="{{ asset('michaelmano/laramin/js/laramin.js') }}"></script>
 @stack('scripts')
 </html>

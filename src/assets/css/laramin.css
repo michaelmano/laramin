@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Bitter:400|Varela);@charset "UTF-8";
 
 /*!
  * animate.css -http://daneden.me/animate
@@ -1886,6 +1886,26 @@ h6 {
   background-color: #dbdbdb;
 }
 
+.util-color-golf {
+  color: #26B99A;
+}
+
+.util-background-golf {
+  background-color: #26B99A;
+}
+
+.util-color-hotel {
+  color: #337ab7;
+}
+
+.util-background-hotel {
+  background-color: #337ab7;
+}
+
+html {
+  height: 100%;
+}
+
 *,
 *::after,
 *::before {
@@ -1903,6 +1923,59 @@ h6 {
 
 *::-webkit-scrollbar-thumb {
   background-color: #c2c1c1;
+}
+
+.Tag {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 0.75rem;
+}
+
+.Tag__name {
+  background-color: whitesmoke;
+  padding: 0.25rem 0.75em;
+}
+
+.Tag__info {
+  background-color: #26B99A;
+  color: #FFFFFF;
+  padding: 0.25rem 0.75em;
+}
+
+.Tag__remove {
+  cursor: pointer;
+  fill: #000000;
+  width: 0.35rem;
+  height: 0.45rem;
+}
+
+.Tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.Tooltip__text {
+  min-width: 320px;
+  visibility: hidden;
+  background-color: #26B99A;
+  color: #FFFFFF;
+  border: 1px solid #26B99A;
+  text-align: center;
+  padding: 0.25rem 0;
+  position: absolute;
+}
+
+.Tooltip:hover .Tooltip__text {
+  visibility: visible;
 }
 
 .Modal__overlay {
@@ -2046,6 +2119,18 @@ h6 {
 .Icon--times {
   width: 0.75rem;
   height: 1rem;
+}
+
+.Body {
+  min-height: 100%;
+  color: #363636;
+  font-family: 'Bitter', serif;
+}
+
+.Laramin {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 40px 1fr 40px;
 }
 
 

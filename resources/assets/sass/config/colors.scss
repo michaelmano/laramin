@@ -4,7 +4,9 @@ $colors: (
     charlie: #363636,
     delta: whitesmoke,
     echo: rgba(10, 10, 10, 0.2),
-    foxtrot: #dbdbdb
+    foxtrot: #dbdbdb,
+    golf: #26B99A,
+    hotel: #337ab7,
 );
 
 @function color($key) {
