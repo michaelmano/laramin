@@ -1,6 +1,10 @@
 $colors: (
     alpha: #FFFFFF,
     bravo: #000000,
+    charlie: #363636,
+    delta: whitesmoke,
+    echo: rgba(10, 10, 10, 0.2),
+    foxtrot: #dbdbdb
 );
 
 @function color($key) {

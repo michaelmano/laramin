@@ -4,19 +4,23 @@
             <div class="Modal__overlay" v-show="show"></div>
         </transition>
         <transition enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight">
-            <div class="Modal__content" v-show="show">
-                <header class="Modal__header">
-                    <h4><slot name="title"></slot></h4>
-                    <button class="Modal__close" @click="show = false">
-                        <svg class="Icon Icon--small"><use xlink:href="#icon-times"></use></svg>
-                    </button>
-                </header>
-                <div class="Modal__body">
-                    <slot name="body"></slot>
+            <div class="Modal__container" v-show="show">
+                <div class="Modal__content">
+                    <header class="Modal__header">
+                        <h6 class="Modal__title"><slot name="title"></slot></h6>
+                        <button class="Modal__close" @click="hideModal()">
+                            <svg class="Icon Icon--times"><use xlink:href="#icon-times"></use></svg>
+                        </button>
+                    </header>
+                    <div class="Modal__body">
+                        <div class="content">
+                            <slot name="body"></slot>
+                        </div>
                     </div>
-                <footer class="Modal__footer">
-                    <slot name="footer"></slot>
-                </footer>
+                    <footer class="Modal__footer">
+                        <slot name="footer"></slot>
+                    </footer>
+                </div>
             </div>
         </transition>
     </div>
@@ -28,5 +32,10 @@
                 show: false,
             }
         },
+        methods: {
+            hideModal() {
+                this.$emit('close');
+            }
+        }
     }
 </script>

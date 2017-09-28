@@ -1854,11 +1854,55 @@ h6 {
   background-color: #000000;
 }
 
+.util-color-charlie {
+  color: #363636;
+}
+
+.util-background-charlie {
+  background-color: #363636;
+}
+
+.util-color-delta {
+  color: whitesmoke;
+}
+
+.util-background-delta {
+  background-color: whitesmoke;
+}
+
+.util-color-echo {
+  color: rgba(10, 10, 10, 0.2);
+}
+
+.util-background-echo {
+  background-color: rgba(10, 10, 10, 0.2);
+}
+
+.util-color-foxtrot {
+  color: #dbdbdb;
+}
+
+.util-background-foxtrot {
+  background-color: #dbdbdb;
+}
+
 *,
 *::after,
 *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: whitesmoke;
+}
+
+*::-webkit-scrollbar {
+  background-color: whitesmoke;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c2c1c1;
 }
 
 .Modal__overlay {
@@ -1870,8 +1914,53 @@ h6 {
   background: rgba(10, 10, 10, 0.86);
 }
 
-.Modal__content {
+.Modal__container {
   position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  text-align: left;
+  z-index: 2;
+}
+
+.Modal__content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 20px;
+  max-height: calc(100vh - 160px);
+  overflow: hidden;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .Modal__content {
+    width: 640px;
+  }
+}
+
+.Modal__header {
+  border-radius: 0.35rem 0.35rem 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1882,24 +1971,57 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
-  left: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  z-index: 2;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: whitesmoke;
+  padding: 1.25rem;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.Modal__title {
+  margin: 0;
+  padding: 0;
+  color: #363636;
+}
+
+.Modal__close {
+  -webkit-transition: 250ms ease-in-out all;
+  transition: 250ms ease-in-out all;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 0.35rem;
+  background-color: rgba(10, 10, 10, 0.2);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.Modal__close svg {
+  fill: #FFFFFF;
+}
+
+.Modal__close:hover {
+  background-color: #363636;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .Modal__body {
   position: relative;
+  background-color: #FFFFFF;
+  padding: 1.25rem;
+  overflow: auto;
   z-index: 1;
+}
+
+.Modal__footer {
+  border-radius: 0 0 0.35rem 0.35rem;
+  background-color: whitesmoke;
+  border-top: 1px solid #dbdbdb;
+  padding: 0.25rem 1.25rem;
 }
 
 .Icon {
@@ -1919,6 +2041,11 @@ h6 {
 .Icon--large {
   width: 3rem;
   height: 3rem;
+}
+
+.Icon--times {
+  width: 0.75rem;
+  height: 1rem;
 }
 
 

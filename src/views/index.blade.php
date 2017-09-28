@@ -17,11 +17,99 @@
 		<h4>Sprites</h4>
 		
 		<button @click="showModal('modal')">Show Modal</button>
-		<laramin-modal ref="modal">
-			<h4 slot="title">Modal Title Here</h4>
-			<p slot="body">
-				Modal Body Content
-			</p>
+		<laramin-modal ref="modal" @close="hideModal">
+			<template slot="title">Modal Title Here</template>
+			<template slot="body">
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+				<p>Modal Body Content</p>
+			</template>
 			<p slot="footer">Footer Content</p>
 		</laramin-modal>
 		

@@ -1,4 +1,12 @@
 // Any global functions or mixins.
+@mixin transition($time: 250ms, $ease: ease-in-out, $type: all) {
+    transition: $time $ease $type;
+}
+
+@mixin border-radius($top-left: 0.35rem, $top-right: 0.35rem, $bottom-right: 0.35rem, $bottom-left: 0.35rem) {
+    border-radius: $top-left $top-right $bottom-right $bottom-left;
+}
+
 @mixin clear-box-model() {
     margin: 0;
     padding: 0;

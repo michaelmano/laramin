@@ -8,35 +8,90 @@
 	right: 0;
 	bottom: 0;
 	background: rgba(10, 10, 10, 0.86);
-
 }
 
-.Modal__content {
+.Modal__container {
 	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	left: 0;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	height: 100%;
-	width: 100%;
-	max-width: 100%;
-	max-height: 100%;
+	text-align: left;
 	z-index: z-index(modal-content);
 }
 
-.Modal__header {
+.Modal__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+	margin: 0 20px;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+	width: 100%;
+
+	@include viewport-min('md') {
+		width: 640px;
+	}
 }
 
-.Modal__close {}
+.Modal__header {
+	@include border-radius($bottom-left: 0, $bottom-right: 0);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background-color: color(delta);
+	padding: 1.25rem;
+	border-bottom: 1px solid color(foxtrot);
+}
+
+.Modal__title {
+	margin: 0;
+	padding: 0;
+	color: color(charlie);
+}
+
+.Modal__close {
+	@include transition;
+
+	cursor: pointer;
+	text-align: center;
+	padding-top: 0.35rem;
+	background-color: color(echo);
+	outline: none;
+	border: none;
+	border-radius: 50%;
+	width: 1.75rem;
+	height: 1.75rem;
+	
+	& svg {
+		fill: color(alpha);
+	}
+
+	&:hover {
+		background-color: color(charlie);
+		transform: scale(1.1);
+	}
+}
 
 .Modal__body {
 	position: relative;
+	background-color: color(alpha);
+	padding: 1.25rem;
+	overflow: auto;
 	z-index: z-index(modal-overlay);
 }
 
-.Modal__footer {}
+.Modal__footer {
+	@include border-radius($top-left: 0, $top-right: 0);
+
+	background-color: color(delta);
+	border-top: 1px solid color(foxtrot);
+	padding: 0.25rem 1.25rem;
+}

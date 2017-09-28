@@ -3,3 +3,14 @@
 *::before {
 	box-sizing:border-box;
 }
+*::-webkit-scrollbar-track {
+	background-color: color(delta);
+}
+
+*::-webkit-scrollbar {
+	background-color: color(delta);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: darken(color(foxtrot), 10%);
+}
