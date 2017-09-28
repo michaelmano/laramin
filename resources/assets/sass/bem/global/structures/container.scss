@@ -1,3 +1,15 @@
 .Container {
-    //
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    max-width: calc(75rem + (1rem * 2));
+}
+
+.Container--has-sidebar {
+
+}
+
+.Container--sidebar-open {
+    margin-right: -4.375rem;
 }

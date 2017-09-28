@@ -2,9 +2,6 @@
 
 @section('standard-content')
 	<div id="example">
-			@component('laramin::components.sidebar')
-			<h3>this is the sidebar content.</h3>
-		@endcomponent
 		<h1>Welcome to the Laramin Dashboard</h1>
 		<h4>Grid System</h4>
 		<p>This package uses the Buzuki grid system, the documentation can be found <a href="https://buzuki.pixls.com.au/">https://buzuki.pixls.com.au/</a> and the github can be found <a href="https://github.com/enzyme/buzuki">https://github.com/enzyme/buzuki</a></p>

@@ -9,5 +9,8 @@ export default {
 	},
 	listenForEscape(event) {
 		if (event.keyCode === 27) this.hideModal();
+	},
+	toggleNavigation() {
+		this.navigationOpen = !this.navigationOpen;
 	}
 }

@@ -1,3 +1,3 @@
-<aside>
-	laramin sidebar yo.asdsadsa
-</aside>
+<laramin-sidebar :open="navigationOpen">
+	This is the sidebar YOOOO
+</laramin-sidebar>

@@ -1,0 +1,14 @@
+.Sidebar {
+	@include transition;
+	
+	flex: 1;
+	position: relative;
+	overflow: hidden;
+	background-color: color(charlie);
+	width: 100%;
+	max-width: 4.375rem;
+	margin-left: -4.375rem;
+	&--open {
+		margin-left: 0;
+	}
+}
