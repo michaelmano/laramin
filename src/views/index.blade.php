@@ -1,7 +1,6 @@
 @extends('laramin::layouts.standard')
 
 @section('standard-content')
-	<div id="example">
 		<h1>Welcome to the Laramin Dashboard</h1>
 		<h4>Grid System</h4>
 		<p>This package uses the Buzuki grid system, the documentation can be found <a href="https://buzuki.pixls.com.au/">https://buzuki.pixls.com.au/</a> and the github can be found <a href="https://github.com/enzyme/buzuki">https://github.com/enzyme/buzuki</a></p>
@@ -52,25 +51,27 @@
 		<div id="sprite-example" class="Row">
 	
 		</div>
-	</div>
 @endsection
 
-@push('pre-scripts')
+@push('scripts')
 <script>
 	// Run through the sprite and print out all of the icons.
-	var sprite = document.getElementById('sprite');
-	var spriteExample = document.getElementById('sprite-example');
-	sprite.childNodes.forEach(function(element) {
-		var container = document.createElement('div');
-		var icon = document.createElement('svg');
-		var use = document.createElement('use');
-		container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg';
-		use.setAttribute('xlink:href', '#' + element.id);
-		icon.classList = 'Icon Icon--small';
-		icon.appendChild(use);
-		icon.title = '<svg class="Icon Icon--small"><use xlink:href="#' + element.id + '"></use></svg>';
-		container.appendChild(icon);
-		spriteExample.appendChild(container);
-	});
+	(function() {
+		var sprite = document.getElementById('sprite');
+		var spriteExample = document.getElementById('sprite-example');
+		sprite.childNodes.forEach(function(element) {
+			var container = document.createElement('div');
+			var icon = document.createElement('svg');
+			var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+			
+			container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg Cell--align-center';
+			use.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href', '#' + element.id);
+			use.setAttribute('xlink:href', '#' + element.id);
+			icon.classList = 'Icon Icon--small';
+			icon.appendChild(use);
+			container.appendChild(icon);
+			spriteExample.appendChild(container);
+		});
+	})();
 </script>
 @endpush

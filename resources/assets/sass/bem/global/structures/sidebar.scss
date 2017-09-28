@@ -5,10 +5,18 @@
 	position: relative;
 	overflow: hidden;
 	background-color: color(charlie);
+	color: color(alpha);
 	width: 100%;
 	max-width: 4.375rem;
 	margin-left: -4.375rem;
+
 	&--open {
+		margin-left: 0;
+	}
+
+	@include viewport-min('md') {
+		max-width: 20rem;
+		padding: 1.25rem;
 		margin-left: 0;
 	}
 }

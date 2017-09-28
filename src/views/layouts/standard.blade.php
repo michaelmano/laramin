@@ -6,7 +6,7 @@
 
 @section('base-content')
 	@include('laramin::components.sidebar')
-	<div class="Container Container--has-sidebar">
+	<div class="Container">
 		@yield('standard-content')
 	</div>
 @endsection

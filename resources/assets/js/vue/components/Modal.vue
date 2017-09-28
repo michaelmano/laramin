@@ -9,7 +9,7 @@
                     <header class="Modal__header">
                         <h6 class="Modal__title"><slot name="title"></slot></h6>
                         <button class="Modal__close" @click="hideModal()">
-                            <svg class="Icon Icon--times"><use xlink:href="#icon-times"></use></svg>
+                            <svg class="Icon Icon--times"><use xlink:href="#svg-times"></use></svg>
                         </button>
                     </header>
                     <div class="Modal__body">
