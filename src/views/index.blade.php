@@ -18,96 +18,17 @@
 		
 		<button @click="showModal('modal')">Show Modal</button>
 		<laramin-modal ref="modal" @close="hideModal">
-			<template slot="title">Modal Title Here</template>
+			<template slot="title">Modal</template>
 			<template slot="body">
 				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
-				<p>Modal Body Content</p>
+			</template>
+			<p slot="footer">Footer Content</p>
+		</laramin-modal>
+
+		<button @click="showModal('modal1')">Show Modal 1</button>
+		<laramin-modal ref="modal1" @close="hideModal">
+			<template slot="title">Modal 1</template>
+			<template slot="body">
 				<p>Modal Body Content</p>
 			</template>
 			<p slot="footer">Footer Content</p>

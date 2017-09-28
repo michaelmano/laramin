@@ -27,8 +27,8 @@ const module = function module() {
                 this.$refs[this.activeModal].show = false;
                 this.activeModal = null;
             },
-            listenForEscape() {
-                this.hideModal();
+            listenForEscape(event) {
+                if (event.keyCode === 27) this.hideModal();
             }
         }
     });
