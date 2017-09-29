@@ -1,8 +1,8 @@
 .NavigationToggle {
-	visibility: hidden;
+	display: none;
 	@media only screen and (max-width: 768px) {
-		visibility: visible;
 		@include transition;
+		display: inline-block;
 		background: transparent;
 		outline: none;
 		border: none;

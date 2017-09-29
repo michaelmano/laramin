@@ -25,12 +25,8 @@
 
 		<h4>Tooltips</h4>
 
-		<span class="Tooltip">Hover me.
-			<span class="Tooltip__text">This is the hovvver</span>
-		</span>
-		<h4>Sprites</h4>
-		
-		<button @click="showModal('modal')">Show Modal</button>
+
+		<button class="Button" @click="showModal('modal')">Show Modal</button>
 		<laramin-modal ref="modal" @close="hideModal">
 			<template slot="title">Modal</template>
 			<template slot="body">
@@ -39,7 +35,7 @@
 			<p slot="footer">Footer Content</p>
 		</laramin-modal>
 
-		<button @click="showModal('modal1')">Show Modal 1</button>
+		<button class="Button" @click="showModal('modal1')">Show Modal 1</button>
 		<laramin-modal ref="modal1" @close="hideModal">
 			<template slot="title">Modal 1</template>
 			<template slot="body">
@@ -47,6 +43,8 @@
 			</template>
 			<p slot="footer">Footer Content</p>
 		</laramin-modal>
+
+		<h4>Sprites - click to reveal code</h4>
 		
 		<div id="sprite-example" class="Row">
 	
@@ -63,18 +61,22 @@
 			var container = document.createElement('div');
 			var icon = document.createElement('svg');
 			var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-			var tooltip = document.createElement('span');
-			var svgExample = document.createTextNode('<svg class="Icon Icon--small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#' + element.id + '"></use></svg>');
-			
-			container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg Cell--align-center Tooltip';
+			var tooltip = document.createElement('laramin-tooltip');
+			var id = document.createElement('p');
+			id.appendChild(document.createTextNode(element.id));
+
+			tooltip.setAttribute(':tooltip', '\'<svg class="Icon Icon--small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#' + element.id + '"></use></svg>\'');
+			tooltip.setAttribute(':trigger', '\'click\'');
+
+			container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg Cell--align-center';
 			use.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href', '#' + element.id);
 			use.setAttribute('xlink:href', '#' + element.id);
+			
 			icon.classList = 'Icon Icon--small';
-			tooltip.classList = 'Tooltip__text';
-			tooltip.appendChild(svgExample);
-			container.appendChild(tooltip);
 			icon.appendChild(use);
-			container.appendChild(icon);
+			tooltip.appendChild(icon);
+			container.appendChild(id);
+			container.appendChild(tooltip);
 			spriteExample.appendChild(container);
 		});
 	})();

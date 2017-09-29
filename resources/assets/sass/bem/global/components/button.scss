@@ -1,3 +1,33 @@
 .Button {
-    //
+    @include button-reset;
+    @include transition();
+    font-size: 0.875rem;
+    display: inline-block;
+    padding: 0.25rem 1.25rem;    
+    background-color: color(golf);
+    color: color(alpha);
+    border: 1px solid rgba(color(golf), 0.8);
+
+    &:hover,
+    &:active {
+        transform: translateY(-1px) scale(0.98);
+        background-color: color(india);
+    }
+}
+
+@each $key, $color in $colors {
+    .Button--#{$key} {
+        background-color: $color;
+        border: 1px solid rgba($color, 0.8);
+
+        &:hover {
+            background-color: darken($color, 5%);
+        }
+    }
+}
+
+.Button--alpha,
+.Button--delta,
+.Button--foxtrot {
+    color: color(charlie);
 }

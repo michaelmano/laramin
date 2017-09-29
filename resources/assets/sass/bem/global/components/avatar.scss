@@ -38,7 +38,7 @@
 }
 
 .Avatar__button {
-	@include button-clear;
+	@include button-reset;
 	display: inline-block;
 	& svg {
 		@include transition;

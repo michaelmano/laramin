@@ -1,4 +1,5 @@
 .Modal {
+	position: absolute;
 }
 
 .Modal__overlay {
@@ -8,6 +9,7 @@
 	right: 0;
 	bottom: 0;
 	background: rgba(10, 10, 10, 0.86);
+	z-index: z-index(modal-overlay);
 }
 
 .Modal__container {
@@ -86,6 +88,7 @@
 	padding: 1.25rem;
 	overflow: auto;
 	z-index: z-index(modal-overlay);
+	color: color(charlie);
 }
 
 .Modal__footer {
@@ -94,4 +97,5 @@
 	background-color: color(delta);
 	border-top: 1px solid color(foxtrot);
 	padding: 0.25rem 1.25rem;
+	color: color(charlie);
 }

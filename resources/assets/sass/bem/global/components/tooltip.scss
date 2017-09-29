@@ -4,17 +4,9 @@
 }
 
 .Tooltip__text {
-	min-width: 20rem;
-    visibility: hidden;
 	background-color: color(golf);
 	color: color(alpha);
-	border: 1px solid color(golf);
-    text-align: center;
-    padding: 0.25rem 0;
-    position: absolute;
+    border: 1px solid color(golf);
+    padding: 0.15rem 1.25rem;
     z-index: z-index(tooltip);
-}
-
-.Tooltip:hover .Tooltip__text {
-	visibility: visible;
 }

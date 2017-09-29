@@ -2050,6 +2050,115 @@ a:hover {
   }
 }
 
+.Button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  -webkit-transition: 250ms ease-in-out all;
+  transition: 250ms ease-in-out all;
+  font-size: 0.875rem;
+  display: inline-block;
+  padding: 0.25rem 1.25rem;
+  background-color: #26B99A;
+  color: #FFFFFF;
+  border: 1px solid rgba(38, 185, 154, 0.8);
+}
+
+.Button:hover,
+.Button:active {
+  -webkit-transform: translateY(-1px) scale(0.98);
+          transform: translateY(-1px) scale(0.98);
+  background-color: #3e8985;
+}
+
+.Button--alpha {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.Button--alpha:hover {
+  background-color: #f2f2f2;
+}
+
+.Button--bravo {
+  background-color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.Button--bravo:hover {
+  background-color: black;
+}
+
+.Button--charlie {
+  background-color: #363636;
+  border: 1px solid rgba(54, 54, 54, 0.8);
+}
+
+.Button--charlie:hover {
+  background-color: #292929;
+}
+
+.Button--delta {
+  background-color: whitesmoke;
+  border: 1px solid rgba(245, 245, 245, 0.8);
+}
+
+.Button--delta:hover {
+  background-color: #e8e8e8;
+}
+
+.Button--echo {
+  background-color: rgba(10, 10, 10, 0.2);
+  border: 1px solid rgba(10, 10, 10, 0.8);
+}
+
+.Button--echo:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Button--foxtrot {
+  background-color: #dbdbdb;
+  border: 1px solid rgba(219, 219, 219, 0.8);
+}
+
+.Button--foxtrot:hover {
+  background-color: #cecece;
+}
+
+.Button--golf {
+  background-color: #26B99A;
+  border: 1px solid rgba(38, 185, 154, 0.8);
+}
+
+.Button--golf:hover {
+  background-color: #22a488;
+}
+
+.Button--hotel {
+  background-color: #337ab7;
+  border: 1px solid rgba(51, 122, 183, 0.8);
+}
+
+.Button--hotel:hover {
+  background-color: #2d6da3;
+}
+
+.Button--india {
+  background-color: #3e8985;
+  border: 1px solid rgba(62, 137, 133, 0.8);
+}
+
+.Button--india:hover {
+  background-color: #367774;
+}
+
+.Button--alpha,
+.Button--delta,
+.Button--foxtrot {
+  color: #363636;
+}
+
 .Tag {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -2084,14 +2193,14 @@ a:hover {
 }
 
 .NavigationToggle {
-  visibility: hidden;
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {
   .NavigationToggle {
-    visibility: visible;
     -webkit-transition: 250ms ease-in-out all;
     transition: 250ms ease-in-out all;
+    display: inline-block;
     background: transparent;
     outline: none;
     border: none;
@@ -2190,19 +2299,11 @@ a:hover {
 }
 
 .Tooltip__text {
-  min-width: 20rem;
-  visibility: hidden;
   background-color: #26B99A;
   color: #FFFFFF;
   border: 1px solid #26B99A;
-  text-align: center;
-  padding: 0.25rem 0;
-  position: absolute;
+  padding: 0.15rem 1.25rem;
   z-index: 1;
-}
-
-.Tooltip:hover .Tooltip__text {
-  visibility: visible;
 }
 
 .List {
@@ -2223,6 +2324,10 @@ a:hover {
   margin-top: 0.25rem;
 }
 
+.Modal {
+  position: absolute;
+}
+
 .Modal__overlay {
   position: fixed;
   left: 0;
@@ -2230,6 +2335,7 @@ a:hover {
   right: 0;
   bottom: 0;
   background: rgba(10, 10, 10, 0.86);
+  z-index: 2;
 }
 
 .Modal__container {
@@ -2333,6 +2439,7 @@ a:hover {
   padding: 1.25rem;
   overflow: auto;
   z-index: 2;
+  color: #363636;
 }
 
 .Modal__footer {
@@ -2340,6 +2447,7 @@ a:hover {
   background-color: whitesmoke;
   border-top: 1px solid #dbdbdb;
   padding: 0.25rem 1.25rem;
+  color: #363636;
 }
 
 .Icon {
@@ -2385,6 +2493,7 @@ a:hover {
   min-height: 100%;
   color: #363636;
   font-family: 'Bitter', serif;
+  font-size: 1rem;
   overflow-x: hidden;
 }
 
