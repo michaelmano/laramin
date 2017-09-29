@@ -1,6 +1,7 @@
 $z-indexes: (
     'modal-content',
     'modal-overlay',
+    'tooltip',
 );
 
 @function z-index($name) {

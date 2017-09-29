@@ -1,4 +1,4 @@
 <header class="Header">
-	Header content.
+	{{ config('app.name') ?? 'Laramin' }} - Dashboard
 	<laramin-navigation-burger @toggle-navigation="toggleNavigation"></laramin-navigation-burger>
 </header>

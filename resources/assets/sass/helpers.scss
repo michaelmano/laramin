@@ -1,4 +1,12 @@
 // Any global functions or mixins.
+
+@mixin button-clear() {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
 @mixin transition($time: 250ms, $ease: ease-in-out, $type: all) {
     transition: $time $ease $type;
 }

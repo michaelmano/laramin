@@ -53,7 +53,7 @@
 		</div>
 @endsection
 
-@push('scripts')
+@push('pre-scripts')
 <script>
 	// Run through the sprite and print out all of the icons.
 	(function() {
@@ -63,11 +63,16 @@
 			var container = document.createElement('div');
 			var icon = document.createElement('svg');
 			var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+			var tooltip = document.createElement('span');
+			var svgExample = document.createTextNode('<svg class="Icon Icon--small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#' + element.id + '"></use></svg>');
 			
-			container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg Cell--align-center';
+			container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg Cell--align-center Tooltip';
 			use.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href', '#' + element.id);
 			use.setAttribute('xlink:href', '#' + element.id);
 			icon.classList = 'Icon Icon--small';
+			tooltip.classList = 'Tooltip__text';
+			tooltip.appendChild(svgExample);
+			container.appendChild(tooltip);
 			icon.appendChild(use);
 			container.appendChild(icon);
 			spriteExample.appendChild(container);

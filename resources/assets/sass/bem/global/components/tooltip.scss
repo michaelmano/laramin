@@ -4,7 +4,7 @@
 }
 
 .Tooltip__text {
-	min-width: 320px;
+	min-width: 20rem;
     visibility: hidden;
 	background-color: color(golf);
 	color: color(alpha);
@@ -12,6 +12,7 @@
     text-align: center;
     padding: 0.25rem 0;
     position: absolute;
+    z-index: z-index(tooltip);
 }
 
 .Tooltip:hover .Tooltip__text {

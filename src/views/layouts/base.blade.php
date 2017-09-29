@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{{ config('app.name') ?? 'Laramin' }} - Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ asset('laramin/css/laramin.css') }}">
+        <link rel="stylesheet" href="{{ asset('michaelmano/laramin/css/laramin.css') }}">
         @stack('styles')
     </head>
 <body class="Body">
@@ -21,6 +21,6 @@
 </body>
 
 @stack('pre-scripts')
-<script src="{{ asset('laramin/js/laramin.js') }}"></script>
+<script src="{{ asset('michaelmano/laramin/js/laramin.js') }}"></script>
 @stack('scripts')
 </html>

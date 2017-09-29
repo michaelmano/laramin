@@ -1,0 +1,58 @@
+.Avatar {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: top;
+	margin-bottom: 1rem;
+	max-width: 100%;
+
+	@include viewport-min('md') {
+		flex-direction: row;
+	}
+}
+
+.Avatar__image {
+	max-width: 100%;
+	height: auto;
+}
+
+.Avatar__menu {
+	@include viewport-min('md') {
+		margin-left: 1rem;
+	}
+}
+
+.Avatar__name {
+	@include clear-box-model;
+
+	text-align: center;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	@include viewport-min('md') {
+		text-align: left;	
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+.Avatar__button {
+	@include button-clear;
+	display: inline-block;
+	& svg {
+		@include transition;
+		fill: color(alpha);
+	}
+	&:hover,
+	&--active {
+		& svg {
+			fill: color(golf);
+			transform: scale(1.1);
+		}
+	}
+
+	@include viewport-min('md') {
+		margin-left: 0.25rem;
+	}
+}

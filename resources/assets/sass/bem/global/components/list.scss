@@ -1,0 +1,16 @@
+.List {
+	font-family: font(bravo);
+}
+
+.List--unstyled {
+	@include clear-box-model;
+	list-style: none;
+}
+
+.List__item {
+	font-size: 0.75rem;
+
+	& + & {
+		margin-top: 0.25rem;
+	}
+}

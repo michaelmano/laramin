@@ -10,8 +10,10 @@ $icon_sizes: (
 
 @each $key, $value in $icon_sizes {
 	.Icon--#{$key} {
-		width: $value;
-		height: $value;
+		max-width: $value;
+		max-height: $value;
+		width: 100%;
+		height: auto;
 	}
 }
 

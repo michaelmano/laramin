@@ -2,3 +2,7 @@
 @import '../../../node_modules/buzuki/src/index';
 @import '../../../node_modules/animate.css/animate.min.css';
 @import url('https://fonts.googleapis.com/css?family=Bitter:400|Varela');
+
+.animated {
+	animation-duration: 0.5s!important;
+}

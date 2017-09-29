@@ -18,3 +18,20 @@ html {
 *::-webkit-scrollbar-thumb {
 	background-color: darken(color(foxtrot), 10%);
 }
+
+a,
+a:hover,
+a:active,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+a {
+	@include transition($time: 100ms);
+	text-decoration: underline;
+
+	&:hover {
+		color: color(india);
+	}
+}
