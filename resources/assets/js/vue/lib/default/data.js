@@ -1,4 +1,4 @@
 export default {
 	activeModal: null,
-	navigationOpen: false,
+	navigationOpen: true,
 }

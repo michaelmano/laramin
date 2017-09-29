@@ -42,14 +42,12 @@
 }
 
 .Modal__header {
-	@include border-radius($bottom-left: 0, $bottom-right: 0);
-
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	background-color: color(delta);
-	padding: 1.25rem;
+	padding: 0.875rem 1.25rem;
 	border-bottom: 1px solid color(foxtrot);
 }
 
@@ -92,10 +90,13 @@
 }
 
 .Modal__footer {
-	@include border-radius($top-left: 0, $top-right: 0);
-
 	background-color: color(delta);
 	border-top: 1px solid color(foxtrot);
-	padding: 0.25rem 1.25rem;
+	padding: 0.875rem 1.25rem;
 	color: color(charlie);
+	
+	& * {
+		margin: 0;
+		padding: 0;
+	}
 }

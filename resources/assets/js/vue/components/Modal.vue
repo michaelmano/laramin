@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <footer class="Modal__footer">
-                        <slot name="footer"></slot>
+                        <small><slot name="footer"></slot></small>
                     </footer>
                 </div>
             </div>

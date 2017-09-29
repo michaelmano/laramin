@@ -1,3 +1,3 @@
 <laramin-sidebar :open="navigationOpen">
-	This is the sidebar YOOOO
+	<laramin-sidebar-item></laramin-sidebar-item>
 </laramin-sidebar>

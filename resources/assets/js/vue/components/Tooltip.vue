@@ -20,7 +20,7 @@
 				type: String
 			},
 			placement: {
-				default: 'left',
+				default: 'top',
 				type: String
 			}
         },

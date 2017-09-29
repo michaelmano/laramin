@@ -2384,7 +2384,6 @@ a:hover {
 }
 
 .Modal__header {
-  border-radius: 0.35rem 0.35rem 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2399,7 +2398,7 @@ a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: whitesmoke;
-  padding: 1.25rem;
+  padding: 0.875rem 1.25rem;
   border-bottom: 1px solid #dbdbdb;
 }
 
@@ -2443,11 +2442,15 @@ a:hover {
 }
 
 .Modal__footer {
-  border-radius: 0 0 0.35rem 0.35rem;
   background-color: whitesmoke;
   border-top: 1px solid #dbdbdb;
-  padding: 0.25rem 1.25rem;
+  padding: 0.875rem 1.25rem;
   color: #363636;
+}
+
+.Modal__footer * {
+  margin: 0;
+  padding: 0;
 }
 
 .Icon {
@@ -2497,12 +2500,6 @@ a:hover {
   overflow-x: hidden;
 }
 
-.Laramin {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 40px 1fr 40px;
-}
-
 .Sidebar {
   -webkit-transition: 250ms ease-in-out all;
   transition: 250ms ease-in-out all;
@@ -2516,11 +2513,6 @@ a:hover {
   color: #FFFFFF;
   width: 100%;
   max-width: 4.375rem;
-  margin-left: -4.375rem;
-}
-
-.Sidebar--open {
-  margin-left: 0;
 }
 
 @media (min-width: 768px) {
