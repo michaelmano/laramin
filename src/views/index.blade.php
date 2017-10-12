@@ -1,84 +1,60 @@
 @extends('laramin::layouts.standard')
 
 @section('standard-content')
-		<h1>Welcome to the Laramin Dashboard</h1>
-		<h4>Grid System</h4>
-		<p>This package uses the Buzuki grid system, the documentation can be found <a href="https://buzuki.pixls.com.au/">https://buzuki.pixls.com.au/</a> and the github can be found <a href="https://github.com/enzyme/buzuki">https://github.com/enzyme/buzuki</a></p>
-		<h4>Qoob Library</h4>
-		<p>Qoob is a lightweight DOM manipulation library and the documentation and github can be found at <a href="https://github.com/enzyme/qoob">https://github.com/enzyme/qoob</a></p>
-		<h4>Vue Components</h4>
-		<ul>
-			<li>list of components.</li>
-		</ul>
-		<h4>Tags</h4>
-		<div class="Tag">
-			<div class="Tag__name">Tag with info</div>
-			<div class="Tag__info">v2</div>
-		</div>
-		<div class="Tag">
-			<div class="Tag__name">Tag without info</div>
-		</div>
-
-		<div class="Tag">
-			<div class="Tag__name">Tag with delete <svg class="Tag__remove"><use xlink:href="#icon-times"></use></svg></div>
-		</div>
-
-		<h4>Tooltips</h4>
-
-
-		<button class="Button" @click="showModal('modal')">Show Modal</button>
-		<laramin-modal ref="modal" @close="hideModal">
-			<template slot="title">Modal</template>
-			<template slot="body">
-				<p>Modal Body Content</p>
-			</template>
-			<p slot="footer">Footer Content</p>
-		</laramin-modal>
-
-		<button class="Button" @click="showModal('modal1')">Show Modal 1</button>
-		<laramin-modal ref="modal1" @close="hideModal">
-			<template slot="title">Modal 1</template>
-			<template slot="body">
-				<p>Modal Body Content</p>
-			</template>
-			<p slot="footer">Footer Content</p>
-		</laramin-modal>
-
-		<h4>Sprites - click to reveal code</h4>
+	<div class="Content">
+		<h1 class="Heading">Welcome to the Laramin Dashboard</h1>
+		<div class="Row">
+			<div class="Cell Cell--12/12@xs Cell--6/12@lg">
+				<div class="Box">
+					<h4 class="Heading Heading--no-mt">Tags</h4>
+					<div class="Tag">
+						<div class="Tag__name">Tag with info</div>
+						<div class="Tag__info">v2</div>
+					</div>
+					<div class="Tag">
+						<div class="Tag__name">Tag without info</div>
+					</div>
 		
-		<div id="sprite-example" class="Row">
+					<div class="Tag">
+						<div class="Tag__name">Tag with delete <i class="Tag__remove fa fa-times"></i></div>
+					</div>
+<pre class="Pre">&lt;div class=&quot;Tag&quot;&gt;
+	&lt;div class=&quot;Tag__name&quot;&gt;Tag with info&lt;/div&gt;
+	&lt;div class=&quot;Tag__info&quot;&gt;v2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;Tag&quot;&gt;
+	&lt;div class=&quot;Tag__name&quot;&gt;Tag without info&lt;/div&gt;
+&lt;/div&gt;
 	
+&lt;div class=&quot;Tag&quot;&gt;
+	&lt;div class=&quot;Tag__name&quot;&gt;Tag with delete &lt;i class=&quot;Tag__remove fa fa-times&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+				</div>
+			</div>
+			<div class="Cell Cell--12/12@xs Cell--6/12@lg">
+				<div class="Box">
+					<h4 class="Heading Heading--no-mt">Modals</h4>
+					<button class="Button" @click="showModal('modal')">Show Modal</button>
+					<laramin-modal ref="modal" @close="hideModal">
+						<template slot="title">Modal</template>
+						<template slot="body">
+							<p>Modal Body Content</p>
+						</template>
+						<p slot="footer">Footer Content</p>
+					</laramin-modal>
+	<pre class="Pre">&lt;button class=&quot;Button&quot; @click=&quot;showModal('modal')&quot;&gt;Show Modal&lt;/button&gt;
+	&lt;laramin-modal ref=&quot;modal&quot; @close=&quot;hideModal&quot;&gt;
+		&lt;template slot=&quot;title&quot;&gt;Modal&lt;/template&gt;
+		&lt;template slot=&quot;body&quot;&gt;
+			&lt;p&gt;Modal Body Content&lt;/p&gt;
+		&lt;/template&gt;
+		&lt;p slot=&quot;footer&quot;&gt;Footer Content&lt;/p&gt;
+	&lt;/laramin-modal&gt;</pre>
+				</div>
 		</div>
+		<div class="Cell Cell--12/12@xs Cell--6/12@lg">
+			<h4>Login Page example.</h4>
+			<a href="/laramin/login">View login page.</a>
+		</div>
+	</div>
 @endsection
-
-@push('pre-scripts')
-<script>
-	// Run through the sprite and print out all of the icons.
-	(function() {
-		var sprite = document.getElementById('sprite');
-		var spriteExample = document.getElementById('sprite-example');
-		sprite.childNodes.forEach(function(element) {
-			var container = document.createElement('div');
-			var icon = document.createElement('svg');
-			var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-			var tooltip = document.createElement('laramin-tooltip');
-			var id = document.createElement('p');
-			id.appendChild(document.createTextNode(element.id));
-
-			tooltip.setAttribute(':tooltip', '\'<svg class="Icon Icon--small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#' + element.id + '"></use></svg>\'');
-			tooltip.setAttribute(':trigger', '\'click\'');
-
-			container.classList = 'Cell Cell--3/12@xs Cell--2/12@md Cell--1/12@lg Cell--align-center';
-			use.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href', '#' + element.id);
-			use.setAttribute('xlink:href', '#' + element.id);
-			
-			icon.classList = 'Icon Icon--small';
-			icon.appendChild(use);
-			tooltip.appendChild(icon);
-			container.appendChild(id);
-			container.appendChild(tooltip);
-			spriteExample.appendChild(container);
-		});
-	})();
-</script>
-@endpush

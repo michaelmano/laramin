@@ -10,4 +10,9 @@ class LaraminController extends Controller
     {
         return view('laramin::index');
     }
+
+    public function login()
+    {
+        return view('laramin::login');
+    }
 }

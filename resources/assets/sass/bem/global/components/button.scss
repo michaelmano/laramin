@@ -1,6 +1,7 @@
 .Button {
     @include button-reset;
-    @include transition();
+    @include transition;
+    
     font-size: 0.875rem;
     display: inline-block;
     padding: 0.25rem 1.25rem;    
@@ -9,9 +10,21 @@
     border: 1px solid rgba(color(golf), 0.8);
 
     &:hover,
+    &:focus,
     &:active {
         transform: translateY(-1px) scale(0.98);
         background-color: color(india);
+    }
+}
+
+.Button--text-link {
+    padding: 0;
+    color: color(golf);
+    background-color: transparent;
+    border: none;
+    
+    &:hover {
+        background-color: transparent;  
     }
 }
 

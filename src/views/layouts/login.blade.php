@@ -10,12 +10,9 @@
         @stack('styles')
     </head>
 <body class="Body">
-    <div id="laramin" class="Laramin">
-        @yield('base-header')
-        <main class="Main">
-            @yield('base-content')
-        </main>
-    </div>
+	<main id="laramin" class="Main Main--full util-background-delta">
+		@yield('login-form')
+	</main>
 </body>
 
 <script src="{{ asset('michaelmano/laramin/js/laramin.js') }}"></script>

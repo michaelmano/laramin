@@ -10,7 +10,3 @@
 		@yield('standard-content')
 	</div>
 @endsection
-
-@section('base-footer')
-	@include('laramin::partials._footer')
-@endsection

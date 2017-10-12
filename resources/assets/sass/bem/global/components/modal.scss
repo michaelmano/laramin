@@ -62,17 +62,13 @@
 
 	cursor: pointer;
 	text-align: center;
-	padding-top: 0.35rem;
 	background-color: color(echo);
 	outline: none;
 	border: none;
 	border-radius: 50%;
 	width: 1.75rem;
 	height: 1.75rem;
-	
-	& svg {
-		fill: color(alpha);
-	}
+	color: color(alpha);
 
 	&:hover {
 		background-color: color(charlie);

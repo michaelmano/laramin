@@ -1,0 +1,66 @@
+.Form {
+	font-size: 0.875rem;
+}
+
+.Form__fieldset {
+	position: relative;
+	& + & {
+		margin-top: 1rem;
+	}
+}
+
+.Form__legend {}
+
+.Form__error {
+	font-size: 0.75rem;
+	color: red;
+}
+
+.Form__input {
+	padding: 0.5rem;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+
+.Form__input-span {
+	display: block;
+	transition: 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67) width;
+	background-color: color(india);
+	height: 2px;
+	width: 3rem;
+}
+
+.Form__label {
+}
+
+.Form__input:focus {
+
+	~ .Form__input-span {
+		width: 100%;
+	}
+
+}
+
+.Form__input--button,
+.Form__input--checkbox,
+.Form__input--color,
+.Form__input--date,
+.Form__input--datetime-local,
+.Form__input--email,
+.Form__input--file,
+.Form__input--hidden,
+.Form__input--image,
+.Form__input--month,
+.Form__input--number,
+.Form__input--password,
+.Form__input--radio,
+.Form__input--range,
+.Form__input--reset,
+.Form__input--search,
+.Form__input--submit,
+.Form__input--tel,
+.Form__input--text,
+.Form__input--time,
+.Form__input--url,
+.Form__input--week {
+
+}

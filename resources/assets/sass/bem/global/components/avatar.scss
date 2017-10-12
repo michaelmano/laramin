@@ -24,11 +24,17 @@
 
 .Avatar__name {
 	@include clear-box-model;
-
+	cursor: pointer;
+	
 	text-align: center;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+
+	&:hover .Avatar__button {
+		color: color(golf);
+	}
+
 
 	@include viewport-min('md') {
 		text-align: left;	
@@ -39,20 +45,32 @@
 
 .Avatar__button {
 	@include button-reset;
+	color: color(alpha);
 	display: inline-block;
-	& svg {
-		@include transition;
-		fill: color(alpha);
-	}
+
 	&:hover,
 	&--active {
-		& svg {
-			fill: color(golf);
-			transform: scale(1.1);
-		}
+		color: color(golf);
 	}
 
 	@include viewport-min('md') {
 		margin-left: 0.25rem;
 	}
+}
+
+.Avatar__navigation { 
+	overflow: hidden;
+	text-align: center;
+
+	@include viewport-min('md') {
+		text-align: left;		
+	}
+
+	& a {
+		font-size: 0.625rem;
+		display: block;
+		@include viewport-min('md') {
+			font-size: 0.875rem;
+		}
+}
 }

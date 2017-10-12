@@ -30,5 +30,6 @@ $heading-sizes: (
 @each $heading, $sizes in $heading-sizes {
     #{$heading} {
         @include fluid-property(font-size, map-get($sizes, min), map-get($sizes, max), $end: 1200);
+        font-family: font(alpha);
     }
 }

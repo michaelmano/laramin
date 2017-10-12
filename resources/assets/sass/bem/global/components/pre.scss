@@ -1,0 +1,33 @@
+.Pre {
+	font-family: font(alpha);
+	margin-top: 1rem;
+	width: 100%;
+	overflow: auto;
+	overflow-y: hidden;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	line-height: 2;
+	padding: 0 1rem;
+	color: color(alpha);
+	background-color: color(charlie);
+	background-image: -webkit-repeating-linear-gradient(top, color(charlie) 0, color(charlie) 1.625rem, lighten(color(charlie), 5%) 1.625rem, lighten(color(charlie), 5%) 3.125rem);
+	background-image: -moz-repeating-linear-gradient(top, color(charlie) 0, color(charlie) 1.625rem, lighten(color(charlie), 5%) 1.625rem, lighten(color(charlie), 5%) 3.125rem);
+	background-image: -ms-repeating-linear-gradient(top, color(charlie) 0, color(charlie) 1.625rem, lighten(color(charlie), 5%) 1.625rem, lighten(color(charlie), 5%) 3.125rem);
+	background-image: -o-repeating-linear-gradient(top, color(charlie) 0, color(charlie) 1.625rem, lighten(color(charlie), 5%) 1.625rem, lighten(color(charlie), 5%) 3.125rem);
+	background-image: repeating-linear-gradient(top, color(charlie) 0, color(charlie) 1.625rem, lighten(color(charlie), 5%) 1.625rem, lighten(color(charlie), 5%) 3.125rem);
+}
+
+.Pre__line {
+	display: block;
+	float:left;
+	margin:0 1em 0 -1em;
+	border-right:1px solid;
+	text-align:right;
+}
+  
+.Pre__line-number {
+	display:block;
+	font-size: 0.5rem;
+	line-height: 3.2;
+	padding: 0 .5em 0 1em;
+}

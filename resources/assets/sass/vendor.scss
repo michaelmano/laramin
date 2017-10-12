@@ -1,7 +1,12 @@
 // Vendor imports from node_modules, Google fonts etc.
+$g-content-width: 92% !default;
+
 @import '../../../node_modules/buzuki/src/index';
 @import '../../../node_modules/animate.css/animate.min.css';
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Bitter:400|Varela');
+
+
 
 .animated {
 	animation-duration: 0.5s!important;

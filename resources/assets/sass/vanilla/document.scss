@@ -5,6 +5,7 @@ html {
 *,
 *::after,
 *::before {
+	min-width: 0;
 	box-sizing:border-box;
 }
 *::-webkit-scrollbar-track {
@@ -34,4 +35,96 @@ a {
 	&:hover {
 		color: color(india);
 	}
+}
+fieldset {
+	@include clear-box-model;
+	border: 0;
+}
+
+input,
+label,
+select,
+button,
+textarea {
+	@include clear-box-model;
+	padding: 0.5rem;
+	border: 0;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	background: none;
+	line-height: 1;
+	font-size: 0.875rem;
+	font-family: font(alpha);
+}
+
+input:focus {
+	outline: 0;
+}
+
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	width: 100%;
+
+}
+
+input[type=checkbox],
+input[type=radio] {
+	width: 0.875rem;
+	height: 0.875rem;
+}
+
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+	display: none;
+}
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+	overflow: visible;
+	width: auto;
+}
+::-webkit-file-upload-button {	
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+textarea {
+	vertical-align: top;
+	overflow: auto;
+}
+select[multiple] {
+	vertical-align: top;
 }

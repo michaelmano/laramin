@@ -3,9 +3,6 @@
 		<span class="NavigationToggle__burger"></span>
 		<span class="NavigationToggle__burger"></span>
 		<span class="NavigationToggle__burger"></span>
-		<span class="NavigationToggle__burger"></span>
-		<span class="NavigationToggle__burger"></span>
-		<span class="NavigationToggle__burger"></span>
 	</button>
 </template>
 
@@ -13,7 +10,7 @@
 	export default {
 		data() {
 			return {
-				open: false,
+				open: true,
 			}
 		},
 		methods: {

@@ -6,9 +6,7 @@
 				<div class="Avatar__menu">
 					<h6 class="Avatar__name" @click.prevent="openUserMenu">Joe Bloggs 
 						<span :class="['Avatar__button', userNav ? 'Avatar__button--active' : '']">
-							<svg class="Icon Icon--small">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-angle-down"></use>
-							</svg>
+							<i class="fa fa-angle-down"></i>
 						</span>
 					</h6>
 					<transition enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
