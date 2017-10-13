@@ -69,7 +69,8 @@
 	width: 1.75rem;
 	height: 1.75rem;
 	color: color(alpha);
-
+	padding: 0.45rem 0.5rem 0.5rem;
+	
 	&:hover {
 		background-color: color(charlie);
 		transform: scale(1.1);

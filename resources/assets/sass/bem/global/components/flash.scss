@@ -1,0 +1,14 @@
+.Flash {
+	display: block;
+	position: fixed;
+	top: 0.625rem;
+	right: 0.625rem;
+	min-width: 10rem;
+}
+
+.Flash__message {
+	background-color: color(golf);
+	color: color(alpha);
+	padding: 1rem;
+	margin-bottom: 0.5rem;
+}

@@ -23,3 +23,56 @@
 	width: 0.35rem;
 	height: 0.45rem;
 }
+
+.Tags {
+	@extend .Form__input;
+    appearance: textfield;
+    cursor: text;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	
+	& .Tag {
+		margin-right: 0.25rem;
+	}
+
+    &__input-wrapper {
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+        padding: 2px;
+
+        .Tags__input {
+            background: transparent;
+            border: 0;
+            outline: none;
+            padding-left: 0;
+            width: 100%;
+        }
+
+        .Tags__list {
+            position: absolute;
+            left: -0.5rem;
+            right: -0.5rem;
+            margin: 0;
+            margin-top: 0.5rem;
+            list-style: none;
+            padding: 0;
+            z-index: 2;
+			background: color(alpha);
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+
+            .Tags__list-item {
+                text-align: left;
+                cursor: pointer;
+                padding: 4px 10px;
+
+                &:hover,
+                &.active {
+                    background-color: color(golf);
+                    color: color(alpha);
+                }
+            }
+        }
+    }
+}

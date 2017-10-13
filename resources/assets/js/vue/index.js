@@ -9,6 +9,8 @@ const module = function module() {
     Vue.component('laramin-sidebar', require('./components/Sidebar.vue'));
     Vue.component('laramin-sidebar-item', require('./components/SidebarItem.vue'));
     Vue.component('laramin-tooltip', require('./components/Tooltip.vue'));
+    Vue.component('laramin-flash', require('./components/Flash.vue'));
+    Vue.component('laramin-tags-input', require('./components/TagsInput.vue'));
   
     new Vue({
         el: '#laramin',

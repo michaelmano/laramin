@@ -11,6 +11,7 @@
     </head>
 <body class="Body">
     <div id="laramin" class="Laramin">
+        @include('laramin::partials._errors')
         @yield('base-header')
         <main class="Main">
             @yield('base-content')

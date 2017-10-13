@@ -2303,6 +2303,21 @@ select[multiple] {
   background-color: #FFFFFF;
 }
 
+.Flash {
+  display: block;
+  position: fixed;
+  top: 0.625rem;
+  right: 0.625rem;
+  min-width: 10rem;
+}
+
+.Flash__message {
+  background-color: #26B99A;
+  color: #FFFFFF;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .Tag {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -2334,6 +2349,70 @@ select[multiple] {
   fill: #000000;
   width: 0.35rem;
   height: 0.45rem;
+}
+
+.Tags {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  cursor: text;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.Tags .Tag {
+  margin-right: 0.25rem;
+}
+
+.Tags__input-wrapper {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  padding: 2px;
+}
+
+.Tags__input-wrapper .Tags__input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  padding-left: 0;
+  width: 100%;
+}
+
+.Tags__input-wrapper .Tags__list {
+  position: absolute;
+  left: -0.5rem;
+  right: -0.5rem;
+  margin: 0;
+  margin-top: 0.5rem;
+  list-style: none;
+  padding: 0;
+  z-index: 2;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.Tags__input-wrapper .Tags__list .Tags__list-item {
+  text-align: left;
+  cursor: pointer;
+  padding: 4px 10px;
+}
+
+.Tags__input-wrapper .Tags__list .Tags__list-item:hover,
+.Tags__input-wrapper .Tags__list .Tags__list-item.active {
+  background-color: #26B99A;
+  color: #FFFFFF;
 }
 
 .Heading--no-mt {
@@ -2606,6 +2685,7 @@ select[multiple] {
   width: 1.75rem;
   height: 1.75rem;
   color: #FFFFFF;
+  padding: 0.45rem 0.5rem 0.5rem;
 }
 
 .Modal__close:hover {
@@ -2800,7 +2880,8 @@ select[multiple] {
   color: red;
 }
 
-.Form__input {
+.Form__input,
+.Tags {
   padding: 0.5rem;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
@@ -2815,7 +2896,8 @@ select[multiple] {
   width: 3rem;
 }
 
-.Form__input:focus ~ .Form__input-span {
+.Form__input:focus ~ .Form__input-span,
+.Tags:focus ~ .Form__input-span {
   width: 100%;
 }
 

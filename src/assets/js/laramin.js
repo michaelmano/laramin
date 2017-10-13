@@ -876,7 +876,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(64);
 
 
 /***/ }),
@@ -2059,6 +2059,8 @@ var module = function module() {
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-sidebar', __webpack_require__(47));
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-sidebar-item', __webpack_require__(50));
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tooltip', __webpack_require__(53));
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-flash', __webpack_require__(58));
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tags-input', __webpack_require__(61));
 
     new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         el: '#laramin',
@@ -16127,6 +16129,486 @@ if (false) {
 
 /***/ }),
 /* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(59)
+/* template */
+var __vue_template__ = __webpack_require__(60)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/vue/components/Flash.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Flash.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2d21cd33", Component.options)
+  } else {
+    hotAPI.reload("data-v-2d21cd33", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			show: false
+		};
+	},
+
+	props: {
+		type: {
+			type: String,
+			default: 'success'
+		},
+		message: {
+			type: String,
+			required: true
+		},
+		animationIn: {
+			default: 'bounceInLeft',
+			type: String
+		},
+		animationOut: {
+			default: 'bounceOutRight',
+			type: String
+		}
+	},
+	mounted: function mounted() {
+		setTimeout(function () {
+			this.show = true;
+		}.bind(this), 100);
+
+		setTimeout(function () {
+			this.show = false;
+		}.bind(this), 5000);
+	}
+});
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "transition",
+    {
+      attrs: {
+        "enter-active-class": "animated " + _vm.animationIn,
+        "leave-active-class": "animated " + _vm.animationOut
+      }
+    },
+    [
+      _c("div", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ],
+        class: ["Flash__message", "Flash__message--" + _vm.type],
+        domProps: { textContent: _vm._s(_vm.message) }
+      })
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2d21cd33", module.exports)
+  }
+}
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(62)
+/* template */
+var __vue_template__ = __webpack_require__(63)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/vue/components/TagsInput.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] TagsInput.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-08a63b18", Component.options)
+  } else {
+    hotAPI.reload("data-v-08a63b18", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        name: {
+            type: String,
+            default: ''
+        },
+        tags: {
+            type: Array,
+            default: function _default() {
+                return [];
+            }
+        },
+        autocomplete: {
+            type: Array,
+            default: function _default() {
+                return [];
+            }
+        },
+        placeholder: {
+            type: String,
+            default: ''
+        },
+        onChange: {
+            type: Function
+        }
+    },
+    data: function data() {
+        return {
+            tagsArray: this.tags,
+            newTag: '',
+            autocompleteSuggestions: [],
+            autocompleteIndex: -1
+        };
+    },
+
+    methods: {
+        focus: function focus() {
+            this.$refs.tags.focus();
+        },
+        addTag: function addTag(tag) {
+            if (tag && !this.tagsArray.includes(tag)) {
+                if (this.autocompleteIndex !== -1) {
+                    if (!this.tagsArray.includes(this.autocompleteSuggestions[this.autocompleteIndex])) {
+                        this.tagsArray.push(this.autocompleteSuggestions[this.autocompleteIndex]);
+                    }
+                } else {
+                    if (tag.replace(/\s/g, '').length) {
+                        this.tagsArray.push(tag);
+                    }
+                }
+                this.emitChanges();
+            }
+            this.newTag = '';
+            this.autocompleteSuggestions = [];
+            this.autocompleteIndex = -1;
+        },
+        remove: function remove(tag) {
+            this.tagsArray = this.tagsArray.filter(function (item) {
+                return tag !== item;
+            });
+            this.emitChanges();
+        },
+        removeLastTag: function removeLastTag() {
+            if (this.newTag) {
+                return;
+            }
+            this.tagsArray.pop();
+            this.emitChanges();
+        },
+        emitChanges: function emitChanges() {
+            if (this.onChange) {
+                this.onChange(JSON.parse(JSON.stringify(this.tagsArray)));
+            }
+        },
+        autocompleteShow: function autocompleteShow() {
+            var _this = this;
+
+            if (this.newTag === '') {
+                this.autocompleteSuggestions = [];
+            } else {
+                this.autocomplete.forEach(function (word, index) {
+                    if (word.match(_this.newTag) !== null && _this.newTag !== '') {
+                        if (!_this.autocompleteSuggestions.includes(word)) {
+                            _this.autocompleteSuggestions.push(word);
+                        }
+                    } else {
+                        _this.autocompleteSuggestions.splice(index, 1);
+                    }
+                });
+            }
+        },
+        autocompleteUp: function autocompleteUp() {
+            this.autocompleteIndex <= 1 ? this.autocompleteIndex = 0 : this.autocompleteIndex--;
+            this.$refs.li.forEach(function (li) {
+                li.classList.remove('active');
+            });
+            this.$refs.li[this.autocompleteIndex].classList.add('active');
+        },
+        autocompleteDown: function autocompleteDown() {
+            this.autocompleteIndex < this.$refs.li.length - 1 ? this.autocompleteIndex++ : '';
+            this.$refs.li.forEach(function (li) {
+                li.classList.remove('active');
+            });
+            this.$refs.li[this.autocompleteIndex].classList.add('active');
+        }
+    }
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      ref: "tags",
+      staticClass: "Tags",
+      on: {
+        click: function($event) {
+          _vm.focus()
+        }
+      }
+    },
+    [
+      _vm._l(_vm.tagsArray, function(tag, index) {
+        return _c("span", { key: index, staticClass: "Tag" }, [
+          _c("div", { staticClass: "Tag__name" }, [
+            _vm._v(_vm._s(tag) + " "),
+            _c(
+              "a",
+              {
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    $event.stopPropagation()
+                    _vm.remove(tag)
+                  }
+                }
+              },
+              [_c("i", { staticClass: "Tag__remove fa fa-times" })]
+            )
+          ]),
+          _vm._v(" "),
+          _vm.name
+            ? _c("input", {
+                attrs: { name: _vm.name, type: "hidden" },
+                domProps: { value: tag }
+              })
+            : _vm._e()
+        ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "Tags__input-wrapper" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.newTag,
+              expression: "newTag"
+            }
+          ],
+          staticClass: "Tags__input",
+          attrs: { placeholder: _vm.placeholder, type: "text" },
+          domProps: { value: _vm.newTag },
+          on: {
+            keydown: [
+              function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "delete", [8, 46])
+                ) {
+                  return null
+                }
+                $event.stopPropagation()
+                _vm.removeLastTag()
+              },
+              function($event) {
+                if (
+                  !("button" in $event) &&
+                  $event.keyCode !== 188 &&
+                  _vm._k($event.keyCode, "enter", 13) &&
+                  _vm._k($event.keyCode, "tab", 9)
+                ) {
+                  return null
+                }
+                $event.preventDefault()
+                $event.stopPropagation()
+                _vm.addTag(_vm.newTag)
+              },
+              function($event) {
+                if (!("button" in $event) && _vm._k($event.keyCode, "up", 38)) {
+                  return null
+                }
+                _vm.autocompleteUp()
+              },
+              function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "down", 40)
+                ) {
+                  return null
+                }
+                _vm.autocompleteDown()
+              }
+            ],
+            input: [
+              function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.newTag = $event.target.value
+              },
+              function($event) {
+                _vm.autocompleteShow()
+              }
+            ]
+          }
+        }),
+        _vm._v(" "),
+        _vm.autocompleteSuggestions.length >= 1
+          ? _c(
+              "ul",
+              { staticClass: "Tags__list" },
+              _vm._l(_vm.autocompleteSuggestions, function(suggestion, index) {
+                return _c("li", {
+                  ref: "li",
+                  refInFor: true,
+                  staticClass: "Tags__list-item",
+                  domProps: { textContent: _vm._s(suggestion) },
+                  on: {
+                    click: function($event) {
+                      _vm.autocompleteIndex = -1
+                      _vm.addTag(suggestion)
+                    }
+                  }
+                })
+              })
+            )
+          : _vm._e()
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-08a63b18", module.exports)
+  }
+}
+
+/***/ }),
+/* 64 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
