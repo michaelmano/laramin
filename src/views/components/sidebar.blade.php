@@ -1,6 +1,5 @@
 <laramin-sidebar :open="navigationOpen">
-	<laramin-sidebar-item url="/laramin" icon="fa-user-circle-o">Users</laramin-sidebar-item>
-	<laramin-sidebar-item url="/some/url" icon="fa-file-text">Pages</laramin-sidebar-item>
-	<laramin-sidebar-item url="/some/url" icon="fa-newspaper-o">Posts</laramin-sidebar-item>
-	<laramin-sidebar-item url="/some/url" icon="fa-question">FAQ's</laramin-sidebar-item>
+	@foreach(Config::get('laramin.sidebar_links') as $link)
+		<laramin-sidebar-item url="{{ $link['url'] }}" icon="{{ $link['icon'] }}">{{ $link['name'] }}</laramin-sidebar-item>
+	@endforeach
 </laramin-sidebar>

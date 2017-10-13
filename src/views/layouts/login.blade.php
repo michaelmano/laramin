@@ -11,7 +11,7 @@
     </head>
 <body class="Body">
 	<main id="laramin" class="Main Main--full util-background-delta">
-        @include('laramin::partials._errors')
+        @include('laramin::partials._flash')
 		@yield('login-form')
 	</main>
 </body>

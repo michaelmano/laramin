@@ -21,6 +21,14 @@
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 }
 
+.Form__input--textarea {
+	width: 100%;
+	display: block;
+	height: 18.75rem;
+	outline: none;
+	border: none;
+}
+
 .Form__input-span {
 	display: block;
 	transition: 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67) width;

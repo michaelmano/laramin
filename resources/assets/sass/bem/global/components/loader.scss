@@ -1,0 +1,75 @@
+.Loader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: z-index(loader);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.Loader__icon {
+	width: 3.75rem;
+	height: 3.75rem;
+	margin: 0 auto;
+  }
+  
+  .Loader__icon .Loader__square {
+	width: 33%;
+	height: 33%;
+	background-color: color(golf);
+	float: left;
+	-webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+			animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+  }
+  .Loader__icon .Loader__square1 {
+	-webkit-animation-delay: 0.2s;
+			animation-delay: 0.2s; }
+  .Loader__icon .Loader__square2 {
+	-webkit-animation-delay: 0.3s;
+			animation-delay: 0.3s; }
+  .Loader__icon .Loader__square3 {
+	-webkit-animation-delay: 0.4s;
+			animation-delay: 0.4s; }
+  .Loader__icon .Loader__square4 {
+	-webkit-animation-delay: 0.1s;
+			animation-delay: 0.1s; }
+  .Loader__icon .Loader__square5 {
+	-webkit-animation-delay: 0.2s;
+			animation-delay: 0.2s; }
+  .Loader__icon .Loader__square6 {
+	-webkit-animation-delay: 0.3s;
+			animation-delay: 0.3s; }
+  .Loader__icon .Loader__square7 {
+	-webkit-animation-delay: 0s;
+			animation-delay: 0s; }
+  .Loader__icon .Loader__square8 {
+	-webkit-animation-delay: 0.1s;
+			animation-delay: 0.1s; }
+  .Loader__icon .Loader__square9 {
+	-webkit-animation-delay: 0.2s;
+			animation-delay: 0.2s; }
+  
+  @-webkit-keyframes sk-cubeGridScaleDelay {
+	0%, 70%, 100% {
+	  -webkit-transform: scale3D(1, 1, 1);
+			  transform: scale3D(1, 1, 1);
+	} 35% {
+	  -webkit-transform: scale3D(0, 0, 1);
+			  transform: scale3D(0, 0, 1); 
+	}
+  }
+  
+  @keyframes sk-cubeGridScaleDelay {
+	0%, 70%, 100% {
+	  -webkit-transform: scale3D(1, 1, 1);
+			  transform: scale3D(1, 1, 1);
+	} 35% {
+	  -webkit-transform: scale3D(0, 0, 1);
+			  transform: scale3D(0, 0, 1);
+	} 
+  }

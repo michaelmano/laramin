@@ -12,5 +12,14 @@ export default {
 	},
 	toggleNavigation() {
 		this.navigationOpen = !this.navigationOpen;
+	},
+	contactProjectManager() {
+		this.loading = true;
+		this.hideModal();
+		this.form.post('/laramin/contact')
+			.then(response => {
+				this.loading = false;
+				this.messages.push({type: 'success', message: response.message});
+			});
 	}
 }

@@ -11,8 +11,15 @@ class LaraminController extends Controller
         return view('laramin::index');
     }
 
-    public function login()
+    public function contact()
     {
-        return view('laramin::login');
+        \Mail::raw(request('message'), function ($message) {
+            $message->from(auth()->user()->email, auth()->user()->name);
+            $message->to(\Config::get('laramin.project_manager.email'));
+        });
+
+        return response()->json([
+            'message' => \Config::get('laramin.project_manager.contact_finalised_message'),
+        ]);
     }
 }

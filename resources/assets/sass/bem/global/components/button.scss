@@ -15,6 +15,15 @@
         transform: translateY(-1px) scale(0.98);
         background-color: color(india);
     }
+
+    &:disabled {
+        cursor: normal;
+        opacity: 0.6;
+        &:hover {
+            transform: none;
+            background-color: color(golf);
+        }
+    }
 }
 
 .Button--text-link {

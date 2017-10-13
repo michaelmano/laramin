@@ -11,7 +11,8 @@
     </head>
 <body class="Body">
     <div id="laramin" class="Laramin">
-        @include('laramin::partials._errors')
+        <laramin-loader :loading="loading"></laramin-loader>
+        @include('laramin::partials._flash')
         @yield('base-header')
         <main class="Main">
             @yield('base-content')
