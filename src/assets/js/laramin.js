@@ -2030,10 +2030,35 @@ var bootstrap = function bootstrap() {
 	if (inputs.legnth < 1) return;
 
 	__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.each(inputs, function (input) {
-		var span = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.make('span');
-		__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.addClass(span, 'Form__input-span');
-		__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.append(__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.parent(input), span);
+		if (__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--file')) return fileInput(input);
+		if (__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--text') || __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--textarea') || __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--tel') || __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--number') || __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--search') || __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--url') || __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--email') || __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.hasClass(input, 'Form__input--password')) return textInput(input);
 	});
+};
+
+var fileInput = function fileInput(input) {
+	var label = input.nextElementSibling,
+	    labelVal = label.innerHTML;
+
+	input.addEventListener('change', function (e) {
+		var fileName = '';
+		if (this.files && this.files.length > 1) fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);else fileName = e.target.value.split('\\').pop();
+
+		if (fileName) label.querySelector('span').innerHTML = fileName;else label.innerHTML = labelVal;
+	});
+
+	// Firefox bug fix
+	input.addEventListener('focus', function () {
+		input.classList.add('has-focus');
+	});
+	input.addEventListener('blur', function () {
+		input.classList.remove('has-focus');
+	});
+};
+
+var textInput = function textInput(input) {
+	var span = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.make('span');
+	__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.addClass(span, 'Form__input-span');
+	__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.append(__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.parent(input), span);
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (bootstrap);
@@ -13119,6 +13144,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vanilla_lib_form__ = __webpack_require__(39);
 //
 //
 //
@@ -13150,11 +13176,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		open: {
 			default: true,
 			type: Boolean
+		},
+		user: {
+			type: Object
+		},
+		userNavigation: {
+			type: Array
 		}
 	},
 	data: function data() {
@@ -13166,6 +13200,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 		openUserMenu: function openUserMenu() {
 			return this.userNav = !this.userNav;
+		},
+		logout: function logout() {
+			this.$emit('loading');
+
+			var form = new __WEBPACK_IMPORTED_MODULE_0__vanilla_lib_form__["a" /* default */]();
+			form.post('/logout').then(function (event) {
+				return location.href = '/';
+			});
 		}
 	}
 });
@@ -13205,8 +13247,10 @@ var render = function() {
             _c("img", {
               staticClass: "Avatar__image",
               attrs: {
-                src: "http://via.placeholder.com/80x80",
-                alt: "User Name"
+                src: _vm.user.avatar
+                  ? _vm.user.avatar
+                  : "http://via.placeholder.com/80x80",
+                alt: _vm.user.name
               }
             }),
             _vm._v(" "),
@@ -13226,7 +13270,7 @@ var render = function() {
                     }
                   },
                   [
-                    _vm._v("Joe Bloggs \n\t\t\t\t\t"),
+                    _vm._v(_vm._s(_vm.user.name) + "\n\t\t\t\t\t"),
                     _c(
                       "span",
                       {
@@ -13263,29 +13307,42 @@ var render = function() {
                         staticClass: "Avatar__navigation"
                       },
                       [
-                        _c("ul", { staticClass: "List List--unstyled" }, [
-                          _c("li", { staticClass: "List__item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "List__item-link",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("Preferences")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "List__item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "List__item-link",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("Logout")]
-                            )
-                          ])
-                        ])
+                        _c(
+                          "ul",
+                          { staticClass: "List List--unstyled" },
+                          [
+                            _vm._l(_vm.userNavigation, function(item) {
+                              return _c("li", { staticClass: "List__item" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "List__item-link",
+                                    attrs: { href: item.link }
+                                  },
+                                  [_vm._v("item.name")]
+                                )
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "List__item" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "List__item-link",
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      _vm.logout($event)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Logout")]
+                              )
+                            ])
+                          ],
+                          2
+                        )
                       ]
                     )
                   ]

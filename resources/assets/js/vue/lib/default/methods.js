@@ -21,5 +21,5 @@ export default {
 				this.loading = false;
 				this.messages.push({type: 'success', message: response.message});
 			});
-	}
+	},
 }

@@ -2183,7 +2183,8 @@ select[multiple] {
   }
 }
 
-.Button {
+.Button,
+.Form__input--file + label {
   cursor: pointer;
   outline: none;
   border: none;
@@ -2199,19 +2200,24 @@ select[multiple] {
 }
 
 .Button:hover,
+.Form__input--file + label:hover,
 .Button:focus,
-.Button:active {
+.Form__input--file + label:focus,
+.Button:active,
+.Form__input--file + label:active {
   -webkit-transform: translateY(-1px) scale(0.98);
           transform: translateY(-1px) scale(0.98);
   background-color: #3e8985;
 }
 
-.Button:disabled {
+.Button:disabled,
+.Form__input--file + label:disabled {
   cursor: normal;
   opacity: 0.6;
 }
 
-.Button:disabled:hover {
+.Button:disabled:hover,
+.Form__input--file + label:disabled:hover {
   -webkit-transform: none;
           transform: none;
   background-color: #26B99A;
@@ -3015,11 +3021,6 @@ select[multiple] {
   margin-top: 1rem;
 }
 
-.Form__error {
-  font-size: 0.75rem;
-  color: red;
-}
-
 .Form__input,
 .Tags {
   padding: 0.5rem;
@@ -3047,5 +3048,40 @@ select[multiple] {
 .Form__input:focus ~ .Form__input-span,
 .Tags:focus ~ .Form__input-span {
   width: 100%;
+}
+
+.Form__input--range {
+  padding: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.Form__input--file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.no-js .Form__input--file + label {
+  display: none;
+}
+
+.Form__input--file:focus + label,
+.Form__input--file.has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.Form__input--file + label * {
+  /* pointer-events: none; */
+  /* in case of FastClick lib use */
+}
+
+.Form__input--file + label i {
+  width: 1rem;
+  height: 1rem;
 }
 

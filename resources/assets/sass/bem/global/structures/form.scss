@@ -11,11 +11,6 @@
 
 .Form__legend {}
 
-.Form__error {
-	font-size: 0.75rem;
-	color: red;
-}
-
 .Form__input {
 	padding: 0.5rem;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
@@ -56,7 +51,6 @@
 .Form__input--email,
 .Form__input--file,
 .Form__input--hidden,
-.Form__input--image,
 .Form__input--month,
 .Form__input--number,
 .Form__input--password,
@@ -71,4 +65,42 @@
 .Form__input--url,
 .Form__input--week {
 
+}
+
+.Form__input--range {
+	padding: 0;
+	box-shadow: none;
+}
+
+.Form__input--file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.Form__input--file + label {
+	@extend .Button;
+}
+
+.no-js .Form__input--file + label {
+	display: none;
+}
+
+.Form__input--file:focus + label,
+.Form__input--file.has-focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.Form__input--file + label * {
+	/* pointer-events: none; */
+	/* in case of FastClick lib use */
+}
+
+.Form__input--file + label i {
+	width: 1rem;
+	height: 1rem;
 }
