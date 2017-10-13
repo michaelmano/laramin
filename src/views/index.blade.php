@@ -2,7 +2,9 @@
 
 @section('standard-content')
 	<div class="Content">
-		<h1 class="Heading">Welcome to the Laramin Dashboard</h1>
+		<div class="Row">
+			<div class="Cell Cell--12/12@xs"><h1 class="Heading">Welcome to the Laramin Dashboard</h1></div>
+		</div>
 		<div class="Row">
 			<div class="Cell Cell--12/12@xs Cell--6/12@lg">
 				<div class="Box">

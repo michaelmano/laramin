@@ -2326,6 +2326,7 @@ select[multiple] {
   top: 0.625rem;
   right: 0.625rem;
   min-width: 10rem;
+  z-index: 4;
 }
 
 .Flash__message {
