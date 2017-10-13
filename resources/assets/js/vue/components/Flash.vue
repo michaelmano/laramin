@@ -31,11 +31,18 @@
 		mounted() {
 			setTimeout(function() {
 				this.show = true;
-			}.bind(this), 100);
+			}.bind(this), this.showTime());
 
 			setTimeout(function() {
 				this.show = false;
 			}.bind(this), 5000)
+		},
+		methods: {
+			showTime() {
+				let min = Math.ceil(10);
+				let max = Math.floor(250);
+				return Math.floor(Math.random() * (max - min)) + min;
+			}
 		}
 	}
 </script>

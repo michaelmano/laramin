@@ -1921,6 +1921,14 @@ h6 {
   background-color: #3e8985;
 }
 
+.util-color-juliet {
+  color: #ff0033;
+}
+
+.util-background-juliet {
+  background-color: #ff0033;
+}
+
 html {
   height: 100%;
 }
@@ -2290,6 +2298,15 @@ select[multiple] {
   background-color: #367774;
 }
 
+.Button--juliet {
+  background-color: #ff0033;
+  border: 1px solid rgba(255, 0, 51, 0.8);
+}
+
+.Button--juliet:hover {
+  background-color: #e6002e;
+}
+
 .Button--alpha,
 .Button--delta,
 .Button--foxtrot {
@@ -2316,6 +2333,10 @@ select[multiple] {
   color: #FFFFFF;
   padding: 1rem;
   margin-bottom: 0.5rem;
+}
+
+.Flash__message--error {
+  background-color: #ff0033;
 }
 
 .Tag {

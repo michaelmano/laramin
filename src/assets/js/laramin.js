@@ -16213,11 +16213,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	mounted: function mounted() {
 		setTimeout(function () {
 			this.show = true;
-		}.bind(this), 100);
+		}.bind(this), this.showTime());
 
 		setTimeout(function () {
 			this.show = false;
 		}.bind(this), 5000);
+	},
+
+	methods: {
+		showTime: function showTime() {
+			var min = Math.ceil(10);
+			var max = Math.floor(250);
+			return Math.floor(Math.random() * (max - min)) + min;
+		}
 	}
 });
 
