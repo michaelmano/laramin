@@ -35,6 +35,7 @@
 			<div class="Cell Cell--12/12@xs Cell--6/12@lg">
 				<div class="Box">
 					<h4 class="Heading Heading--no-mt">Tag Input</h4>
+					<p>If you also pass a :name prop to the component e.g. :name="tags[]" it will create hidden inputs and set the values to the tags.</p>
 					<laramin-tags-input :autocomplete="['Suggestion 1',' Suggestion 2', 'Suggestion 3']" :tags="['tag1', 'tag2', 'tag3']"></laramin-tags-input>
 					<pre class="Pre">&lt;laramin-tags-input :autocomplete=&quot;['Suggestion 1',' Suggestion 2', 'Suggestion 3']&quot; :tags=&quot;['tag1', 'tag2', 'tag3']&quot;&gt;&lt;/laramin-tags-input&gt;</pre>
 				</div>
