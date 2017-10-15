@@ -3050,7 +3050,9 @@ select[multiple] {
   width: 100%;
 }
 
-.Form__input--range {
+.Form__input--range,
+.Form__input--radio,
+.Form__input--checkbox {
   padding: 0;
   -webkit-box-shadow: none;
           box-shadow: none;

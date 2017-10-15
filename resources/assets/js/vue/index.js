@@ -13,7 +13,7 @@ const module = function module() {
     Vue.component('laramin-flash', require('./components/Flash.vue'));
     Vue.component('laramin-tags-input', require('./components/TagsInput.vue'));
   
-    new Vue({
+    window.laramin = new Vue({
         el: '#laramin',
         data,
         watch,

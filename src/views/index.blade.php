@@ -70,7 +70,7 @@
 
 					<fieldset class="Form__fieldset">
 						<label class="Form__label" for="fullName">Text</label>
-						<input class="Form__input Form__input--text" name="fullName" id="fullName" type="text" placeholder="Jane Doe" required autofocus>
+						<input class="Form__input Form__input--text" name="fullName" id="fullName" type="text" required>
 					</fieldset>
 
 					<fieldset class="Form__fieldset">
@@ -98,11 +98,6 @@
 						<label class="Form__label" for="radio">Radio
 							<input class="Form__input Form__input--radio" name="radio" id="radio" type="radio">
 						</label>
-					</fieldset>
-
-					<fieldset class="Form__fieldset">
-						<label class="Form__label" for="color">Color</label>
-						<input class="Form__input Form__input--color" name="color" id="color" type="color">
 					</fieldset>
 
 					<fieldset class="Form__fieldset">
@@ -163,7 +158,7 @@
 		
 	&lt;fieldset class=&quot;Form__fieldset&quot;&gt;
 		&lt;label class=&quot;Form__label&quot; for=&quot;fullName&quot;&gt;Text&lt;/label&gt;
-		&lt;input class=&quot;Form__input Form__input--text&quot; name=&quot;fullName&quot; id=&quot;fullName&quot; type=&quot;text&quot; placeholder=&quot;Jane Doe&quot; required autofocus&gt;
+		&lt;input class=&quot;Form__input Form__input--text&quot; name=&quot;fullName&quot; id=&quot;fullName&quot; type=&quot;text&quot; required autofocus&gt;
 	&lt;/fieldset&gt;
 
 	&lt;fieldset class=&quot;Form__fieldset&quot;&gt;
@@ -191,11 +186,6 @@
 		&lt;label class=&quot;Form__label&quot; for=&quot;radio&quot;&gt;Radio
 			&lt;input class=&quot;Form__input Form__input--radio&quot; name=&quot;radio&quot; id=&quot;radio&quot; type=&quot;radio&quot;&gt;
 		&lt;/label&gt;
-	&lt;/fieldset&gt;
-
-	&lt;fieldset class=&quot;Form__fieldset&quot;&gt;
-		&lt;label class=&quot;Form__label&quot; for=&quot;color&quot;&gt;Color&lt;/label&gt;
-		&lt;input class=&quot;Form__input Form__input--color&quot; name=&quot;color&quot; id=&quot;color&quot; type=&quot;color&quot;&gt;
 	&lt;/fieldset&gt;
 
 	&lt;fieldset class=&quot;Form__fieldset&quot;&gt;

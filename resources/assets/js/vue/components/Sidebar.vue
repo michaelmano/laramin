@@ -2,7 +2,7 @@
 	<transition enter-active-class="animated animated--fast slideInLeft" leave-active-class="animated slideOutLeft">
 		<aside v-show="open" class="Sidebar">
 			<section class="Avatar">
-				<img class="Avatar__image" :src="user.avatar ? user.avatar : 'http://via.placeholder.com/80x80'" :alt="user.name">
+				<img class="Avatar__image" :src="user.avatar ? user.avatar : 'http://via.placeholder.com/80x80?text=No%20Avatar'" :alt="user.name">
 				<div class="Avatar__menu">
 					<h6 class="Avatar__name" @click.prevent="openUserMenu">{{ user.name }}
 						<span :class="['Avatar__button', userNav ? 'Avatar__button--active' : '']">

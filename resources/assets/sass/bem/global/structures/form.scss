@@ -67,7 +67,9 @@
 
 }
 
-.Form__input--range {
+.Form__input--range,
+.Form__input--radio,
+.Form__input--checkbox {
 	padding: 0;
 	box-shadow: none;
 }
