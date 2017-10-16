@@ -2831,13 +2831,31 @@ select[multiple] {
   width: 1.75rem;
   height: 1.75rem;
   color: #FFFFFF;
-  padding: 0.45rem 0.5rem 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
 }
 
 .Modal__close:hover {
   background-color: #363636;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.Modal__close i {
+  margin: 0 auto;
+  display: block;
 }
 
 .Modal__body {
