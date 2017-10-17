@@ -2332,9 +2332,26 @@ select[multiple] {
 
 .Box {
   padding: 1rem;
-  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background-color: #FFFFFF;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.Box--slim {
+  padding: 0.25rem;
+}
+
+.Box--with-hover:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.Box--no-shadow,
+.Box--no-shadow:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .Flash {
@@ -2456,6 +2473,11 @@ select[multiple] {
 
 .Heading--no-mt {
   margin-top: 0;
+}
+
+.Heading--cleared {
+  margin: 0;
+  padding: 0;
 }
 
 .NavigationToggle {
@@ -2879,6 +2901,44 @@ select[multiple] {
   padding: 0;
 }
 
+.Masonry {
+  -webkit-column-count: 1;
+          column-count: 1;
+}
+
+@media (min-width: 768px) {
+  .Masonry {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .Masonry {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Masonry {
+    -webkit-column-count: 4;
+            column-count: 4;
+  }
+}
+
+.Masonry__panel {
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.Masonry__panel > * {
+  /* Fix for elements with box shadows */
+  display: inline-block;
+  margin: 0.1875rem 0;
+}
+
 .Pre {
   font-family: 'Bitter', serif;
   margin-top: 1rem;
@@ -2949,6 +3009,10 @@ select[multiple] {
   position: relative;
 }
 
+.Content {
+  margin-bottom: 2rem;
+}
+
 .Body {
   min-height: 100%;
   color: #363636;
@@ -2970,6 +3034,13 @@ select[multiple] {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   overflow: hidden;
   background-color: #363636;

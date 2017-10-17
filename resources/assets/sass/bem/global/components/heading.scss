@@ -4,3 +4,7 @@
 .Heading--no-mt {
 	margin-top: 0;
 }
+
+.Heading--cleared {
+	@include clear-box-model;
+}

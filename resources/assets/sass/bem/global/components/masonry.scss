@@ -1,0 +1,26 @@
+.Masonry {
+	column-count: 1;
+	
+	@include viewport-min('md') {
+		column-count: 2;
+	}
+
+	@include viewport-min('lg') {
+		column-count: 3;
+	}
+
+	@include viewport-min('xl') {
+		column-count: 4;
+	}
+}
+
+.Masonry__panel {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+	
+	& > * {
+		/* Fix for elements with box shadows */
+		display: inline-block;
+		margin: 0.1875rem 0;
+	}
+}

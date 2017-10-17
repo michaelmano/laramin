@@ -3,6 +3,8 @@
 	
 	font-family: font(bravo);
 	flex: 1;
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	overflow: hidden;
 	background-color: color(charlie);
@@ -15,4 +17,8 @@
 		padding: 1.25rem;
 		margin-left: 0;
 	}
+}
+
+.Sidebar__footer {
+	
 }
