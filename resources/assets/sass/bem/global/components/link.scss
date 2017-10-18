@@ -1,0 +1,22 @@
+.Link,
+a.Link {
+	cursor: pointer;
+}
+
+a.Link--no-underline,
+.Link--no-underline {
+    text-decoration: none;
+}
+
+@each $key, $color in $colors {
+	.Link--#{$key},
+	a.Link--#{$key} {
+        color: $color;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken($color, 5%);
+        }
+    }
+}

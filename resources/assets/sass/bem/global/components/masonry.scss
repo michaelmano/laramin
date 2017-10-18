@@ -1,16 +1,12 @@
 .Masonry {
 	column-count: 1;
 	
-	@include viewport-min('md') {
+	@include viewport-min('lg') {
 		column-count: 2;
 	}
 
-	@include viewport-min('lg') {
-		column-count: 3;
-	}
-
 	@include viewport-min('xl') {
-		column-count: 4;
+		column-count: 3;
 	}
 }
 

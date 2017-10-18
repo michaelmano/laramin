@@ -3,3 +3,41 @@ $base-size: 0.25rem;
 @function size($multiplier) {
     @return $base-size * $multiplier;
 }
+
+
+@for $i from 0 through 8 {
+    $rounded: $i + 0rem;
+    $rounded_with_half: $i + 0.5rem;
+
+    .util-breakaway-top-#{$i} {
+        margin-top: $rounded !important;
+    }
+
+    .util-breakaway-bottom-#{$i} {
+        margin-bottom: $rounded !important;
+    }
+
+    .util-breakaway-top-#{$i}-5 {
+        margin-top: $rounded_with_half !important;
+    }
+
+    .util-breakaway-bottom-#{$i}-5 {
+        margin-bottom: $rounded_with_half !important;
+    }
+
+    .util-padding-top-#{$i} {
+        padding-top: $rounded !important;
+    }
+
+    .util-padding-bottom-#{$i} {
+        padding-bottom: $rounded !important;
+    }
+
+    .util-padding-top-#{$i}-5 {
+        padding-top: $rounded_with_half !important;
+    }
+
+    .util-padding-bottom-#{$i}-5 {
+        padding-bottom: $rounded_with_half !important;
+    }
+}

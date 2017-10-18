@@ -1,3 +1,5 @@
+import Q from 'qoob';
+
 export default {
 	showModal(name) {
 		this.$refs[name].show = true;
@@ -22,4 +24,21 @@ export default {
 				this.messages.push({type: 'success', message: response.message});
 			});
 	},
+	deleteItemInput(event) {
+		this.deleteItem = event.target.value;
+	},
+	submitDeleteItem(url, element) {
+		const target = event.target;
+		this.loading = true;
+		this.hideModal();
+		this.deleteForm.delete(url)
+
+		.then(response => {
+			if (element !== '') {
+				Q.remove(Q.head(Q.ancestor(target, element)));
+			}
+			this.loading = false;
+			this.messages.push({type: 'success', message: response.message});
+		});
+	}
 }
