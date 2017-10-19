@@ -1,4 +1,10 @@
 .Header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2.5rem;
+	
 	color: color(alpha);
 	background-color: color(charlie);
 	line-height: 2.5rem;
@@ -7,4 +13,6 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+
+	z-index: z-index(header);
 }

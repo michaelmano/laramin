@@ -5759,7 +5759,7 @@ select[multiple] {
   top: 0.625rem;
   right: 0.625rem;
   min-width: 10rem;
-  z-index: 5;
+  z-index: 6;
 }
 
 .Flash__message {
@@ -5870,11 +5870,7 @@ select[multiple] {
   color: #FFFFFF;
 }
 
-.Heading--no-mt {
-  margin-top: 0;
-}
-
-.Heading--cleared {
+.Heading {
   margin: 0;
   padding: 0;
 }
@@ -6242,7 +6238,7 @@ a.Link--kilo:active {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 6;
+  z-index: 7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6329,7 +6325,7 @@ a.Link--kilo:active {
   right: 0;
   bottom: 0;
   background: rgba(10, 10, 10, 0.86);
-  z-index: 3;
+  z-index: 4;
 }
 
 .Modal__container {
@@ -6353,7 +6349,7 @@ a.Link--kilo:active {
           justify-content: center;
   overflow: hidden;
   text-align: left;
-  z-index: 4;
+  z-index: 5;
 }
 
 .Modal__content {
@@ -6405,7 +6401,6 @@ a.Link--kilo:active {
 .Modal__close {
   -webkit-transition: 250ms ease-in-out all;
   transition: 250ms ease-in-out all;
-  position: relative;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-box-flex: 0;
@@ -6436,27 +6431,6 @@ a.Link--kilo:active {
   padding: 0;
 }
 
-.Modal__close:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.25rem;
-  height: 0.25rem;
-  background: rgba(255, 255, 255, 0.3);
-  opacity: 0;
-  border-radius: 100%;
-  -webkit-transform: scale(1) translate(-50%);
-          transform: scale(1) translate(-50%);
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-}
-
-.Modal__close:hover:after {
-  -webkit-animation: ripple 1s ease-out;
-          animation: ripple 1s ease-out;
-}
-
 .Modal__close:hover {
   background-color: #37474F;
   -webkit-transform: perspective(1px) scale(1.1);
@@ -6473,7 +6447,7 @@ a.Link--kilo:active {
   background-color: #FFFFFF;
   padding: 1.25rem;
   overflow: auto;
-  z-index: 3;
+  z-index: 4;
   color: #37474F;
 }
 
@@ -6606,8 +6580,7 @@ a.Link--kilo:active {
 
 .Laramin {
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: 40px 1fr;
+  height: 100vh;
 }
 
 .Sidebar {
@@ -6662,6 +6635,11 @@ a.Link--kilo:active {
 }
 
 .Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
   color: #FFFFFF;
   background-color: #37474F;
   line-height: 2.5rem;
@@ -6679,6 +6657,7 @@ a.Link--kilo:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 3;
 }
 
 .Main {
@@ -6689,6 +6668,8 @@ a.Link--kilo:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  min-height: 100%;
+  margin-top: 2.5rem;
 }
 
 .Main--full {

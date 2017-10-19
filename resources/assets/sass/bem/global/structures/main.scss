@@ -1,6 +1,8 @@
 .Main {
 	display: flex;
 	flex-direction: row;
+	min-height: 100%;
+	margin-top: 2.5rem;
 }
 
 .Main--full {
