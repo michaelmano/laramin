@@ -5789,21 +5789,27 @@ select[multiple] {
 }
 
 .Tag__name {
-  background-color: whitesmoke;
+  background-color: #00BF9A;
+  color: #FFFFFF;
   padding: 0.25rem 0.75em;
 }
 
 .Tag__info {
-  background-color: #4DB6AC;
+  background-color: #009688;
   color: #FFFFFF;
   padding: 0.25rem 0.75em;
 }
 
 .Tag__remove {
   cursor: pointer;
-  fill: #000000;
-  width: 0.35rem;
-  height: 0.45rem;
+  background-color: #009688;
+  color: #FFFFFF;
+  padding: 0.25rem 0.75em;
+}
+
+.Tag__remove:hover i {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .Tags {
@@ -6387,7 +6393,7 @@ a.Link--kilo:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: whitesmoke;
+  background-color: #37474F;
   padding: 0.875rem 1.25rem;
   border-bottom: 1px solid #dbdbdb;
 }
@@ -6395,7 +6401,7 @@ a.Link--kilo:active {
 .Modal__title {
   margin: 0;
   padding: 0;
-  color: #37474F;
+  color: #FFFFFF;
 }
 
 .Modal__close {
@@ -6408,7 +6414,7 @@ a.Link--kilo:active {
           flex-grow: 0;
   cursor: pointer;
   text-align: center;
-  background-color: rgba(10, 10, 10, 0.2);
+  background-color: #00BF9A;
   outline: none;
   border: none;
   border-radius: 50%;
@@ -6432,7 +6438,6 @@ a.Link--kilo:active {
 }
 
 .Modal__close:hover {
-  background-color: #37474F;
   -webkit-transform: perspective(1px) scale(1.1);
           transform: perspective(1px) scale(1.1);
 }
@@ -6452,10 +6457,10 @@ a.Link--kilo:active {
 }
 
 .Modal__footer {
-  background-color: whitesmoke;
+  background-color: #37474F;
   border-top: 1px solid #dbdbdb;
   padding: 0.875rem 1.25rem;
-  color: #37474F;
+  color: #FFFFFF;
 }
 
 .Modal__footer p {

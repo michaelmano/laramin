@@ -17508,6 +17508,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -17640,22 +17641,22 @@ var render = function() {
     [
       _vm._l(_vm.tagsArray, function(tag, index) {
         return _c("span", { key: index, staticClass: "Tag" }, [
-          _c("div", { staticClass: "Tag__name" }, [
-            _vm._v(_vm._s(tag) + " "),
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    $event.stopPropagation()
-                    _vm.remove(tag)
-                  }
+          _c("div", { staticClass: "Tag__name" }, [_vm._v(_vm._s(tag))]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "Tag__remove",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  $event.stopPropagation()
+                  _vm.remove(tag)
                 }
-              },
-              [_c("i", { staticClass: "Tag__remove fa fa-times" })]
-            )
-          ]),
+              }
+            },
+            [_c("i", { staticClass: "fa fa-times" })]
+          ),
           _vm._v(" "),
           _vm.name
             ? _c("input", {

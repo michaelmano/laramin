@@ -7,21 +7,28 @@
 }
 
 .Tag__name {
-	background-color: color(delta);
+    background-color: color(golf);
+    color: color(alpha);
 	padding: 0.25rem 0.75em;
 }
 
 .Tag__info {
-	background-color: color(hotel);
+	background-color: color(india);
 	color: color(alpha);
 	padding: 0.25rem 0.75em;
 }
 
 .Tag__remove {
-	cursor: pointer;
-	fill: color(bravo);
-	width: 0.35rem;
-	height: 0.45rem;
+    cursor: pointer;
+    background-color: color(india);
+	color: color(alpha);
+    padding: 0.25rem 0.75em;
+    
+    &:hover {
+        & i {
+            transform: scale(1.1);
+        }
+    }
 }
 
 .Tags {

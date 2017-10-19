@@ -1,7 +1,8 @@
 <template>
     <div @click="focus()" ref="tags" class="Tags">
         <span v-for="(tag, index) in tagsArray" v-bind:key="index" class="Tag">
-            <div class="Tag__name">{{ tag }} <a @click.prevent.stop="remove(tag)"><i class="Tag__remove fa fa-times"></i></a></div>
+            <div class="Tag__name">{{ tag }}</div>
+            <div class="Tag__remove" @click.prevent.stop="remove(tag)"><i class="fa fa-times"></i></div>
             <input v-if="name" :name="name" :value="tag" type="hidden">
         </span>
         <div class="Tags__input-wrapper">

@@ -46,7 +46,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	background-color: color(delta);
+	background-color: color(charlie);
 	padding: 0.875rem 1.25rem;
 	border-bottom: 1px solid color(foxtrot);
 }
@@ -54,7 +54,7 @@
 .Modal__title {
 	margin: 0;
 	padding: 0;
-	color: color(charlie);
+	color: color(alpha);
 }
 
 .Modal__close {
@@ -65,7 +65,7 @@
 
 	cursor: pointer;
 	text-align: center;
-	background-color: color(echo);
+	background-color: color(golf);
 	outline: none;
 	border: none;
 	border-radius: 50%;
@@ -79,7 +79,6 @@
 	padding: 0;
 	
 	&:hover {
-		background-color: color(charlie);
 		transform: perspective(1px) scale(1.1);
 	}
 	& i {
@@ -98,10 +97,10 @@
 }
 
 .Modal__footer {
-	background-color: color(delta);
+	background-color: color(charlie);
 	border-top: 1px solid color(foxtrot);
 	padding: 0.875rem 1.25rem;
-	color: color(charlie);
+	color: color(alpha);
 	
 	& p {
 		margin: 0;

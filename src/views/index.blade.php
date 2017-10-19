@@ -9,7 +9,7 @@
 			<div class="Cell Cell--12/12@xs Cell--6/12@lg">
 				<div class="Box">
 					<h4 class="Heading Heading--no-mt">Tags</h4>
-					<div class="Tag">
+					<div class="Tag util-breakaway-top-1">
 						<div class="Tag__name">Tag with info</div>
 						<div class="Tag__info">v2</div>
 					</div>
@@ -18,7 +18,8 @@
 					</div>
 		
 					<div class="Tag">
-						<div class="Tag__name">Tag with delete <i class="Tag__remove fa fa-times"></i></div>
+						<div class="Tag__name">Tag with delete</div>
+						<div class="Tag__remove"><i class="fa fa-times"></i></div>
 					</div>
 									
 <pre class="Pre">&lt;div class=&quot;Tag&quot;&gt;
@@ -30,7 +31,8 @@
 	&lt;/div&gt;
 		
 	&lt;div class=&quot;Tag&quot;&gt;
-		&lt;div class=&quot;Tag__name&quot;&gt;Tag with delete &lt;i class=&quot;Tag__remove fa fa-times&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+		&lt;div class=&quot;Tag__name&quot;&gt;Tag with delete&lt;/div&gt;
+		&lt;div class=&quot;Tag__remove&quot;&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 	&lt;/div&gt;</pre>
 				</div>
 			</div>
