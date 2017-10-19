@@ -1,14 +1,15 @@
 $colors: (
     alpha: #FFFFFF,
     bravo: #000000,
-    charlie: #363636,
+    charlie: #37474F,
     delta: whitesmoke,
     echo: rgba(10, 10, 10, 0.2),
     foxtrot: #dbdbdb,
-    golf: #26B99A,
-    hotel: #337ab7,
-    india: #3e8985,
-    juliet: #ff0033,
+    golf: #00BF9A,
+    hotel: #4DB6AC,
+    india: #009688,
+    juliet: #0277BD,
+    kilo: #D32F2F,
 );
 
 @function color($key) {

@@ -14,14 +14,14 @@
   },
   "author": "Michael Mano <michael.mano26@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "animate.css": "^3.5.2",
     "axios": "^0.16.2",
     "buzuki": "^1.0.1",
-    "cross-env": "^5.0.1",
     "laravel-mix": "^1.0",
     "qoob": "^4.5.1",
     "tooltip.js": "^1.1.5",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "font-awesome": "^4.7.0"
   }
 }

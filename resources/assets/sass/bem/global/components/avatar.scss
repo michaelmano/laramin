@@ -32,7 +32,7 @@
 	flex-direction: column;
 
 	&:hover .Avatar__button {
-		color: color(golf);
+		color: color(hotel);
 	}
 
 
@@ -50,7 +50,7 @@
 
 	&:hover,
 	&--active {
-		color: color(golf);
+		color: color(hotel);
 	}
 
 	@include viewport-min('md') {

@@ -1,6 +1,7 @@
 .Masonry {
+	position: relative;
 	column-count: 1;
-	
+	z-index: z-index(masonry);	
 	@include viewport-min('lg') {
 		column-count: 2;
 	}

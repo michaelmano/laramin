@@ -1,29 +1,31 @@
 <template>
 	<transition enter-active-class="animated animated--fast slideInLeft" leave-active-class="animated slideOutLeft">
 		<aside v-show="open" class="Sidebar">
-			<section class="Avatar">
-				<img class="Avatar__image" :src="user.avatar ? user.avatar : 'http://via.placeholder.com/80x80?text=No%20Avatar'" :alt="user.name">
-				<div class="Avatar__menu">
-					<h6 class="Avatar__name" @click.prevent="openUserMenu">{{ user.name }}
-						<span :class="['Avatar__button', userNav ? 'Avatar__button--active' : '']">
-							<i class="fa fa-angle-down"></i>
-						</span>
-					</h6>
-					<transition enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
-						<nav v-show="userNav" class="Avatar__navigation">
-							<ul class="List List--unstyled">
-								<li class="List__item" v-for="item in userNavigation"><a :href="item.link" class="List__item-link">item.name</a></li>
-								<li class="List__item"><a href="#" @click.prevent="logout" class="List__item-link">Logout</a></li>
-							</ul>
-						</nav>
-					</transition>
-				</div>
-			</section>
-			<nav class="Navigation">
-				<ul class="Navigation__list">
-					<slot></slot>
-				</ul>
-			</nav>
+			<div class="Sidebar__container">
+				<section class="Avatar">
+					<img class="Avatar__image" :src="user.avatar ? user.avatar : 'http://via.placeholder.com/80x80?text=No%20Avatar'" :alt="user.name">
+					<div class="Avatar__menu">
+						<h6 class="Avatar__name" @click.prevent="openUserMenu">{{ user.name }}
+							<span :class="['Avatar__button', userNav ? 'Avatar__button--active' : '']">
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</h6>
+						<transition enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
+							<nav v-show="userNav" class="Avatar__navigation">
+								<ul class="List List--unstyled">
+									<li class="List__item" v-for="item in userNavigation"><a :href="item.link" class="List__item-link">item.name</a></li>
+									<li class="List__item"><a href="#" @click.prevent="logout" class="List__item-link">Logout</a></li>
+								</ul>
+							</nav>
+						</transition>
+					</div>
+				</section>
+				<nav class="Navigation">
+					<ul class="Navigation__list">
+						<slot></slot>
+					</ul>
+				</nav>
+			</div>
 		</aside>
 	</transition>
 </template>

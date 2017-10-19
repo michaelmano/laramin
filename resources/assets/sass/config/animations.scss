@@ -1,0 +1,22 @@
+@keyframes sk-cubeGridScaleDelay {
+	0%, 70%, 100% {
+			transform: scale3D(1, 1, 1);
+	} 35% {
+			transform: scale3D(0, 0, 1);
+	} 
+}
+
+@keyframes ripple {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	20% {
+		transform: scale(25);
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(40);
+	}
+}

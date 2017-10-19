@@ -1,5 +1,5 @@
 @if ($value && $url)
-	<a @click="showModal('delete-{{ str_slug($value,$url) }}')" class="Link Link--no-underline Link--juliet"><i class="fa fa-trash"></i> Delete</a>
+	<a @click="showModal('delete-{{ str_slug($value,$url) }}')" class="Link Link--no-underline Link--kilo"><i class="fa fa-trash"></i> Delete</a>
 	<laramin-modal ref="delete-{{ str_slug($value,$url) }}" @close="hideModal">
 		<template slot="title">{{ $value }}</template>
 		<template slot="body">
@@ -9,7 +9,7 @@
 				</fieldset>
 		</template>
 		<p slot="footer">
-			<button v-if="deleteItem === '{{ $value }}'" class="Button Button--juliet" @click="submitDeleteItem('{{ $url }}', '{{ isset($remove) ? $remove : '' }}')">Delete</button>
+			<button v-if="deleteItem === '{{ $value }}'" class="Button Button--kilo" @click="submitDeleteItem('{{ $url }}', '{{ isset($remove) ? $remove : '' }}')">Delete</button>
 		</p>
 	</laramin-modal>
 @endif

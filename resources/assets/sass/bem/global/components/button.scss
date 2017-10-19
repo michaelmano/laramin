@@ -2,33 +2,45 @@
     @include button-reset;
     @include transition;
     
+    position: relative;
     font-size: 0.875rem;
     display: inline-block;
     padding: 0.25rem 1.25rem;    
-    background-color: color(golf);
+    background-color: color(hotel);
     color: color(alpha);
-    border: 1px solid rgba(color(golf), 0.8);
-
-    &:hover,
-    &:focus,
-    &:active {
-        transform: translateY(-1px) scale(0.98);
-        background-color: color(india);
-    }
+    border: 1px solid rgba(color(hotel), 0.8);
 
     &:disabled {
         cursor: normal;
         opacity: 0.6;
         &:hover {
             transform: none;
-            background-color: color(golf);
+            background-color: color(hotel);
         }
+    }
+
+    &:hover:after {
+        animation: ripple 1s ease-out;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        background: rgba(255, 255, 255, .3);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1) translate(-50%);
+        transform-origin: 50% 50%;
     }
 }
 
 .Button--text-link {
     padding: 0;
-    color: color(golf);
+    color: color(hotel);
     background-color: transparent;
     border: none;
     
@@ -47,7 +59,6 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: darken($color, 5%);
         }
     }
 }

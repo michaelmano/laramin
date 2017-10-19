@@ -9,22 +9,22 @@ return [
     ],
     'sidebar_links' => [
         [
-            'url' => '/laramin',
-            'name' => 'Users',
-            'icon' => 'fa-user-circle-o',
+            'url' => '/dashboard',
+            'name' => 'Dashboard',
+            'icon' => 'fa-window-maximize',
         ],
         [
-            'url' => '/laramin/pages',
+            'url' => '/dashboard/pages',
             'name' => 'Pages',
             'icon' => 'fa-file-text',
         ],
         [
-            'url' => '/laramin/posts',
+            'url' => '/dashboard/posts',
             'name' => 'Posts',
             'icon' => 'fa-newspaper-o',
         ],
         [
-            'url' => '/laramin/faqs',
+            'url' => '/dashboard/faqs',
             'name' => 'FAQ\'s',
             'icon' => 'fa-question',
         ],

@@ -1,4 +1,10 @@
 {
     "/src/assets/js/laramin.js": "/src/assets/js/laramin.js",
-    "/src/assets/css/laramin.css": "/src/assets/css/laramin.css"
+    "/src/assets/css/laramin.css": "/src/assets/css/laramin.css",
+    "/src/assets/fonts/fontawesome-webfont.eot": "/src/assets/fonts/fontawesome-webfont.eot",
+    "/src/assets/fonts/fontawesome-webfont.svg": "/src/assets/fonts/fontawesome-webfont.svg",
+    "/src/assets/fonts/fontawesome-webfont.ttf": "/src/assets/fonts/fontawesome-webfont.ttf",
+    "/src/assets/fonts/fontawesome-webfont.woff": "/src/assets/fonts/fontawesome-webfont.woff",
+    "/src/assets/fonts/fontawesome-webfont.woff2": "/src/assets/fonts/fontawesome-webfont.woff2",
+    "/src/assets/fonts/FontAwesome.otf": "/src/assets/fonts/FontAwesome.otf"
 }

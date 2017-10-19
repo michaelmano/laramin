@@ -4,6 +4,7 @@ $z-indexes: (
     'modal-content',
     'modal-overlay',
     'tooltip',
+    'masonry',
 );
 
 @function z-index($name) {

@@ -80,7 +80,7 @@
 	
 	&:hover {
 		background-color: color(charlie);
-		transform: scale(1.1);
+		transform: perspective(1px) scale(1.1);
 	}
 	& i {
 		margin: 0 auto;

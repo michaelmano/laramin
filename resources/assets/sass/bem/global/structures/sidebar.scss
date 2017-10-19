@@ -19,6 +19,19 @@
 	}
 }
 
+.Sidebar__container {
+	position: fixed;
+	top: 3.7rem;
+	left: 0;
+	width: 4.375rem;
+	overflow: hidden;
+	@include viewport-min('md') {
+		left: 1.25rem;
+		width: 17.5rem;
+		overflow: visible;
+	}
+}
+
 .Sidebar__footer {
 	
 }
