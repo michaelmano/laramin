@@ -5658,6 +5658,10 @@ select[multiple] {
   border: none;
 }
 
+.Button--text-link:after {
+  display: none;
+}
+
 .Button--text-link:hover,
 .Button--text-link:focus,
 .Button--text-link:active {
@@ -6678,6 +6682,7 @@ a.Link--kilo:active {
 }
 
 .Main--full {
+  margin-top: 0;
   height: 100vh;
   max-height: 100vh;
   -webkit-box-pack: center;

@@ -10,7 +10,7 @@
         @stack('styles')
     </head>
 <body class="Body">
-	<main id="laramin" class="Main Main--full util-background-delta">
+	<main id="laramin" class="Main Main--full util-background-charlie">
         @include('laramin::partials._flash')
 		@yield('login-form')
 	</main>

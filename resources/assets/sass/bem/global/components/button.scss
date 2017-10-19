@@ -25,6 +25,10 @@
     color: color(hotel);
     background-color: transparent;
     border: none;
+
+    &:after {
+        display: none;
+    }
     
     &:hover,
     &:focus,
