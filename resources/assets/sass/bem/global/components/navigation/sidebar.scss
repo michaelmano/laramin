@@ -10,6 +10,7 @@
 
 .Navigation__list-item {
 	@include transition;
+	
 	padding: 0 1.25rem;
 
 	&:hover,
@@ -24,6 +25,7 @@
 }
 
 .Navigation__list-link {
+
 	display: block;
 	text-align: center;
 	padding: 0.5rem 0.625rem;

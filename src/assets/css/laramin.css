@@ -5615,6 +5615,29 @@ select[multiple] {
   border: 1px solid rgba(77, 182, 172, 0.8);
 }
 
+.Button:after,
+.Form__input--file + label:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  border-radius: 100%;
+  -webkit-transform: scale(1) translate(-50%);
+          transform: scale(1) translate(-50%);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.Button:hover:after,
+.Form__input--file + label:hover:after {
+  -webkit-animation: ripple 1s ease-out;
+          animation: ripple 1s ease-out;
+}
+
 .Button:disabled,
 .Form__input--file + label:disabled {
   cursor: normal;
@@ -5626,29 +5649,6 @@ select[multiple] {
   -webkit-transform: none;
           transform: none;
   background-color: #4DB6AC;
-}
-
-.Button:hover:after,
-.Form__input--file + label:hover:after {
-  -webkit-animation: ripple 1s ease-out;
-          animation: ripple 1s ease-out;
-}
-
-.Button:after,
-.Form__input--file + label:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
-  background: rgba(255, 255, 255, 0.3);
-  opacity: 0;
-  border-radius: 100%;
-  -webkit-transform: scale(1) translate(-50%);
-          transform: scale(1) translate(-50%);
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
 }
 
 .Button--text-link {
@@ -5880,7 +5880,29 @@ select[multiple] {
 }
 
 .NavigationToggle {
+  position: relative;
   display: none;
+}
+
+.NavigationToggle:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  border-radius: 100%;
+  -webkit-transform: scale(1) translate(-50%);
+          transform: scale(1) translate(-50%);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.NavigationToggle:focus:not(:active)::after {
+  -webkit-animation: ripple 1s ease-out;
+          animation: ripple 1s ease-out;
 }
 
 @media only screen and (max-width: 768px) {
@@ -6383,6 +6405,7 @@ a.Link--kilo:active {
 .Modal__close {
   -webkit-transition: 250ms ease-in-out all;
   transition: 250ms ease-in-out all;
+  position: relative;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-box-flex: 0;
@@ -6411,6 +6434,27 @@ a.Link--kilo:active {
       -ms-flex-align: center;
           align-items: center;
   padding: 0;
+}
+
+.Modal__close:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  border-radius: 100%;
+  -webkit-transform: scale(1) translate(-50%);
+          transform: scale(1) translate(-50%);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.Modal__close:hover:after {
+  -webkit-animation: ripple 1s ease-out;
+          animation: ripple 1s ease-out;
 }
 
 .Modal__close:hover {
@@ -6596,9 +6640,13 @@ a.Link--kilo:active {
   }
 }
 
+.Sidebar.animated .Sidebar__container {
+  top: 0;
+}
+
 .Sidebar__container {
   position: fixed;
-  top: 3.7rem;
+  top: 2.5rem;
   left: 0;
   width: 4.375rem;
   overflow: hidden;
@@ -6606,6 +6654,7 @@ a.Link--kilo:active {
 
 @media (min-width: 768px) {
   .Sidebar__container {
+    top: 3.7rem;
     left: 1.25rem;
     width: 17.5rem;
     overflow: visible;

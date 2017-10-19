@@ -1,4 +1,39 @@
 // Any global functions or mixins.
+@mixin ripple-click() {
+    @include ripple;
+
+    &:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+    }
+
+}
+
+@mixin ripple-hover() {
+    @include ripple;
+
+    &:hover:after {
+        animation: ripple 1s ease-out;
+    }
+}
+
+@mixin ripple() {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.25rem;
+        height: 0.25rem;
+        background: rgba(255, 255, 255, .3);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1) translate(-50%);
+        transform-origin: 50% 50%;
+    }
+}
+
 @mixin visually-hidden() {
     position: absolute; 
     overflow: hidden; 

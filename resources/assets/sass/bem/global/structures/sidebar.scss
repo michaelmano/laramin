@@ -19,13 +19,18 @@
 	}
 }
 
+.Sidebar.animated .Sidebar__container {
+	top: 0;
+}
+
 .Sidebar__container {
 	position: fixed;
-	top: 3.7rem;
+	top: 2.5rem;
 	left: 0;
 	width: 4.375rem;
 	overflow: hidden;
 	@include viewport-min('md') {
+		top: 3.7rem;
 		left: 1.25rem;
 		width: 17.5rem;
 		overflow: visible;
