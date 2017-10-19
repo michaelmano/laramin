@@ -1,8 +1,8 @@
 .Button {
     @include button-reset;
     @include transition;
-    @include ripple-hover;
-    
+
+    text-decoration: none;
     font-size: 0.875rem;
     display: inline-block;
     padding: 0.25rem 1.25rem;    
@@ -18,6 +18,18 @@
             background-color: color(hotel);
         }
     }
+
+    & + & {
+        margin-left: 0.25rem;
+    }
+}
+
+.Button--ripple-hover {
+    @include ripple-hover;
+}
+
+.Button--ripple-click {
+    @include ripple-click;
 }
 
 .Button--text-link {
@@ -53,4 +65,32 @@
 .Button--delta,
 .Button--foxtrot {
     color: color(charlie);
+}
+
+.Button--round {
+    @include transition;    
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: color(alpha);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    
+    &:hover {
+        transform: perspective(1px) scale(1.05);
+    }
+    & i {
+        margin: 0 auto;
+        display: block;
+    }
 }

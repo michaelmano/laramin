@@ -1,3 +1,7 @@
 .Heading {
 	@include clear-box-model;
 }
+
+.Heading__meta {
+	display: block;
+}

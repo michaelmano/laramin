@@ -1,5 +1,9 @@
 @if ($value && $url)
-	<a @click="showModal('delete-{{ str_slug($value,$url) }}')" class="Link Link--no-underline Link--kilo"><i class="fa fa-trash"></i> Delete</a>
+	@if (isset($delete_text))
+		<a @click="showModal('delete-{{ str_slug($value,$url) }}')" class="Link Link--no-underline Link--kilo"><i class="fa fa-trash"></i> {{ $delete_text }}</a>
+	@else
+		<button @click="showModal('delete-{{ str_slug($value,$url) }}')" class="Button Button--kilo Button--round"><i class="fa fa-trash"></i></button>
+	@endif
 	<laramin-modal ref="delete-{{ str_slug($value,$url) }}" @close="hideModal">
 		<template slot="title">{{ $value }}</template>
 		<template slot="body">
