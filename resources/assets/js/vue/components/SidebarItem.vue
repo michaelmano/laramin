@@ -20,7 +20,7 @@
 		},
 		data() {
 			return {
-				active: window.location.href.replace('http://' + window.location.hostname, '') === this.url
+				active: window.location.pathname === this.url || '/' + window.location.pathname.split( '/' )[1] + '/' + window.location.pathname.split( '/' )[2] === this.url
 			}
 		}
 	}
