@@ -47,6 +47,7 @@
     outline: none;
     border: none;
     background: transparent;
+    border-radius: 0;
 }
 
 @mixin transition($time: 250ms, $ease: ease-in-out, $type: all) {

@@ -24,6 +24,13 @@
     }
 }
 
+a.Button {
+	text-decoration: none;
+	&:hover {
+		color: inherit;
+	}
+}
+
 .Button--ripple-hover {
     @include ripple-hover;
 }
@@ -68,7 +75,7 @@
 }
 
 .Button--round {
-    @include transition;    
+    @include transition; 
     flex-shrink: 0;
     flex-grow: 0;
 
@@ -80,7 +87,7 @@
     width: 1.75rem;
     height: 1.75rem;
     color: color(alpha);
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;

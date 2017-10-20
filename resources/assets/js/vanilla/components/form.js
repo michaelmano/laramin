@@ -1,9 +1,15 @@
 import Q from 'qoob';
+import Quill from 'quill';
 
 const bootstrap = function bootstrap() {
+	const editors = Q.find('.Form__wysiwyg');
 	const inputs = Q.find('.Form__input');
-	if (inputs.legnth < 1) return;
+	queWysiwygs(editors);
+	queInputs(inputs);
+}
 
+const queInputs = function inputs(inputs) {
+	if (inputs.legnth < 1) return;
 	Q.each(inputs, input => {
 		if (Q.hasClass(input, 'Form__input--file')) return fileInput(input);
 		if (Q.hasClass(input, 'Form__input--text')
@@ -14,6 +20,25 @@ const bootstrap = function bootstrap() {
 		|| Q.hasClass(input, 'Form__input--url')
 		|| Q.hasClass(input, 'Form__input--email')
 		|| Q.hasClass(input, 'Form__input--password')) return textInput(input);
+	});
+}
+
+const queWysiwygs = function wysiwygs(editors) {
+	if (editors.length <= 0) return;
+	Q.each(editors, editor => {
+		var quill = new Quill(editor, {
+			theme: 'snow'
+		});
+
+		const input = Q.make('input');
+		const quillValue = Q.head(Q.children(editor, '.ql-editor'));
+		input.name = editor.getAttribute('name');
+		input.type = 'hidden';
+		Q.append(editor, input);
+		
+		Q.on(editor, 'input', event => {
+			input.value = quillValue.innerHTML;
+		});
 	});
 }
 
