@@ -7737,7 +7737,6 @@ a.Link--kilo:active {
   color: #FFFFFF;
   background-color: #37474F;
   line-height: 2.5rem;
-  padding: 0 1.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7801,9 +7800,15 @@ a.Link--kilo:active {
 .Form__input--textarea {
   width: 100%;
   display: block;
-  height: 18.75rem;
+  height: 6.75rem;
   outline: none;
   border: none;
+}
+
+@media (min-width: 768px) {
+  .Form__input--textarea {
+    height: 13.75rem;
+  }
 }
 
 .Form__input-span {

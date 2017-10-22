@@ -13,7 +13,7 @@
                         </button>
                     </header>
                     <div class="Modal__body">
-                        <div class="content">
+                        <div class="Content">
                             <slot name="body"></slot>
                         </div>
                     </div>

@@ -20,7 +20,7 @@
                 <template slot="title">Having an issue?</template>
                 <template slot="body">
                     <p>You can get in contact with {{ Config::get('laramin.project_manager.name') }} via the contact form below or by calling <a href="tel:{{ Config::get('laramin.project_manager.phone') }}">{{ Config::get('laramin.project_manager.phone') }}</a>.</p>
-                    <form v-on:submit.prevent="contactProjectManager" class="Form Box" method="POST" action="{{ route('laramin.contact') }}">
+                    <form v-on:submit.prevent="contactProjectManager" class="Form Box Box--padded" method="POST" action="{{ route('laramin.contact') }}">
                         {{ csrf_field() }}
                         <fieldset class="Form__fieldset">
                             <label class="Form__label" for="message">Message</label>

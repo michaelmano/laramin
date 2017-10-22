@@ -27830,7 +27830,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "Modal__body" }, [
-                  _c("div", { staticClass: "content" }, [_vm._t("body")], 2)
+                  _c("div", { staticClass: "Content" }, [_vm._t("body")], 2)
                 ]),
                 _vm._v(" "),
                 _c("footer", { staticClass: "Modal__footer" }, [
