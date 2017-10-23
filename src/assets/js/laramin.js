@@ -15570,7 +15570,21 @@ var bootstrap = function bootstrap() {
 			handle: ".js-sortable-tile",
 			draggable: ".js-sortable-item",
 			onUpdate: function onUpdate(event) {
-				var item = event.item;
+				var sortableInput = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.children(sortableContainer, '.js-sortable-input');
+				if (sortableInput.length >= 1) {
+					var promises = [];
+					window.laramin.loading = true;
+					__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.each(sortableInput, function (sortableInput, index) {
+						var promise = axios.post(sortableInput.form.action, {
+							_method: 'PATCH',
+							order: index + 1
+						});
+						promises.push(promise);
+					});
+					Promise.all(promises).then(function () {
+						window.laramin.loading = false;
+					});
+				}
 			}
 		});
 	});

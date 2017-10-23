@@ -9,10 +9,24 @@ const bootstrap = function bootstrap() {
 			animation: 250,
 			handle: ".js-sortable-tile",
 			draggable: ".js-sortable-item",
-			onUpdate: function (event){
-			   var item = event.item;
+			onUpdate: function (event) {
+				const sortableInput = Q.children(sortableContainer, '.js-sortable-input');
+				if (sortableInput.length >= 1) {
+					let promises = [];
+					window.laramin.loading = true;
+					Q.each(sortableInput, (sortableInput, index) => {
+						let promise = axios.post(sortableInput.form.action, {
+							_method: 'PATCH',
+							order: index+1
+						});
+						promises.push(promise);
+					});
+					Promise.all(promises).then(() => {
+						window.laramin.loading = false;
+					});
+				}
 			}
-		  });
+		});
 	});
 }
 
