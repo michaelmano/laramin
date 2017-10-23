@@ -18,13 +18,16 @@
     "animate.css": "^3.5.2",
     "axios": "^0.16.2",
     "buzuki": "^1.0.1",
+    "cross-env": "^5.1.0",
     "font-awesome": "^4.7.0",
     "laravel-mix": "^1.0",
     "qoob": "^4.5.1",
     "quill": "^1.3.3",
-    "tooltip.js": "^1.1.5",
-    "cross-env": "^5.1.0",
     "sortablejs": "^1.6.1",
+    "tooltip.js": "^1.1.5",
     "vue": "^2.1.10"
+  },
+  "dependencies": {
+    "cropperjs": "^1.1.3"
   }
 }
