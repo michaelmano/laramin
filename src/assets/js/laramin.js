@@ -2208,6 +2208,8 @@ var queWysiwygs = function wysiwygs(editors) {
 		var quillValue = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.head(__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.children(editor, '.ql-editor'));
 		input.name = editor.getAttribute('name');
 		input.type = 'hidden';
+		input.value = quillValue.innerHTML;
+
 		__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.append(editor, input);
 
 		__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.on(editor, 'input', function (event) {

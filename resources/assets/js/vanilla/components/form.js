@@ -34,6 +34,8 @@ const queWysiwygs = function wysiwygs(editors) {
 		const quillValue = Q.head(Q.children(editor, '.ql-editor'));
 		input.name = editor.getAttribute('name');
 		input.type = 'hidden';
+		input.value = quillValue.innerHTML;
+		
 		Q.append(editor, input);
 		
 		Q.on(editor, 'input', event => {
