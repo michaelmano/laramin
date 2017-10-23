@@ -28068,6 +28068,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -28138,15 +28139,14 @@ var render = function() {
         [
           _c("div", { staticClass: "Sidebar__container" }, [
             _c("section", { staticClass: "Avatar" }, [
-              _c("img", {
-                staticClass: "Avatar__image",
-                attrs: {
-                  src: _vm.user.avatar
-                    ? _vm.user.avatar
-                    : "http://via.placeholder.com/80x80?text=No%20Avatar",
-                  alt: _vm.user.name
-                }
-              }),
+              _vm.user.avatar
+                ? _c("img", {
+                    staticClass: "Avatar__image",
+                    attrs: { src: _vm.user.avatar, alt: _vm.user.name }
+                  })
+                : _c("i", {
+                    staticClass: "Avatar__image fa fa-4x fa-user-circle-o"
+                  }),
               _vm._v(" "),
               _c(
                 "div",
