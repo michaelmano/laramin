@@ -17116,7 +17116,6 @@ var bootstrap = function bootstrap() {
 
 	__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.each(croppers, function (crops) {
 		var attributes = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.head(__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.data(crops, 'cropper'));
-
 		if (attributes) {
 			var image = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.head(__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.children(crops, 'img'));
 			var upload = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.head(__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.children(crops, '.js-crop-upload'));
@@ -17136,8 +17135,9 @@ var bootstrap = function bootstrap() {
 				input.value = JSON.stringify(cropper.getData());
 			};
 
-			var enableCropper = function enableCropper() {
+			var enableCropper = function enableCropper(src) {
 				enabled = true;
+				image.src = src;
 
 				cropper = new __WEBPACK_IMPORTED_MODULE_1_cropperjs___default.a(image, {
 					aspectRatio: 12 / 5,
@@ -17176,8 +17176,6 @@ var bootstrap = function bootstrap() {
 			};
 
 			var render = function render(input) {
-				console.log(input);
-
 				if (input.files && input.files[0]) {
 					var reader = new FileReader();
 					reader.onload = function (event) {
@@ -17186,11 +17184,14 @@ var bootstrap = function bootstrap() {
 						image.src = event.target.result;
 						image.onload = function () {
 							if (image.width < MIN_WIDTH || image.height < MIN_HEIGHT) {
+								var message = 'Error, File needs to be above ' + MIN_WIDTH + 'x' + MIN_HEIGHT;
 								file_input.value = '';
-								// error here. clear inputs so on.
+
+								upload.nextElementSibling.querySelector('span').innerHTML = message;
+								laramin.messages.push({ type: 'error', message: message });
 							} else {
 								if (!enabled) {
-									enableCropper();
+									enableCropper(image.src);
 								}
 								cropper.replace(image.src);
 							}

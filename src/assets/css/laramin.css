@@ -6598,9 +6598,9 @@ img {
   font-size: 0.875rem;
   display: inline-block;
   padding: 0.25rem 1.25rem;
-  background-color: #4DB6AC;
+  background-color: #00BF9A;
   color: #FFFFFF;
-  border: 1px solid rgba(77, 182, 172, 0.8);
+  border: 1px solid rgba(0, 191, 154, 0.8);
 }
 
 .Button:disabled,
@@ -6613,7 +6613,7 @@ img {
 .Form__input--file + label:disabled:hover {
   -webkit-transform: none;
           transform: none;
-  background-color: #4DB6AC;
+  background-color: #00BF9A;
 }
 
 .Button + .Button,
@@ -6683,7 +6683,7 @@ a.Button:hover {
 
 .Button--text-link {
   padding: 0;
-  color: #4DB6AC;
+  color: #00BF9A;
   background-color: transparent;
   border: none;
 }

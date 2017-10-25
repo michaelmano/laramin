@@ -7,7 +7,6 @@ const bootstrap = function bootstrap() {
 
 	Q.each(croppers, crops => {
 		const attributes = Q.head(Q.data(crops, 'cropper'));
-		
 		if (attributes) {
 			const image = Q.head(Q.children(crops, 'img'));
 			const upload = Q.head(Q.children(crops, '.js-crop-upload'));
@@ -27,9 +26,10 @@ const bootstrap = function bootstrap() {
 				input.value = JSON.stringify(cropper.getData());
 			}
 			
-			const enableCropper = function enableCropper() {
+			const enableCropper = function enableCropper(src) {
 				enabled = true;
-
+				image.src = src;
+				
 				cropper = new Cropper(image, {
 					aspectRatio: 12 / 5,
 					width: image.width, // resize the cropped area
@@ -67,8 +67,6 @@ const bootstrap = function bootstrap() {
 			}
 
 			const render = function render(input) {
-				console.log(input);
-
 				if (input.files && input.files[0]) {
 					var reader = new FileReader();
 					reader.onload = function(event) {
@@ -77,11 +75,14 @@ const bootstrap = function bootstrap() {
 						image.src = event.target.result;
 						image.onload = function() {
 							if (image.width < MIN_WIDTH || image.height < MIN_HEIGHT) {
+								const message = 'Error, File needs to be above ' + MIN_WIDTH + 'x' + MIN_HEIGHT;
 								file_input.value = '';
-								// error here. clear inputs so on.
+
+								upload.nextElementSibling.querySelector('span').innerHTML = message;
+								laramin.messages.push({type: 'error', message});
 							} else {
 								if (!enabled) {
-									enableCropper()
+									enableCropper(image.src)
 								}
 								cropper.replace(image.src);
 							}
