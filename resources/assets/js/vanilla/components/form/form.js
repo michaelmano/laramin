@@ -1,10 +1,7 @@
 import Q from 'qoob';
-import Quill from 'quill';
 
 const bootstrap = function bootstrap() {
-	const editors = Q.find('.Form__wysiwyg');
 	const inputs = Q.find('.Form__input');
-	queWysiwygs(editors);
 	queInputs(inputs);
 }
 
@@ -20,27 +17,6 @@ const queInputs = function inputs(inputs) {
 		|| Q.hasClass(input, 'Form__input--url')
 		|| Q.hasClass(input, 'Form__input--email')
 		|| Q.hasClass(input, 'Form__input--password')) return textInput(input);
-	});
-}
-
-const queWysiwygs = function wysiwygs(editors) {
-	if (editors.length <= 0) return;
-	Q.each(editors, editor => {
-		var quill = new Quill(editor, {
-			theme: 'snow'
-		});
-
-		const input = Q.make('input');
-		const quillValue = Q.head(Q.children(editor, '.ql-editor'));
-		input.name = editor.getAttribute('name');
-		input.type = 'hidden';
-		input.value = quillValue.innerHTML;
-		
-		Q.append(editor, input);
-		
-		Q.on(editor, 'input', event => {
-			input.value = quillValue.innerHTML;
-		});
 	});
 }
 
