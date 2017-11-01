@@ -23223,20 +23223,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			tabs: [],
-			activeTab: false
+			activeTab: null
 		};
 	},
 	mounted: function mounted() {
-		var _this = this;
-
 		this.tabs = this.$children;
 		if (window.location.hash) {
-			this.tabs.forEach(function (tab) {
-				if (tab.$refs[window.location.hash]) {
-					tab.isActive = _this.activeTab = true;
-				}
-			});
-			if (this.activeTab === false) this.tabs[0].isActive = true;
+			this.activeTab = this.tabs.filter(function (tab) {
+				return tab.$refs[window.location.hash];
+			})[0];
+			if (this.activeTab) {
+				this.activeTab.isActive = true;
+			} else {
+				this.tabs[0].isActive = true;
+			}
 		} else {
 			this.tabs[0].isActive = true;
 		}
