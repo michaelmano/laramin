@@ -23235,10 +23235,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			if (window.location.hash) {
 				var refs = this.tabs.filter(function (tab) {
 					return tab.$refs[window.location.hash];
-				});
-				if (refs.length >= 1) {
-					return refs[0].isActive = true;
-				}
+				})[0];
+				if (refs) return refs.isActive = true;
 			}
 			return this.tabs[0].isActive = true;
 		},

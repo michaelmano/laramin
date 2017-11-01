@@ -25,10 +25,8 @@
 		methods: {
 			mountTab() {
 				if (window.location.hash) {
-					const refs = this.tabs.filter(tab => tab.$refs[window.location.hash]);
-					if (refs.length >= 1) {
-						return refs[0].isActive = true;
-					}
+					const refs = this.tabs.filter(tab => tab.$refs[window.location.hash])[0];
+					if (refs) return refs.isActive = true;
 				}
 				return this.tabs[0].isActive = true;
 			},
