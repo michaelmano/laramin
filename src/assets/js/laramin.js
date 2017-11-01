@@ -2268,7 +2268,10 @@ var bootstrap = function bootstrap() {
 	var editors = __WEBPACK_IMPORTED_MODULE_0_qoob___default.a.find('.Form__wysiwyg');
 	if (editors.length <= 0) return;
 	__WEBPACK_IMPORTED_MODULE_0_qoob___default.a.each(editors, function (editorContainer) {
-		__WEBPACK_IMPORTED_MODULE_1__ckeditor_ckeditor5_build_classic___default.a.create(editorContainer).then(function (editor) {
+		editorContainer.height = 500;
+		__WEBPACK_IMPORTED_MODULE_1__ckeditor_ckeditor5_build_classic___default.a.create(editorContainer, {
+			height: '600px'
+		}).then(function (editor) {
 			console.log(editor);
 		}).catch(function (error) {
 			console.error(error);
@@ -7640,6 +7643,8 @@ var module = function module() {
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tooltip', __webpack_require__(66));
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-flash', __webpack_require__(71));
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tags-input', __webpack_require__(74));
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tabs', __webpack_require__(84));
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tab', __webpack_require__(87));
 
     window.laramin = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         el: '#laramin',
@@ -23151,6 +23156,293 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(85)
+/* template */
+var __vue_template__ = __webpack_require__(86)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/vue/components/Tabs.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4231d30b", Component.options)
+  } else {
+    hotAPI.reload("data-v-4231d30b", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			tabs: []
+		};
+	},
+	mounted: function mounted() {
+		this.tabs = this.$children;
+		if (window.location.hash) {
+			this.tabs.forEach(function (tab) {
+				if (tab.$refs[window.location.hash]) tab.isActive = true;
+			});
+		} else {
+			this.tabs[0].isActive = true;
+		}
+	},
+
+	methods: {
+		selectTab: function selectTab(hash) {
+			this.tabs.forEach(function (tab) {
+				if (tab.hash === hash) {
+					tab.isActive = true;
+				} else {
+					tab.isActive = false;
+				}
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "Tabs" }, [
+    _c(
+      "ul",
+      { staticClass: "Tabs__list", attrs: { role: "tablist" } },
+      _vm._l(_vm.tabs, function(tab) {
+        return _c(
+          "li",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: tab.isVisible,
+                expression: "tab.isVisible"
+              }
+            ],
+            staticClass: "Tabs__list-item",
+            attrs: { role: "presentation" }
+          },
+          [
+            _c("a", {
+              class: ["Tabs__list-link", tab.isActive ? "is-active" : ""],
+              attrs: {
+                "aria-controls": tab.hash,
+                "aria-selected": tab.isActive,
+                href: tab.hash,
+                role: "tab"
+              },
+              domProps: { innerHTML: _vm._s(tab.header) },
+              on: {
+                click: function($event) {
+                  _vm.selectTab(tab.hash, $event)
+                }
+              }
+            })
+          ]
+        )
+      })
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "Tabs__panels" }, [_vm._t("default")], 2)
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4231d30b", module.exports)
+  }
+}
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(88)
+/* template */
+var __vue_template__ = __webpack_require__(89)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/vue/components/Tab.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5f101dd0", Component.options)
+  } else {
+    hotAPI.reload("data-v-5f101dd0", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        id: { default: null },
+        name: { required: true },
+        prefix: { default: '' },
+        suffix: { default: '' }
+    },
+    data: function data() {
+        return {
+            isActive: false,
+            isVisible: true
+        };
+    },
+    computed: {
+        header: function header() {
+            return this.prefix + this.name + this.suffix;
+        },
+        hash: function hash() {
+            return this.id ? '#' + this.id : '#' + this.name.toLowerCase().replace(/ /g, '-');
+        }
+    }
+});
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "section",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.isActive,
+          expression: "isActive"
+        }
+      ],
+      ref: _vm.hash,
+      staticClass: "Tabs__panel",
+      attrs: { "aria-hidden": !_vm.isActive, id: _vm.hash, role: "tabpanel" }
+    },
+    [_c("div", { staticClass: "Box Box--padded" }, [_vm._t("default")], 2)]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5f101dd0", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

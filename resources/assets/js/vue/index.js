@@ -12,6 +12,8 @@ const module = function module() {
     Vue.component('laramin-tooltip', require('./components/Tooltip.vue'));
     Vue.component('laramin-flash', require('./components/Flash.vue'));
     Vue.component('laramin-tags-input', require('./components/TagsInput.vue'));
+    Vue.component('laramin-tabs', require('./components/Tabs.vue'));
+    Vue.component('laramin-tab', require('./components/Tab.vue'));
   
     window.laramin = new Vue({
         el: '#laramin',

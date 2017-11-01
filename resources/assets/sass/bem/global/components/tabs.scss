@@ -1,0 +1,49 @@
+.Tabs {
+}
+
+.Tabs__list {
+	@include clear-box-model;
+	@include box-shadow;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	align-items: space-between;
+	background-color: color(hotel);
+}
+
+.Tabs__list-item {
+	@include clear-box-model;
+	display: inline-block;
+}
+
+.Tabs__list-item .Tabs__list-link {
+	display: block;
+	position: relative;
+	width: 100%;
+	color: color(alpha);
+	text-decoration: none;
+	padding: 1.25rem;
+
+	&:before {
+		@include pseudo;
+		border-bottom: 5px solid transparent;
+		left: 50%;
+		right: 50%;
+		width: 0;
+		bottom: 0;
+	}
+
+	&:hover,
+	&:active,
+	&:focus,
+	&.is-active {
+		color: color(alpha);
+		&:before {
+			transition: left ease-in-out 250ms, width ease-in-out 250ms;
+			width: 100%;
+			left: 0;
+			right: 0;
+			border-bottom: 5px solid color(alpha);
+		}
+	}
+}

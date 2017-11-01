@@ -6,16 +6,16 @@
     font-size: 0.875rem;
     display: inline-block;
     padding: 0.25rem 1.25rem;    
-    background-color: color(golf);
+    background-color: color(hotel);
     color: color(alpha);
-    border: 1px solid rgba(color(golf), 0.8);
+    border: 1px solid rgba(color(hotel), 0.8);
 
     &:disabled {
         cursor: normal;
         opacity: 0.6;
         &:hover {
             transform: none;
-            background-color: color(golf);
+            background-color: color(hotel);
         }
     }
 
