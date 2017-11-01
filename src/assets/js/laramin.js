@@ -1242,7 +1242,7 @@ var Form = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(77);
+module.exports = __webpack_require__(83);
 
 
 /***/ }),
@@ -7643,8 +7643,8 @@ var module = function module() {
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tooltip', __webpack_require__(66));
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-flash', __webpack_require__(71));
     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tags-input', __webpack_require__(74));
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tabs', __webpack_require__(84));
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tab', __webpack_require__(87));
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tabs', __webpack_require__(77));
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('laramin-tab', __webpack_require__(80));
 
     window.laramin = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         el: '#laramin',
@@ -23153,26 +23153,14 @@ if (false) {
 
 /***/ }),
 /* 77 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(85)
+var __vue_script__ = __webpack_require__(78)
 /* template */
-var __vue_template__ = __webpack_require__(86)
+var __vue_template__ = __webpack_require__(79)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -23212,7 +23200,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 85 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23234,15 +23222,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
-			tabs: []
+			tabs: [],
+			activeTab: false
 		};
 	},
 	mounted: function mounted() {
+		var _this = this;
+
 		this.tabs = this.$children;
 		if (window.location.hash) {
 			this.tabs.forEach(function (tab) {
-				if (tab.$refs[window.location.hash]) tab.isActive = true;
+				if (tab.$refs[window.location.hash]) {
+					tab.isActive = _this.activeTab = true;
+				}
 			});
+			if (this.activeTab === false) this.tabs[0].isActive = true;
 		} else {
 			this.tabs[0].isActive = true;
 		}
@@ -23262,7 +23256,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 86 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -23323,15 +23317,15 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(88)
+var __vue_script__ = __webpack_require__(81)
 /* template */
-var __vue_template__ = __webpack_require__(89)
+var __vue_template__ = __webpack_require__(82)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -23371,7 +23365,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 88 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23409,7 +23403,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 89 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -23443,6 +23437,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-5f101dd0", module.exports)
   }
 }
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
