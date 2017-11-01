@@ -23222,27 +23222,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
-			tabs: [],
-			activeTab: null
+			tabs: []
 		};
 	},
 	mounted: function mounted() {
 		this.tabs = this.$children;
-		if (window.location.hash) {
-			this.activeTab = this.tabs.filter(function (tab) {
-				return tab.$refs[window.location.hash];
-			})[0];
-			if (this.activeTab) {
-				this.activeTab.isActive = true;
-			} else {
-				this.tabs[0].isActive = true;
-			}
-		} else {
-			this.tabs[0].isActive = true;
-		}
+		this.mountTab();
 	},
 
 	methods: {
+		mountTab: function mountTab() {
+			if (window.location.hash) {
+				var refs = this.tabs.filter(function (tab) {
+					return tab.$refs[window.location.hash];
+				});
+				if (refs.length >= 1) {
+					return refs[0].isActive = true;
+				}
+			}
+			return this.tabs[0].isActive = true;
+		},
 		selectTab: function selectTab(hash) {
 			this.tabs.forEach(function (tab) {
 				if (tab.hash === hash) {

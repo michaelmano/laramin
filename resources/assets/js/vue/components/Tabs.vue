@@ -16,23 +16,22 @@
 		data() {
 			return {
 				tabs: [],
-				activeTab: null
 			}
 		},
 		mounted() {
 			this.tabs = this.$children;
-			if (window.location.hash) {
-				this.activeTab = this.tabs.filter(tab => tab.$refs[window.location.hash])[0];
-				if (this.activeTab) {
-					this.activeTab.isActive = true;
-				} else {
-					this.tabs[0].isActive = true;
-				}
-			} else {
-				this.tabs[0].isActive = true;
-			}
+			this.mountTab();
 		},
 		methods: {
+			mountTab() {
+				if (window.location.hash) {
+					const refs = this.tabs.filter(tab => tab.$refs[window.location.hash]);
+					if (refs.length >= 1) {
+						return refs[0].isActive = true;
+					}
+				}
+				return this.tabs[0].isActive = true;
+			},
 			selectTab(hash) {
 				this.tabs.forEach(tab => {
 					if (tab.hash === hash) {
