@@ -2,11 +2,11 @@
 	position: relative;
 	column-count: 1;
 	z-index: z-index(masonry);	
-	@include viewport-min('lg') {
+	@media only screen and (min-width: 768px) {
 		column-count: 2;
 	}
 
-	@include viewport-min('xl') {
+	@media only screen and (min-width: 1460px) {
 		column-count: 3;
 	}
 }

@@ -5902,7 +5902,7 @@ a.Button:hover {
 }
 
 .Card__footer > div {
-  padding: 0;
+  padding: 0.25rem;
 }
 
 .Flash {
@@ -6631,14 +6631,14 @@ a.Link--kilo:active {
   z-index: 1;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .Masonry {
     -webkit-column-count: 2;
             column-count: 2;
   }
 }
 
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1460px) {
   .Masonry {
     -webkit-column-count: 3;
             column-count: 3;
