@@ -8,10 +8,6 @@ const bootstrap = function bootstrap() {
 		editorContainer.height = 500;
 		ClassicEditor.create(editorContainer, {
 			height: '600px'
-		}).then(editor => {
-			console.log(editor);
-		}).catch(error => {
-			console.error(error);
 		});
 	});
 }

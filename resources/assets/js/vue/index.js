@@ -14,6 +14,7 @@ const module = function module() {
     Vue.component('laramin-tags-input', require('./components/TagsInput.vue'));
     Vue.component('laramin-tabs', require('./components/Tabs.vue'));
     Vue.component('laramin-tab', require('./components/Tab.vue'));
+    Vue.component('laramin-crop', require('./components/Cropper.vue'));
   
     window.laramin = new Vue({
         el: '#laramin',
