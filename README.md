@@ -12,6 +12,8 @@ I created Laramin to get your laravel project up and running without spending to
 	* [Login Form](#login-form)
 - [Elements and Layouts](#elements-and-layouts)
 	* [Default Blade](#default-blade)
+	* [Grid System](#grid-system)
+	* [Forms](#forms)
 - [Vue Components](#vue-components)
 	* [Image Cropper](#image-cropper)
 	* [Flash Messages](#flash-messages)
@@ -35,6 +37,8 @@ Once you have a Laravel project up and running you can install laramin with comp
 and then publish the assets with
 
 `php artisan vendor:publish --provider Michaelmano\Laramin`
+
+I highly suggest not editing the files under `public/michaelmano/laramin` as Laramin is still in beta and there will be many updates.
 
 ### Routes
 As Laramin is an admin panel I will start with `php artisan make:auth` and then edit my route service provider `app/Providers/RouteServiceProvider.php` and adding the below inside of mapWebRoutes.
@@ -112,17 +116,110 @@ Now overwrite the login page under `resources/views/auth/login.blade.php` with t
 ```
 @extends('laramin::layouts.standard')
 @push('styles')
-	Any style sheets or even inline styles you wish to push
+	You can push any overrides or additional styles here.
 @endpush
 @section('standard-content')
 	Content here
 @endsection
 @push('scripts')
-	any scripts you wish to inline or call.
+	You can push any javascript here.
 @endpush
 ```
 This is the blade i use for everything.
 
+### Grid System
+Laramin uses [Buzuki](https://buzuki.pixls.com.au/) a mobile-first, responsive BEM flavoured flexbox css grid system.
+
+### Forms
+```
+<form enctype="multipart/form-data" class="Form" method="POST" action="{{ route('login') }}">
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="fullName">Text</label>
+		<input class="Form__input Form__input--text" name="fullName" id="fullName" type="text" required>
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="phone">Phone</label>
+		<input class="Form__input Form__input--tel" name="phone" id="phone" type="tel" required>
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="comment">Textarea</label>
+		<textarea class="Form__input Form__input--textarea"></textarea>
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="date">Date</label>
+		<input class="Form__input Form__input--date" type="date">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="checkbox">Checkbox
+			<input class="Form__input Form__input--checkbox" name="checkbox" id="checkbox" type="checkbox">
+		</label>
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="radio">Radio
+			<input class="Form__input Form__input--radio" name="radio" id="radio" type="radio">
+		</label>
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="email">Email</label>
+		<input class="Form__input Form__input--email" name="email" id="email" type="email">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<input type="file" name="file[]" id="file" class="Form__input Form__input--file" data-multiple-caption="{count} files selected" multiple />
+		<label for="file"><i class="fa fa-upload"></i> <span>Choose a file&hellip;</span></label>
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="month">Month</label>
+		<input class="Form__input Form__input--month" name="month" id="month" type="month">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="number">Number</label>
+		<input class="Form__input Form__input--number" name="number" id="number" type="number">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="password">Password</label>
+		<input class="Form__input Form__input--password" name="password" id="password" type="password">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="range">Range</label>
+		<input class="Form__input Form__input--range" name="range" id="range" type="range">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="search">Search</label>
+		<input class="Form__input Form__input--search" name="search" id="search" type="search">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="time">Time</label>
+		<input class="Form__input Form__input--time" name="time" id="time" type="time">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="url">Url</label>
+		<input class="Form__input Form__input--url" name="url" id="url" type="url">
+	</fieldset>
+	
+	<fieldset class="Form__fieldset">
+		<label class="Form__label" for="week">Week</label>
+		<input class="Form__input Form__input--week" name="week" id="week" type="week">
+	</fieldset>
+
+	<fieldset class="Form__fieldset">
+		<button class="Button" type="submit">Submit</button>
+	</fieldset>
+</form>
+```
 ## Vue Components
 
 ### Image Cropper
