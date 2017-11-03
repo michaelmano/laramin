@@ -10,5 +10,8 @@
         }
     ],
     "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {"Michaelmano\\Laramin": "src"}
+    },
     "require": {}
 }
