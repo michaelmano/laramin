@@ -8,7 +8,7 @@
 		<div class="Row">
 			<div class="Cell Cell--12/12@xs Cell--6/12@xl">
 				<div class="Cell Cell--12/12@xs">
-					<div class="Box Box--padded">
+					<div class="Box Box--padded">			
 						<h4 class="Heading Heading--no-mt util-breakaway-bottom-2">Form Examples</h4>
 						<laramin-tabs>
 							<laramin-tab name="Forms Example">
@@ -279,10 +279,10 @@
 						<h4 class="Heading Heading--no-mt util-breakaway-bottom-2">Image Cropper</h4>
 						<laramin-tabs>
 							<laramin-tab name="Example">
-								<laramin-crop image="http://via.placeholder.com/1920x800" min-width="1920" min-height="800" name="image"></laramin-crop>
+								<laramin-crop image="http://via.placeholder.com/1920x800" :min-width="1920" :min-height="800" name="image"></laramin-crop>
 							</laramin-tab>
 							<laramin-tab name="Image Cropper Code">
-								<pre class="Pre">&lt;laramin-crop image=&quot;http://via.placeholder.com/1920x800&quot; min-width=&quot;1920&quot; min-height=&quot;800&quot; name=&quot;image&quot;&gt;&lt;/laramin-crop&gt;</pre>
+								<pre class="Pre">&lt;laramin-crop image=&quot;http://via.placeholder.com/1920x800&quot; :min-width=&quot;1920&quot; :min-height=&quot;800&quot; name=&quot;image&quot;&gt;&lt;/laramin-crop&gt;</pre>
 							</laramin-tab>
 						</laramin-tabs>
 					</div>

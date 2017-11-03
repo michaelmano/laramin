@@ -16,7 +16,8 @@
         @yield('base-header')
         <main class="Main">
             @yield('base-content')
-            <laramin-modal ref="bcm-ticket" @close="hideModal" :animation-in="'flipInX'" :animation-out="'flipOutX'">
+            @if (Config::get('laramin.project_manager.name'))
+            <laramin-modal ref="help-ticket" @close="hideModal" :animation-in="'flipInX'" :animation-out="'flipOutX'">
                 <template slot="title">Having an issue?</template>
                 <template slot="body">
                     <p>You can get in contact with {{ Config::get('laramin.project_manager.name') }} via the contact form below or by calling <a href="tel:{{ Config::get('laramin.project_manager.phone') }}">{{ Config::get('laramin.project_manager.phone') }}</a>.</p>
@@ -33,6 +34,7 @@
                 </template>
                 <p slot="footer">We will get back to you as soon as possible.</p>
             </laramin-modal>
+            @endif
         </main>
     </div>
 </body>

@@ -3,7 +3,7 @@
 return [
     'project_manager' => [
         'name' => 'John Smith',
-        'email' => 'mmano@bcm.com.au',
+        'email' => 'jsmith@example.com',
         'phone' => '555 55 555',
         'contact_finalised_message' => 'Thank you for contacting us, we will get back to you as soon as possible.',
     ],
