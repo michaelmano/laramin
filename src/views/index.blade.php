@@ -237,8 +237,8 @@
 							<h4 class="Heading Heading--no-mt util-breakaway-bottom-2">Tag Input</h4>
 							<laramin-tabs>
 								<laramin-tab name="Tags Input Example">
-									<p>If you also pass a :name prop to the component e.g. :name="tags[]" it will create hidden inputs and set the values to the tags.</p>
-									<laramin-tags-input :autocomplete="['Suggestion 1',' Suggestion 2', 'Suggestion 3']" :tags="['tag1', 'tag2', 'tag3']"></laramin-tags-input>
+									<p>If you also pass a name prop to the component e.g. name="tags[]" it will create hidden inputs and set the values to the tags.</p>
+									<laramin-tags-input name="tags[]" :autocomplete="['Suggestion 1',' Suggestion 2', 'Suggestion 3']" :tags="['tag1', 'tag2', 'tag3']"></laramin-tags-input>
 								</laramin-tab>
 								<laramin-tab name="Tags Input Code">
 									<pre class="Pre">&lt;laramin-tags-input :autocomplete=&quot;['Suggestion 1',' Suggestion 2', 'Suggestion 3']&quot; :tags=&quot;['tag1', 'tag2', 'tag3']&quot;&gt;&lt;/laramin-tags-input&gt;</pre>
@@ -279,10 +279,10 @@
 						<h4 class="Heading Heading--no-mt util-breakaway-bottom-2">Image Cropper</h4>
 						<laramin-tabs>
 							<laramin-tab name="Example">
-								<laramin-crop :image="'http://via.placeholder.com/1920x800'" :min-width="1920" :min-height="800" :name="'image'"></laramin-crop>
+								<laramin-crop image="http://via.placeholder.com/1920x800" min-width="1920" min-height="800" name="image"></laramin-crop>
 							</laramin-tab>
 							<laramin-tab name="Image Cropper Code">
-								<pre class="Pre">&lt;laramin-crop :image=&quot;'http://via.placeholder.com/1920x800'&quot; :min-width=&quot;1920&quot; :min-height=&quot;800&quot; :name=&quot;'image'&quot;&gt;&lt;/laramin-crop&gt;</pre>
+								<pre class="Pre">&lt;laramin-crop image=&quot;http://via.placeholder.com/1920x800&quot; min-width=&quot;1920&quot; min-height=&quot;800&quot; name=&quot;image&quot;&gt;&lt;/laramin-crop&gt;</pre>
 							</laramin-tab>
 						</laramin-tabs>
 					</div>
