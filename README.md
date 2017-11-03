@@ -8,7 +8,8 @@ I created Laramin to get your laravel project up and running without spending to
 
 ## Table of Contents
 - [Installing](#installing)
-	* [Setting up](#setting-up)
+	* [Routes](#routes)
+	* [Login Form](#login-form)
 - [Elements and Layouts](#elements-and-layouts)
 	* [Default Blade](#default-blade)
 - [Vue Components](#vue-components)
@@ -31,8 +32,12 @@ Once you have a Laravel project up and running you can install laramin with comp
 
 `Michaelmano\Laramin\LaraminServiceProvider::class,`
 
-### Setting up
-I normally start by editing my route service provider `app/Providers/RouteServiceProvider.php` and adding the below inside of mapWebRoutes.
+and then publish the assets with
+
+`php artisan vendor:publish --provider Michaelmano\Laramin`
+
+### Routes
+As Laramin is an admin panel I will start with `php artisan make:auth` and then edit my route service provider `app/Providers/RouteServiceProvider.php` and adding the below inside of mapWebRoutes.
 ```
 protected function mapWebRoutes()
 {
@@ -61,8 +66,22 @@ Route::group([
     Route::resource('/faqs', 'FaqController');
 });
 ```
+To stop user registration I will edit `app/Http/Controllers/Auth/RegisterController.php` and add a new public function to the bottom called forbidden
+```
+public function forbidden()
+{
+	abort(403);
+}
+```
+Then edit `web/routes.php` file and add
+```
+Route::get('register', 'Auth\RegisterController@forbidden');
+```
+However if your project uses registration you can set up your own middleware to handle the dashboard.
+I will also search for `protected $redirectTo = '/home';` in the project and replace it wil `protected $redirectTo = '/dashboard';`
 
-Now to start using laramin I will use the command `php artisan make:auth` to get Laravels authentication scaffolding up and running and then overwrite the login page under `resources/views/auth/login.blade.php` with the following.
+### Login Form
+Now overwrite the login page under `resources/views/auth/login.blade.php` with the following.
 ```
 @extends('laramin::layouts.login')
 
@@ -86,19 +105,6 @@ Now to start using laramin I will use the command `php artisan make:auth` to get
 	</form>
 @endsection
 ```
-I will now edit `app/Http/Controllers/Auth/RegisterController.php` and add a new public function to the bottom called forbidden
-```
-public function forbidden()
-{
-	abort(403);
-}
-```
-and then edit `web/routes.php` and add 
-```
-Route::get('register', 'Auth\RegisterController@forbidden');
-```
-To stop user registration however if your project uses registration you can set up your own middleware to handle the dashboard.
-I will also search for `protected $redirectTo = '/home';` in the project and replace it wil `protected $redirectTo = '/dashboard';`
 
 ## Elements and Layouts
 
