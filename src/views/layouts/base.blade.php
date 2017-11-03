@@ -39,6 +39,7 @@
     </div>
 </body>
 
+<script src="{{ asset('michaelmano/laramin/js/ckeditor.js') }}"></script>
 <script src="{{ asset('michaelmano/laramin/js/laramin.js') }}"></script>
 @stack('scripts')
 </html>

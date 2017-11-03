@@ -1,5 +1,4 @@
 import Q from 'qoob';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const bootstrap = function bootstrap() {
 	const editors = Q.find('.Form__wysiwyg');
