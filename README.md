@@ -36,7 +36,7 @@ Once you have a Laravel project up and running you can install laramin with comp
 
 and then publish the assets with
 
-`php artisan vendor:publish --provider Michaelmano\Laramin`
+`php artisan vendor:publish --provider="Michaelmano\Laramin\LaraminServiceProvider"`
 
 I highly suggest not editing the files under `public/michaelmano/laramin` as Laramin is still in beta and there will be many updates.
 
