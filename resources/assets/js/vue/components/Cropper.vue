@@ -2,10 +2,11 @@
 	<section>
 		<div class="util-breakaway-bottom-2">
 			<img ref="image" :src="image">
+			<laramin-simple-loader :loading="!loaded"></laramin-simple-loader>
 		</div>
 		<input type="hidden" :name="name + '_dimentions'" :value="dimentions">
 		<input :name="name" ref="file" type="file" accept="image/*" class="Form__input Form__input--file" data-multiple-caption="{count} files selected"/>
-		<label @click="$refs['file'].click()" :for="name"><i class="fa fa-upload"></i> <span v-text="label">&hellip;</span></label>
+		<label @click="$refs['file'].click()" :for="name"><i class="fa fa-upload"></i> <span v-text="labelText"></span></label>
 	</section>
 </template>
 
@@ -36,9 +37,11 @@
 		data() {
 			return {
 				enabled: false,
+				labelText: this.label,
 				cropper: '',
 				dimentions: '',
 				fileInput: '',
+				loaded: false,
 			}
 		},
 		mounted() {
@@ -46,9 +49,12 @@
 				event.preventDefault();
 				this.render(event.target);
 			}.bind(this));
+
+			this.$refs['image'].onload = function () {
+				this.loaded = true;
+			}.bind(this);
 		},
 		methods: {
-			
 			updateDimentions() {
 				this.dimentions = JSON.stringify(this.cropper.getData());
 			},
@@ -104,7 +110,7 @@
 								const message = 'Error, File needs to be above ' + this.minWidth + 'x' + this.minHeight;
 								file_input.value = '';
 
-								upload.nextElementSibling.querySelector('span').innerHTML = message;
+								this.labelText = message;
 								laramin.messages.push({type: 'error', message});
 							} else {
 								if (!this.enabled) {

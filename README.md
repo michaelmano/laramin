@@ -10,11 +10,19 @@ I created Laramin to get your laravel project up and running without spending to
 - [Installing](#installing)
 	* [Routes](#routes)
 	* [Login Form](#login-form)
+- [Config](#config)
+	* [Menu](#menu)
+	* [Project Manager](#project-manager)
 - [Elements and Layouts](#elements-and-layouts)
 	* [Default Blade](#default-blade)
 	* [Grid System](#grid-system)
+	* [Kitchen Sink](#kitchen-sink)
+	* [Tags](#tags)
+	* [Cards](#cards)
 	* [Forms](#forms)
+	* [Utility Helpers](#utility-helpers)
 - [Vue Components](#vue-components)
+	* [Modals](#modals)
 	* [Image Cropper](#image-cropper)
 	* [Flash Messages](#flash-messages)
 	* [Loading Overlay](#loading-overlay)
@@ -24,9 +32,7 @@ I created Laramin to get your laravel project up and running without spending to
 - [Laravel Components](#laravel-components)
 	* [Delete Item](#delete-item)
 - [Vanilla JavaScript](#vanilla-javascript)
-- [Config](#config)
-	* [Menu](#menu)
-	* [Project Manager](#project-manager)
+	* [Sortable Items](#sortable-items)
 
 
 ## Installing
@@ -85,6 +91,8 @@ However if your project uses registration you can set up your own middleware to 
 I will also search for `protected $redirectTo = '/home';` in the project and replace it wil `protected $redirectTo = '/dashboard';`
 
 ### Login Form
+![login](https://github.com/michaelmano/laramin/raw/develop/documentation/images/login.png)
+
 Now overwrite the login page under `resources/views/auth/login.blade.php` with the following.
 ```
 @extends('laramin::layouts.login')
@@ -110,6 +118,48 @@ Now overwrite the login page under `resources/views/auth/login.blade.php` with t
 @endsection
 ```
 
+## Config
+The config can be found in your project under `config/laramin.php`
+### Menu
+You can set the menu up by editing the config and this layout uses font-awesome, The user avatar will be a font awesome user icon unless your user object has a $user->avatar which points to a image URL.
+
+```
+'sidebar_links' => [
+	[
+		'url' => '/dashboard',
+		'name' => 'Dashboard',
+		'icon' => 'fa-window-maximize',
+	],
+	[
+		'url' => '/dashboard/pages',
+		'name' => 'Pages',
+		'icon' => 'fa-file-text',
+	],
+	[
+		'url' => '/dashboard/posts',
+		'name' => 'Posts',
+		'icon' => 'fa-newspaper-o',
+	],
+	[
+		'url' => '/dashboard/faqs',
+		'name' => 'FAQ\'s',
+		'icon' => 'fa-question',
+	],
+],
+```
+### Project Manager
+The project manager is used to create a help form which a client may use to send them an email or get their contact details, If you remove the values the help button will not show.
+
+![project-manager](https://github.com/michaelmano/laramin/raw/develop/documentation/images/project-manager.png)
+```
+'project_manager' => [
+	'name' => 'John Smith',
+	'email' => 'jsmith@example.com',
+	'phone' => '555 55 555',
+	'contact_finalised_message' => 'Thank you for contacting us, we will get back to you as soon as possible.',
+],
+```
+
 ## Elements and Layouts
 
 ### Default Blade
@@ -130,7 +180,103 @@ This is the blade i use for everything.
 ### Grid System
 Laramin uses [Buzuki](https://buzuki.pixls.com.au/) a mobile-first, responsive BEM flavoured flexbox css grid system.
 
+### Kitchen Sink
+
+If your project is set to local environment laramin has 1 route which you can view for all elements you can use in the system with the code also shown. you can access it from `http://your-domain.tld/laramin`
+
+### Box
+The box element is just an element with a box-shadow, You can also add a modifier class of `Box--padded` which will add padding to the Box, 
+
+### Masonry
+The Masonry of laramin uses css grids, no JavaScript at all.
+The code below uses the Masonry elements with the [Cards](#cards)
+
+![masonry](https://github.com/michaelmano/laramin/raw/develop/documentation/images/masonry.png)
+```
+<div class="Masonry__panel">
+	<div class="Box Card">
+		<header class="Card__header">
+			<h5 class="Heading util-breakaway-bottom-2"><a href="{{ route('dashboard.posts.edit', $post) }}">{{ $post->title }}</a></h5>
+			<small class="Heading__meta"><strong>Slug: </strong>{{ $post->slug }}</small>
+		</header>
+		<div class="Card__content">
+			{{ $post->body }}
+		</div>
+		<footer class="Card__footer Row Row--valign-center">
+			<div class="Cell Cell--12/12@xs Cell--4/12@xl">
+				<a href="{{ route('dashboard.posts.edit', $post) }}" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+				@include('laramin::components.confirm-delete', [
+					'value' => $post->title,
+					'url' => route('dashboard.posts.destroy', $post),
+					'remove' => '.Masonry__panel'
+				])
+			</div>
+			<div class="Cell Cell--12/12@xs Cell--8/12@xl Cell--align-right@xl">
+				@foreach($post->tags as $tag)
+					<div class="Tag">
+						<div class="Tag__name">{{ $tag->name }}</div>
+					</div>
+				@endforeach
+			</div>
+		</footer>
+	</div>
+</div>
+```
+### Tags
+![tags](https://github.com/michaelmano/laramin/raw/develop/documentation/images/tags.png)
+
+The tags can be specified like so: 
+
+```
+<div class="Tag">
+	<div class="Tag__name">Tag with info</div>
+	<div class="Tag__info">v2</div>
+</div>
+<div class="Tag">
+	<div class="Tag__name">Tag without info</div>
+</div>
+	
+<div class="Tag">
+	<div class="Tag__name">Tag with delete</div>
+	<div class="Tag__remove"><i class="fa fa-times"></i></div>
+</div>
+```
+
+### Cards
+![cards](https://github.com/michaelmano/laramin/raw/develop/documentation/images/cards.png)
+
+The card component has 3 elements, The Header, Content and Footer, Below I am putting the title of the post in the header with a slug as a heading meta, then we have the post content as Card__content
+and in the footer I am rendering the [Delete Item](#delete-item) laravel component in the footer with the post [Tags](#tags).
+```
+<div class="Box Card">
+    <header class="Card__header">
+        <h5 class="Heading util-breakaway-bottom-2"><a href="{{ route('dashboard.posts.edit', $post) }}">{{ $post->title }}</a></h5>
+        <small class="Heading__meta"><strong>Slug: </strong>{{ $post->slug }}</small>
+    </header>
+    <div class="Card__content">
+        {{ $post->body }}
+    </div>
+    <footer class="Card__footer Row Row--valign-center">
+        <div class="Cell Cell--12/12@xs Cell--4/12@xl">
+            <a href="{{ route('dashboard.posts.edit', $post) }}" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+            @include('laramin::components.confirm-delete', [
+                'value' => $post->title,
+                'url' => route('dashboard.posts.destroy', $post),
+                'remove' => '.Masonry__panel'
+            ])
+        </div>
+        <div class="Cell Cell--12/12@xs Cell--8/12@xl Cell--align-right@xl">
+            @foreach($post->tags as $tag)
+                <div class="Tag">
+                    <div class="Tag__name">{{ $tag->name }}</div>
+                </div>
+            @endforeach
+        </div>
+    </footer>
+</div>
+```
 ### Forms
+![forms](https://github.com/michaelmano/laramin/raw/develop/documentation/images/forms.png)
 ```
 <form enctype="multipart/form-data" class="Form" method="POST" action="{{ route('login') }}">
 	<fieldset class="Form__fieldset">
@@ -220,10 +366,37 @@ Laramin uses [Buzuki](https://buzuki.pixls.com.au/) a mobile-first, responsive B
 	</fieldset>
 </form>
 ```
+
+### Utility Helpers
+
+***Margins***
+
+`util-breakaway-${top/right/bottom/left}-${0/1/2/3/4/5/6/7/8}-${5}` can be used like so `util-breakaway-bottom-0` to remove margins off the bottom or `util-breakaway-top-1-5` to add 1.5rem margin to the top.
+
+***Animations***
+
+Laramin uses the animate.css library [Animate.css](https://daneden.github.io/animate.css/)
+
 ## Vue Components
 
+### Modals
+![modals](https://github.com/michaelmano/laramin/raw/develop/documentation/images/modals.png)
+```
+<button class="Button" @click="showModal('modal')">Show Modal</button>
+<laramin-modal ref="modal" @close="hideModal">
+	<template slot="title">Modal</template>
+	<template slot="body">
+		<p>Modal Body Content</p>
+	</template>
+	<p slot="footer">Footer Content</p>
+</laramin-modal>
+```
+
+The button on click will trigger a function called showModal() which takes 1 paramer, the reference of the modal which must also be unique `ref="modal"` and the modal can be passed a prop for the animation you wish to use
+`<laramin-modal ref="name" @close="hideModal" animation-in="flipInX" animation-out="flipOutX">` by default the animations are `bounceInLeft` and `bounceOutRight`
+
 ### Image Cropper
-`<laramin-crop image="http://via.placeholder.com/1920x800" :min-width="1920" :min-height="800" name="image"></laramin-crop>`
+`<laramin-crop image="http://via.placeholder.com/1920x800" label="file button text (default is choose an image)" :min-width="1920" :min-height="800" name="image"></laramin-crop>`
 
 The name and image are required, the name will set the name of the file input and also create a hidden input called `${name}`_dimentions which you can use in the back end of your application to crop the uploaded image.
 
@@ -343,6 +516,7 @@ Promise.all(promises).then(() => {
 So I have set the window to loading, created a promis and then when they have all completed I set the loading back to false.
 
 ### Tabs
+![tabs](https://github.com/michaelmano/laramin/raw/develop/documentation/images/tabs.png)
 The tabs component is quite easy to use.
 ```
 <laramin-tabs>
@@ -408,43 +582,41 @@ This will create a button with the text `Delete Page` if you do not pass `delete
 The remove will remove first parent with the class as this is done via ajax.
 
 ## Vanilla JavaScript
-**TODO**
 
-## Config
-The config can be found in your project under `config/laramin.php`
-### Menu
-You can set the menu up by editing the config and this layout uses font-awesome.
+### Sortable Items
+![sortable](https://github.com/michaelmano/laramin/raw/develop/documentation/images/sortable.png)
+
+To use sortable you would have a field called order on your modal and then when rendering you would do it like so:
 ```
-'sidebar_links' => [
-	[
-		'url' => '/dashboard',
-		'name' => 'Dashboard',
-		'icon' => 'fa-window-maximize',
-	],
-	[
-		'url' => '/dashboard/pages',
-		'name' => 'Pages',
-		'icon' => 'fa-file-text',
-	],
-	[
-		'url' => '/dashboard/posts',
-		'name' => 'Posts',
-		'icon' => 'fa-newspaper-o',
-	],
-	[
-		'url' => '/dashboard/faqs',
-		'name' => 'FAQ\'s',
-		'icon' => 'fa-question',
-	],
-],
+<div class="Row js-sortable">
+	@foreach($faqs as $faq)
+		<div class="Cell Cell--12/12@xs js-sortable-item">
+			<div class="Box Card">
+				<header class="Card__header">
+					<h6 class="Heading"><a href="{{ route('dashboard.faqs.edit', $faq) }}">{{ $faq->title }}</a></h6>
+				</header>
+				<div class="Card__content">
+					{{ $faq->body }}
+				</div>
+				<footer class="Card__footer Row Row--valign-center">
+					<div class="Cell Cell--align-left Cell--6/12@xs">
+						<button class="Button Button--round js-sortable-tile"><i class="fa fa-arrows"></i></button>
+						<form action="{{ route('dashboard.faqs.update', $faq) }}" method="POST">
+							<input class="js-sortable-input" type="hidden" value="{{ $faq->order }}">
+						</form>
+					</div>
+					<div class="Cell Cell--align-right Cell--6/12@xs">
+						<a href="{{ route('dashboard.faqs.edit', $faq) }}" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+						@include('laramin::components.confirm-delete', [
+							'value' => $faq->title,
+							'url' => route('dashboard.faqs.destroy', $faq),
+							'remove' => '.js-sortable-item'
+						])
+					</div>
+				</footer>
+			</div>
+		</div>
+	@endforeach
+</div>
 ```
-### Project Manager
-The project manager is used to create a help form which a client may use to send them an email or get their contact details, If you remove the values the help button will not show.
-```
-'project_manager' => [
-	'name' => 'John Smith',
-	'email' => 'jsmith@example.com',
-	'phone' => '555 55 555',
-	'contact_finalised_message' => 'Thank you for contacting us, we will get back to you as soon as possible.',
-],
-```
+This will render each item and each item will have a hidden form which will change the value of the order input and post it to the route you specify when dragged. The item will only change order if you drag it by the sortable button `<button class="Button Button--round js-sortable-tile"><i class="fa fa-arrows"></i></button>`

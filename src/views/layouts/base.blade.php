@@ -16,8 +16,8 @@
         @yield('base-header')
         <main class="Main">
             @yield('base-content')
-            @if (Config::get('laramin.project_manager.name'))
-            <laramin-modal ref="help-ticket" @close="hideModal" :animation-in="'flipInX'" :animation-out="'flipOutX'">
+            @if (Config::get('laramin.project_manager'))
+            <laramin-modal ref="help-ticket" @close="hideModal" animation-in="{{ Config::get('laramin.project_manager.modal_animation.animation_in') }}" animation-out="{{ Config::get('laramin.project_manager.modal_animation.animation_out') }}">
                 <template slot="title">Having an issue?</template>
                 <template slot="body">
                     <p>You can get in contact with {{ Config::get('laramin.project_manager.name') }} via the contact form below or by calling <a href="tel:{{ Config::get('laramin.project_manager.phone') }}">{{ Config::get('laramin.project_manager.phone') }}</a>.</p>

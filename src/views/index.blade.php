@@ -196,6 +196,80 @@
 				</div>
 			</div>
 			<div class="Cell Cell--12/12@xs Cell--6/12@xl">
+				<div class="Cell Cell--12/12@xs">
+					<div class="Box Box--padded">
+						<h4 class="Heading Heading--no-mt util-breakaway-bottom-2">Sortable Items</h4>
+						<laramin-tabs>
+							<laramin-tab name="Sortable Example">
+								<div class="Row js-sortable js-sortable">
+									<div class="Cell Cell--12/12@xs js-sortable-item">
+										<div class="Box Card">
+											<header class="Card__header">
+												<h6 class="Heading"><a href="#">Sortable Item 1</a></h6>
+											</header>
+											<div class="Card__content">
+												<p>Et provident ut dolorum cum dicta quia tenetur. Eius est expedita consectetur sed nisi. Nisi sed natus sapiente facilis minus eius. Voluptatem hic iste hic cumque. Quos eum et facere voluptatem neque mollitia voluptatem....</p>
+											</div>
+											<footer class="Card__footer Row Row--valign-center">
+												<div class="Cell Cell--align-left Cell--6/12@xs">
+													<button class="Button Button--round js-sortable-tile"><i class="fa fa-arrows"></i></button>
+													<form action="#" method="POST">
+														<input class="js-sortable-input js-sortable-example" type="hidden" value="1">
+													</form>
+												</div>
+												<div class="Cell Cell--align-right Cell--6/12@xs">
+													<a href="#" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+													<a href="#" class="Button Button--kilo Button--round"><i class="fa fa-trash"></i></a>
+												</div>
+											</footer>
+										</div>
+									</div>
+									<div class="Cell Cell--12/12@xs js-sortable-item">
+										<div class="Box Card">
+											<header class="Card__header">
+												<h6 class="Heading"><a href="#">Sortable Item 2</a></h6>
+											</header>
+											<div class="Card__content">
+												<p>Et provident ut dolorum cum dicta quia tenetur. Eius est expedita consectetur sed nisi. Nisi sed natus sapiente facilis minus eius. Voluptatem hic iste hic cumque. Quos eum et facere voluptatem neque mollitia voluptatem....</p>
+											</div>
+											<footer class="Card__footer Row Row--valign-center">
+												<div class="Cell Cell--align-left Cell--6/12@xs">
+													<button class="Button Button--round js-sortable-tile"><i class="fa fa-arrows"></i></button>
+													<form action="#" method="POST">
+														<input class="js-sortable-input js-sortable-example" type="hidden" value="2">
+													</form>
+												</div>
+												<div class="Cell Cell--align-right Cell--6/12@xs">
+													<a href="#" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+													<a href="#" class="Button Button--kilo Button--round"><i class="fa fa-trash"></i></a>
+												</div>
+											</footer>
+										</div>
+									</div>
+								</div>
+							</laramin-tab>
+							<laramin-tab name="Sortable Code">
+							<p>The code below is the basics of what is required, In the example I have shown I have also used the Box and the Card bem elements.</p>
+<pre class="Pre">
+&#x3C;div class=&#x22;js-sortable&#x22;&#x3E;
+    &#x3C;div class=&#x22;js-sortable-item&#x22;&#x3E;
+        &#x3C;button class=&#x22;Button Button--round js-sortable-tile&#x22;&#x3E;&#x3C;i class=&#x22;fa fa-arrows&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/button&#x3E;
+        &#x3C;form action=&#x22;/update-route-here&#x22; method=&#x22;POST&#x22;&#x3E;
+            &#x3C;input class=&#x22;js-sortable-input&#x22; type=&#x22;hidden&#x22; value=&#x22;1&#x22;&#x3E;
+        &#x3C;/form&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;js-sortable-item&#x22;&#x3E;
+        &#x3C;button class=&#x22;Button Button--round js-sortable-tile&#x22;&#x3E;&#x3C;i class=&#x22;fa fa-arrows&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/button&#x3E;
+        &#x3C;form action=&#x22;/update-route-here&#x22; method=&#x22;POST&#x22;&#x3E;
+            &#x3C;input class=&#x22;js-sortable-input&#x22; type=&#x22;hidden&#x22; value=&#x22;2&#x22;&#x3E;
+        &#x3C;/form&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+							</laramin-tab>
+						</laramin-tabs>
+						</div>
+					</div>
 					<div class="Cell Cell--12/12@xs">
 						<div class="Box Box--padded">
 							<h4 class="Heading Heading--no-mt util-breakaway-bottom-2">Tags</h4>
@@ -282,7 +356,7 @@
 								<laramin-crop image="http://via.placeholder.com/1920x800" :min-width="1920" :min-height="800" name="image"></laramin-crop>
 							</laramin-tab>
 							<laramin-tab name="Image Cropper Code">
-								<pre class="Pre">&lt;laramin-crop image=&quot;http://via.placeholder.com/1920x800&quot; :min-width=&quot;1920&quot; :min-height=&quot;800&quot; name=&quot;image&quot;&gt;&lt;/laramin-crop&gt;</pre>
+								<pre class="Pre">&lt;laramin-crop image=&quot;http://via.placeholder.com/1920x800&quot; label="file button text (default is choose an image)" :min-width=&quot;1920&quot; :min-height=&quot;800&quot; name=&quot;image&quot;&gt;&lt;/laramin-crop&gt;</pre>
 							</laramin-tab>
 						</laramin-tabs>
 					</div>
