@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.1] - 05-11-2017
+
+## Added
+ - Updates readme to contain controller generation and view templates.
+
 ## [0.2.0] - 05-11-2017
 
 ## Added
