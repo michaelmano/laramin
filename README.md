@@ -121,7 +121,8 @@ Now overwrite the login page under `resources/views/auth/login.blade.php` with t
 ## Config
 The config can be found in your project under `config/laramin.php`
 ### Menu
-You can set the menu up by editing the config and this layout uses font-awesome.
+You can set the menu up by editing the config and this layout uses font-awesome, The user avatar will be a font awesome user icon unless your user object has a $user->avatar which points to a image URL.
+
 ```
 'sidebar_links' => [
 	[
@@ -221,6 +222,26 @@ The code below uses the Masonry elements with the [Cards](#cards)
 	</div>
 </div>
 ```
+### Tags
+![tags](https://github.com/michaelmano/laramin/raw/develop/documentation/images/tags.png)
+
+The tags can be specified like so: 
+
+```
+<div class="Tag">
+	<div class="Tag__name">Tag with info</div>
+	<div class="Tag__info">v2</div>
+</div>
+<div class="Tag">
+	<div class="Tag__name">Tag without info</div>
+</div>
+	
+<div class="Tag">
+	<div class="Tag__name">Tag with delete</div>
+	<div class="Tag__remove"><i class="fa fa-times"></i></div>
+</div>
+```
+
 ### Cards
 ![cards](https://github.com/michaelmano/laramin/raw/develop/documentation/images/cards.png)
 
