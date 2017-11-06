@@ -13,8 +13,13 @@ I created Laramin to get your laravel project up and running without spending to
 - [Elements and Layouts](#elements-and-layouts)
 	* [Default Blade](#default-blade)
 	* [Grid System](#grid-system)
+	* [Kitchen Sink](#kitchen-sink)
+	* [Tags](#tags)
+	* [Cards](#cards)
 	* [Forms](#forms)
+	* [Utility Helpers](#utility-helpers)
 - [Vue Components](#vue-components)
+	* [Modals](#modals)
 	* [Image Cropper](#image-cropper)
 	* [Flash Messages](#flash-messages)
 	* [Loading Overlay](#loading-overlay)
@@ -130,7 +135,47 @@ This is the blade i use for everything.
 ### Grid System
 Laramin uses [Buzuki](https://buzuki.pixls.com.au/) a mobile-first, responsive BEM flavoured flexbox css grid system.
 
+### Kitchen Sink
+
+If your project is set to local environment laramin has 1 route which you can view for all elements you can use in the system with the code also shown. you can access it from `http://your-domain.tld/laramin`
+
+### Masonry
+![masonry](https://raw.githubusercontent.com/michaelmano/laramin/master/documentation/images/masonry.png)
+### Cards
+![cards](https://raw.githubusercontent.com/michaelmano/laramin/master/documentation/images/cards.png)
+
+The card component has 3 elements, The Header, Content and Footer, Below I am putting the title of the post in the header with a slug as a heading meta, then we have the post content as Card__content
+and in the footer I am rendering the [Delete Item](#delete-item) laravel component in the footer with the post [Tags](#tags).
+```
+<div class="Box Card">
+    <header class="Card__header">
+        <h5 class="Heading util-breakaway-bottom-2"><a href="{{ route('dashboard.posts.edit', $post) }}">{{ $post->title }}</a></h5>
+        <small class="Heading__meta"><strong>Slug: </strong>{{ $post->slug }}</small>
+    </header>
+    <div class="Card__content">
+        {{ $post->body }}
+    </div>
+    <footer class="Card__footer Row Row--valign-center">
+        <div class="Cell Cell--12/12@xs Cell--4/12@xl">
+            <a href="{{ route('dashboard.posts.edit', $post) }}" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+            @include('laramin::components.confirm-delete', [
+                'value' => $post->title,
+                'url' => route('dashboard.posts.destroy', $post),
+                'remove' => '.Masonry__panel'
+            ])
+        </div>
+        <div class="Cell Cell--12/12@xs Cell--8/12@xl Cell--align-right@xl">
+            @foreach($post->tags as $tag)
+                <div class="Tag">
+                    <div class="Tag__name">{{ $tag->name }}</div>
+                </div>
+            @endforeach
+        </div>
+    </footer>
+</div>
+```
 ### Forms
+![forms](https://raw.githubusercontent.com/michaelmano/laramin/master/documentation/images/forms.png)
 ```
 <form enctype="multipart/form-data" class="Form" method="POST" action="{{ route('login') }}">
 	<fieldset class="Form__fieldset">
@@ -220,7 +265,29 @@ Laramin uses [Buzuki](https://buzuki.pixls.com.au/) a mobile-first, responsive B
 	</fieldset>
 </form>
 ```
+
+### Utility Helpers
+
+## Margins
+`util-breakaway-${top/right/bottom/left}-${0/1/2/3/4/5/6/7/8}-${5}` can be used like so `util-breakaway-bottom-0` to remove margins off the bottom or `util-breakaway-top-1-5` to add 1.5rem margin to the top.
+
 ## Vue Components
+
+### Modals
+![modals](https://raw.githubusercontent.com/michaelmano/laramin/master/documentation/images/modals.png)
+```
+<button class="Button" @click="showModal('modal')">Show Modal</button>
+<laramin-modal ref="modal" @close="hideModal">
+	<template slot="title">Modal</template>
+	<template slot="body">
+		<p>Modal Body Content</p>
+	</template>
+	<p slot="footer">Footer Content</p>
+</laramin-modal>
+```
+
+The button on click will trigger a function called showModal() which takes 1 paramer, the reference of the modal which must also be unique `ref="modal"` and the modal can be passed a prop for the animation you wish to use
+`<laramin-modal ref="name" @close="hideModal" animation-in="flipInX" animation-out="flipOutX">` by default the animations are `bounceInLeft` and `bounceOutRight`
 
 ### Image Cropper
 `<laramin-crop image="http://via.placeholder.com/1920x800" :min-width="1920" :min-height="800" name="image"></laramin-crop>`
@@ -343,6 +410,7 @@ Promise.all(promises).then(() => {
 So I have set the window to loading, created a promis and then when they have all completed I set the loading back to false.
 
 ### Tabs
+![tabs](https://raw.githubusercontent.com/michaelmano/laramin/master/documentation/images/tabs.png)
 The tabs component is quite easy to use.
 ```
 <laramin-tabs>
