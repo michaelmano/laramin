@@ -15,6 +15,10 @@ const queInputs = function inputs(inputs) {
 		|| Q.hasClass(input, 'Form__input--number')
 		|| Q.hasClass(input, 'Form__input--search')
 		|| Q.hasClass(input, 'Form__input--url')
+		|| Q.hasClass(input, 'Form__input--time')
+		|| Q.hasClass(input, 'Form__input--week')
+		|| Q.hasClass(input, 'Form__input--month')
+		|| Q.hasClass(input, 'Form__input--date')
 		|| Q.hasClass(input, 'Form__input--email')
 		|| Q.hasClass(input, 'Form__input--password')) return textInput(input);
 	});
@@ -46,7 +50,17 @@ const fileInput = function fileInput(input) {
 const textInput = function textInput(input) {
 	const span = Q.make('span');
 	Q.addClass(span, 'Form__input-span');
+	if (input.value) {
+		Q.addClass(input, 'is-dirty');
+	}
 	Q.append(Q.parent(input), span);
+	Q.on(input, 'blur', event => {
+		if (input.value) {
+			Q.addClass(input, 'is-dirty');
+		} else {
+			Q.removeClass(input, 'is-dirty');
+		}
+	});
 }
 
 export default bootstrap;
