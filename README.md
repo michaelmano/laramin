@@ -391,7 +391,7 @@ The button on click will trigger a function called showModal() which takes 1 par
 `<laramin-modal ref="name" @close="hideModal" animation-in="flipInX" animation-out="flipOutX">` by default the animations are `bounceInLeft` and `bounceOutRight`
 
 ### Image Cropper
-`<laramin-crop image="http://via.placeholder.com/1920x800" :min-width="1920" :min-height="800" name="image"></laramin-crop>`
+`<laramin-crop image="http://via.placeholder.com/1920x800" label="file button text (default is choose an image)" :min-width="1920" :min-height="800" name="image"></laramin-crop>`
 
 The name and image are required, the name will set the name of the file input and also create a hidden input called `${name}`_dimentions which you can use in the back end of your application to crop the uploaded image.
 

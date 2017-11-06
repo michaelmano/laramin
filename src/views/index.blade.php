@@ -356,7 +356,7 @@
 								<laramin-crop image="http://via.placeholder.com/1920x800" :min-width="1920" :min-height="800" name="image"></laramin-crop>
 							</laramin-tab>
 							<laramin-tab name="Image Cropper Code">
-								<pre class="Pre">&lt;laramin-crop image=&quot;http://via.placeholder.com/1920x800&quot; :min-width=&quot;1920&quot; :min-height=&quot;800&quot; name=&quot;image&quot;&gt;&lt;/laramin-crop&gt;</pre>
+								<pre class="Pre">&lt;laramin-crop image=&quot;http://via.placeholder.com/1920x800&quot; label="file button text (default is choose an image)" :min-width=&quot;1920&quot; :min-height=&quot;800&quot; name=&quot;image&quot;&gt;&lt;/laramin-crop&gt;</pre>
 							</laramin-tab>
 						</laramin-tabs>
 					</div>
