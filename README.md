@@ -10,6 +10,9 @@ I created Laramin to get your laravel project up and running without spending to
 - [Installing](#installing)
 	* [Routes](#routes)
 	* [Login Form](#login-form)
+- [Config](#config)
+	* [Menu](#menu)
+	* [Project Manager](#project-manager)
 - [Elements and Layouts](#elements-and-layouts)
 	* [Default Blade](#default-blade)
 	* [Grid System](#grid-system)
@@ -29,9 +32,7 @@ I created Laramin to get your laravel project up and running without spending to
 - [Laravel Components](#laravel-components)
 	* [Delete Item](#delete-item)
 - [Vanilla JavaScript](#vanilla-javascript)
-- [Config](#config)
-	* [Menu](#menu)
-	* [Project Manager](#project-manager)
+	* [Sortable Items](#sortable-items)
 
 
 ## Installing
@@ -115,6 +116,46 @@ Now overwrite the login page under `resources/views/auth/login.blade.php` with t
 @endsection
 ```
 
+## Config
+The config can be found in your project under `config/laramin.php`
+### Menu
+You can set the menu up by editing the config and this layout uses font-awesome.
+```
+'sidebar_links' => [
+	[
+		'url' => '/dashboard',
+		'name' => 'Dashboard',
+		'icon' => 'fa-window-maximize',
+	],
+	[
+		'url' => '/dashboard/pages',
+		'name' => 'Pages',
+		'icon' => 'fa-file-text',
+	],
+	[
+		'url' => '/dashboard/posts',
+		'name' => 'Posts',
+		'icon' => 'fa-newspaper-o',
+	],
+	[
+		'url' => '/dashboard/faqs',
+		'name' => 'FAQ\'s',
+		'icon' => 'fa-question',
+	],
+],
+```
+### Project Manager
+The project manager is used to create a help form which a client may use to send them an email or get their contact details, If you remove the values the help button will not show.
+![project-manager](https://github.com/michaelmano/laramin/raw/develop/documentation/images/project-manager.png)
+```
+'project_manager' => [
+	'name' => 'John Smith',
+	'email' => 'jsmith@example.com',
+	'phone' => '555 55 555',
+	'contact_finalised_message' => 'Thank you for contacting us, we will get back to you as soon as possible.',
+],
+```
+
 ## Elements and Layouts
 
 ### Default Blade
@@ -139,8 +180,43 @@ Laramin uses [Buzuki](https://buzuki.pixls.com.au/) a mobile-first, responsive B
 
 If your project is set to local environment laramin has 1 route which you can view for all elements you can use in the system with the code also shown. you can access it from `http://your-domain.tld/laramin`
 
+### Box
+The box element is just an element with a box-shadow, You can also add a modifier class of `Box--padded` which will add padding to the Box, 
+
 ### Masonry
+The Masonry of laramin uses css grids, no JavaScript at all.
+The code below uses the Masonry elements with the [Cards](#cards)
 ![masonry](https://github.com/michaelmano/laramin/raw/develop/documentation/images/masonry.png)
+```
+<div class="Masonry__panel">
+	<div class="Box Card">
+		<header class="Card__header">
+			<h5 class="Heading util-breakaway-bottom-2"><a href="{{ route('dashboard.posts.edit', $post) }}">{{ $post->title }}</a></h5>
+			<small class="Heading__meta"><strong>Slug: </strong>{{ $post->slug }}</small>
+		</header>
+		<div class="Card__content">
+			{{ $post->body }}
+		</div>
+		<footer class="Card__footer Row Row--valign-center">
+			<div class="Cell Cell--12/12@xs Cell--4/12@xl">
+				<a href="{{ route('dashboard.posts.edit', $post) }}" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+				@include('laramin::components.confirm-delete', [
+					'value' => $post->title,
+					'url' => route('dashboard.posts.destroy', $post),
+					'remove' => '.Masonry__panel'
+				])
+			</div>
+			<div class="Cell Cell--12/12@xs Cell--8/12@xl Cell--align-right@xl">
+				@foreach($post->tags as $tag)
+					<div class="Tag">
+						<div class="Tag__name">{{ $tag->name }}</div>
+					</div>
+				@endforeach
+			</div>
+		</footer>
+	</div>
+</div>
+```
 ### Cards
 ![cards](https://github.com/michaelmano/laramin/raw/develop/documentation/images/cards.png)
 
@@ -476,43 +552,41 @@ This will create a button with the text `Delete Page` if you do not pass `delete
 The remove will remove first parent with the class as this is done via ajax.
 
 ## Vanilla JavaScript
-**TODO**
 
-## Config
-The config can be found in your project under `config/laramin.php`
-### Menu
-You can set the menu up by editing the config and this layout uses font-awesome.
+### Sortable Items
+![sortable](https://github.com/michaelmano/laramin/raw/develop/documentation/images/sortable.png)
+
+To use sortable you would have a field called order on your modal and then when rendering you would do it like so:
 ```
-'sidebar_links' => [
-	[
-		'url' => '/dashboard',
-		'name' => 'Dashboard',
-		'icon' => 'fa-window-maximize',
-	],
-	[
-		'url' => '/dashboard/pages',
-		'name' => 'Pages',
-		'icon' => 'fa-file-text',
-	],
-	[
-		'url' => '/dashboard/posts',
-		'name' => 'Posts',
-		'icon' => 'fa-newspaper-o',
-	],
-	[
-		'url' => '/dashboard/faqs',
-		'name' => 'FAQ\'s',
-		'icon' => 'fa-question',
-	],
-],
+<div class="Row js-sortable">
+	@foreach($faqs as $faq)
+		<div class="Cell Cell--12/12@xs js-sortable-item">
+			<div class="Box Card">
+				<header class="Card__header">
+					<h6 class="Heading"><a href="{{ route('dashboard.faqs.edit', $faq) }}">{{ $faq->title }}</a></h6>
+				</header>
+				<div class="Card__content">
+					{{ $faq->body }}
+				</div>
+				<footer class="Card__footer Row Row--valign-center">
+					<div class="Cell Cell--align-left Cell--6/12@xs">
+						<button class="Button Button--round js-sortable-tile"><i class="fa fa-arrows"></i></button>
+						<form action="{{ route('dashboard.faqs.update', $faq) }}" method="POST">
+							<input class="js-sortable-input" type="hidden" value="{{ $faq->order }}">
+						</form>
+					</div>
+					<div class="Cell Cell--align-right Cell--6/12@xs">
+						<a href="{{ route('dashboard.faqs.edit', $faq) }}" class="Button Button--round"><i class="fa fa-pencil"></i></a>
+						@include('laramin::components.confirm-delete', [
+							'value' => $faq->title,
+							'url' => route('dashboard.faqs.destroy', $faq),
+							'remove' => '.js-sortable-item'
+						])
+					</div>
+				</footer>
+			</div>
+		</div>
+	@endforeach
+</div>
 ```
-### Project Manager
-The project manager is used to create a help form which a client may use to send them an email or get their contact details, If you remove the values the help button will not show.
-```
-'project_manager' => [
-	'name' => 'John Smith',
-	'email' => 'jsmith@example.com',
-	'phone' => '555 55 555',
-	'contact_finalised_message' => 'Thank you for contacting us, we will get back to you as soon as possible.',
-],
-```
+This will render each item and each item will have a hidden form which will change the value of the order input and post it to the route you specify when dragged. The item will only change order if you drag it by the sortable button `<button class="Button Button--round js-sortable-tile"><i class="fa fa-arrows"></i></button>`
