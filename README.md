@@ -91,6 +91,8 @@ However if your project uses registration you can set up your own middleware to 
 I will also search for `protected $redirectTo = '/home';` in the project and replace it wil `protected $redirectTo = '/dashboard';`
 
 ### Login Form
+![login](https://github.com/michaelmano/laramin/raw/develop/documentation/images/login.png)
+
 Now overwrite the login page under `resources/views/auth/login.blade.php` with the following.
 ```
 @extends('laramin::layouts.login')
@@ -146,6 +148,7 @@ You can set the menu up by editing the config and this layout uses font-awesome.
 ```
 ### Project Manager
 The project manager is used to create a help form which a client may use to send them an email or get their contact details, If you remove the values the help button will not show.
+
 ![project-manager](https://github.com/michaelmano/laramin/raw/develop/documentation/images/project-manager.png)
 ```
 'project_manager' => [
@@ -186,6 +189,7 @@ The box element is just an element with a box-shadow, You can also add a modifie
 ### Masonry
 The Masonry of laramin uses css grids, no JavaScript at all.
 The code below uses the Masonry elements with the [Cards](#cards)
+
 ![masonry](https://github.com/michaelmano/laramin/raw/develop/documentation/images/masonry.png)
 ```
 <div class="Masonry__panel">
