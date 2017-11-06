@@ -369,7 +369,8 @@ and in the footer I am rendering the [Delete Item](#delete-item) laravel compone
 
 ### Utility Helpers
 
-**Margins**
+***Margins***
+
 `util-breakaway-${top/right/bottom/left}-${0/1/2/3/4/5/6/7/8}-${5}` can be used like so `util-breakaway-bottom-0` to remove margins off the bottom or `util-breakaway-top-1-5` to add 1.5rem margin to the top.
 
 ***Animations***
