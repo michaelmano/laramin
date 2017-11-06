@@ -9,11 +9,13 @@ I created Laramin to get your laravel project up and running without spending to
 ## Table of Contents
 - [Installing](#installing)
 	* [Routes](#routes)
+	* [Controllers](#controllers)
+	* [Views](#views)
 	* [Login Form](#login-form)
 - [Config](#config)
 	* [Menu](#menu)
 	* [Project Manager](#project-manager)
-- [Elements and Layouts](#elements-and-layouts)
+- [Elements](#elements)
 	* [Default Blade](#default-blade)
 	* [Grid System](#grid-system)
 	* [Kitchen Sink](#kitchen-sink)
@@ -88,7 +90,40 @@ Then edit `web/routes.php` file and add
 Route::get('register', 'Auth\RegisterController@forbidden');
 ```
 However if your project uses registration you can set up your own middleware to handle the dashboard.
-I will also search for `protected $redirectTo = '/home';` in the project and replace it wil `protected $redirectTo = '/dashboard';`
+I will also update 
+
+```
+app/Http/Controllers/Auth/LoginController.php
+app/Http/Controllers/Auth/RegisterController.php
+app/Http/Controllers/Auth/ResetPasswordController.php
+```
+
+with `protected $redirectTo = '/home';` to `protected $redirectTo = '/dashboard';`
+
+and
+
+```
+app/Http/Middleware/RedirectIfAuthenticated.php
+```
+`return redirect('/home');` with `return redirect('/dashboard');`
+
+### Views
+
+Now I will create a view folder called dashboard `resources/views/dashboard` and create a `index.blade.php` file and put the following code inside of it.
+
+```
+@extends('laramin::layouts.standard')
+@push('styles')
+	You can push any overrides or additional styles here.
+@endpush
+@section('standard-content')
+	Content here
+@endsection
+@push('scripts')
+	You can push any javascript here.
+@endpush
+```
+This is the blade layout to use with laramin.
 
 ### Login Form
 ![login](https://github.com/michaelmano/laramin/raw/develop/documentation/images/login.png)
@@ -117,6 +152,9 @@ Now overwrite the login page under `resources/views/auth/login.blade.php` with t
 	</form>
 @endsection
 ```
+### Controllers
+
+Generate a controller that can be used to handle your dashboard index `php artisan make:controller Dashboard/DashboardController` and any others you may require, e.g. if your project has dynamic pages you can generate this with `php artisan make:controller Dashboard/PageController -r` Pass the -r parameter for resources e.g. CRUD
 
 ## Config
 The config can be found in your project under `config/laramin.php`
@@ -160,22 +198,7 @@ The project manager is used to create a help form which a client may use to send
 ],
 ```
 
-## Elements and Layouts
-
-### Default Blade
-```
-@extends('laramin::layouts.standard')
-@push('styles')
-	You can push any overrides or additional styles here.
-@endpush
-@section('standard-content')
-	Content here
-@endsection
-@push('scripts')
-	You can push any javascript here.
-@endpush
-```
-This is the blade i use for everything.
+## Elements
 
 ### Grid System
 Laramin uses [Buzuki](https://buzuki.pixls.com.au/) a mobile-first, responsive BEM flavoured flexbox css grid system.
