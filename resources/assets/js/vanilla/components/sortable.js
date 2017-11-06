@@ -11,7 +11,7 @@ const bootstrap = function bootstrap() {
 			draggable: ".js-sortable-item",
 			onUpdate: function (event) {
 				const sortableInput = Q.children(sortableContainer, '.js-sortable-input');
-				if (sortableInput.length >= 1) {
+				if (sortableInput.length >= 1 && !Q.hasClass(sortableInput, 'js-sortable-example')) {
 					let promises = [];
 					window.laramin.loading = true;
 					Q.each(sortableInput, (sortableInput, index) => {
