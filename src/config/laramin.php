@@ -9,7 +9,7 @@ return [
         'contact_finalised_message' => 'Thank you for contacting us, we will get back to you as soon as possible.',
         'modal_animation' => [
             'animation_in' => 'flipInX',
-            'animation_out' => 'flipOutX'
+            'animation_out' => 'flipOutX',
         ],
     ],
     'sidebar_links' => [
