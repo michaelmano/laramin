@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1] - 13-04-2018
+
+### Changed
+
+* Formatting of [README.md](README.md)
+
 ## [0.3.0] - 13-04-2018
 
 ### Added
