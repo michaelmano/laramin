@@ -109,8 +109,11 @@
 							if (image.width < this.minWidth || image.height < this.minHeight) {
 								const message = 'Error, File needs to be above ' + this.minWidth + 'x' + this.minHeight;
 								file_input.value = '';
-
 								this.labelText = message;
+								this.cropper.destroy();
+								this.loaded = false;
+								this.$refs.image.src = this.image;
+								this.enabled = false;
 								laramin.messages.push({type: 'error', message});
 							} else {
 								if (!this.enabled) {
