@@ -1,6 +1,6 @@
 <?php
 
-namespace Michaelmano\Laramin;
+namespace MichaelMano\Laramin;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,11 +11,11 @@ class LaraminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/views', 'laramin');
+        $this->loadViewsFrom(__DIR__ . '/views', 'laramin');
         $this->publishes([
-            __DIR__.'/assets' => public_path('michaelmano/laramin'),
+            __DIR__ . '/assets' => public_path('MichaelMano/laramin'),
         ], 'public');
-        $this->publishes([__DIR__.'/config/laramin.php' => config_path('laramin.php')]);
+        $this->publishes([__DIR__ . '/config/laramin.php' => config_path('laramin.php')]);
     }
 
     /**
@@ -23,7 +23,7 @@ class LaraminServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        include __DIR__.'/routes.php';
-        $this->app->make('Michaelmano\Laramin\LaraminController');
+        include __DIR__ . '/routes.php';
+        $this->app->make('MichaelMano\Laramin\LaraminController');
     }
 }

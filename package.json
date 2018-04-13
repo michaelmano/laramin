@@ -15,7 +15,7 @@
   "author": "Michael Mano <michael.mano26@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^1.0.0-alpha.1",
+    "@ckeditor/ckeditor5-build-classic": "^1.0.0-beta.3",
     "animate.css": "^3.5.2",
     "axios": "^0.16.2",
     "buzuki": "^1.0.1",

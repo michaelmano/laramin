@@ -1,6 +1,6 @@
 <?php
 
-namespace Michaelmano\Laramin;
+namespace MichaelMano\Laramin;
 
 use App\Http\Controllers\Controller;
 
