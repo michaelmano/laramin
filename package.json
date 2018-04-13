@@ -1,6 +1,6 @@
 {
   "name": "laramin",
-  "version": "1.0.0",
+  "version": "0.3.1",
   "description": "A Laravel dashboard panel",
   "main": "resources/js/app.js",
   "scripts": {
