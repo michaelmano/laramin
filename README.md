@@ -203,7 +203,7 @@ You can set the menu up by editing the config and this layout uses font-awesome,
 
 The project manager is used to create a help form which a client may use to send them an email or get their contact details, If you remove the values the help button will not show.
 
-![project-manager](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/project-manager.png)
+![project-manager](https://github.com/michaelmano/laramin/raw/develop/documentation/images/project-manager.png)
 
 ```php
 'project_manager' => [
@@ -233,7 +233,7 @@ The box element is just an element with a box-shadow, You can also add a modifie
 The Masonry of laramin uses css grids, no JavaScript at all.
 The code below uses the Masonry elements with the [Cards](#cards)
 
-![masonry](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/masonry.png)
+![masonry](https://github.com/michaelmano/laramin/raw/develop/documentation/images/masonry.png)
 
 ```php
 <div class="Masonry__panel">
@@ -268,7 +268,7 @@ The code below uses the Masonry elements with the [Cards](#cards)
 
 ### Tags
 
-![tags](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/tags.png)
+![tags](https://github.com/michaelmano/laramin/raw/develop/documentation/images/tags.png)
 
 The tags can be specified like so:
 
@@ -289,7 +289,7 @@ The tags can be specified like so:
 
 ### Cards
 
-![cards](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/cards.png)
+![cards](https://github.com/michaelmano/laramin/raw/develop/documentation/images/cards.png)
 
 The card component has 3 elements, The Header, Content and Footer, Below I am putting the title of the post in the header with a slug as a heading meta, then we have the post content as Card\_\_content
 and in the footer I am rendering the [Delete Item](#delete-item) laravel component in the footer with the post [Tags](#tags).
@@ -325,7 +325,7 @@ and in the footer I am rendering the [Delete Item](#delete-item) laravel compone
 
 ### Forms
 
-![forms](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/forms.png)
+![forms](https://github.com/michaelmano/laramin/raw/develop/documentation/images/forms.png)
 
 ```php
 <form enctype="multipart/form-data" class="Form" method="POST" action="{{ route('login') }}">
@@ -431,7 +431,7 @@ Laramin uses the animate.css library [Animate.css](https://daneden.github.io/ani
 
 ### Modals
 
-![modals](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/modals.png)
+![modals](https://github.com/michaelmano/laramin/raw/develop/documentation/images/modals.png)
 
 ```php
 <button class="Button" @click="showModal('modal')">Show Modal</button>
@@ -576,7 +576,7 @@ So I have set the window to loading, created a promis and then when they have al
 
 ### Tabs
 
-![tabs](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/tabs.png)
+![tabs](https://github.com/michaelmano/laramin/raw/develop/documentation/images/tabs.png)
 The tabs component is quite easy to use.
 
 ```php
@@ -652,7 +652,7 @@ The remove will remove first parent with the class as this is done via ajax.
 
 ### Sortable Items
 
-![sortable](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/sortable.png)
+![sortable](https://github.com/michaelmano/laramin/raw/develop/documentation/images/sortable.png)
 
 To use sortable you would have a field called order on your modal and then when rendering you would do it like so:
 
