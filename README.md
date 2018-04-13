@@ -34,7 +34,7 @@ I created Laramin to get your laravel project up and running without spending to
 
 ## Installing
 
-Once you have a Laravel project up and running you can install laramin with composer `composer require MichaelMano/laramin` and then adding it to your service providers under `config/app.php`
+Once you have a Laravel project up and running you can install laramin with composer `composer require michaelmano/laramin` and then adding it to your service providers under `config/app.php`
 
 `MichaelMano\Laramin\LaraminServiceProvider::class,`
 
@@ -42,7 +42,7 @@ and then publish the assets with
 
 `php artisan vendor:publish --provider="MichaelMano\Laramin\LaraminServiceProvider"`
 
-I highly suggest not editing the files under `public/MichaelMano/laramin` as Laramin is still in beta and there will be many updates.
+I highly suggest not editing the files under `public/michaelmano/laramin` as Laramin is still in beta and there will be many updates.
 
 ### Routes
 
@@ -134,7 +134,7 @@ This is the blade layout to use with laramin.
 
 ### Login Form
 
-![login](https://github.com/MichaelMano/laramin/raw/develop/documentation/images/login.png)
+![login](https://github.com/michaelmano/laramin/raw/develop/documentation/images/login.png)
 
 Now overwrite the login page under `resources/views/auth/login.blade.php` with the following.
 
